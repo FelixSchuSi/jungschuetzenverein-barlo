@@ -2,9 +2,10 @@
 import { Container } from '@components/odyssey-theme';
 import Layout from './Page.astro'; 
 import { generateTagData } from '../utils/helpers';
+import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
 
-const {content: {title, description, publishDate, canonicalURL, featuredImage, tags} } = Astro.props;
-
+let {content: {title, description, publishDate, canonicalURL, featuredImage, tags} } = Astro.props;
+featuredImage = BASE_PATH_WITHOUT_DOMAIN + "/" + featuredImage;
 let allTagsData = [];
 
 if(tags && tags.length > 0){

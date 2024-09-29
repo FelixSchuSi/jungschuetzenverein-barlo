@@ -1,10 +1,12 @@
 ---
+import { BASE_PATH_WITHOUT_DOMAIN } from "../../../base-path.mjs";
 const {post} = Astro.props;
+const featuredImage = BASE_PATH_WITHOUT_DOMAIN + post.featuredImage;
 ---
 
 <li class="blog-post__preview">
   <a href={post.href}>
-    <img src={post.featuredImage} />
+    <img src={featuredImage} />
     <h3>{post.title}</h3>
     {post.excerpt && <p>{post.excerpt}</p>}
   </a>
