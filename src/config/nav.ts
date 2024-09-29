@@ -15,4 +15,4 @@ export const nav = [
 		title: 'Contact',
 		slug: '/company/contact',
 	},
-];
+] as const;

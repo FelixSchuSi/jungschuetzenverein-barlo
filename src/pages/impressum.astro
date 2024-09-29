@@ -1,0 +1,72 @@
+---
+import { TextSection } from '@components/odyssey-theme';
+import Layout from '../layouts/Page.astro';
+import HeroSection from '@components/sections/heros/HeroSection.astro';
+import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
+
+const seo = {
+	title: `Impressum | Jungschützenverein Barlo e. V.`,
+	description: `Das Impressum für die Website vom Jungschützenverein Barlo e. V.`,
+};
+---
+
+<Layout {seo}>
+	<HeroSection>
+		<div slot="text-container">
+			<h1>Impressum</h1>
+			<p>
+				Du suchst nach dem Impressum? Dann bist du hier genau richtig. Wenn du
+				mit uns in Kontakt treten möchtest, schreib uns doch auf Instagram <a
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://www.instagram.com/jungschuetzenvereinbarlo_ev_/"
+					>@jungschuetzenvereinbarlo_ev_</a
+				>!
+			</p>
+		</div>
+		<picture slot="image-container">
+			<img
+				src={BASE_PATH_WITHOUT_DOMAIN + '/assets/images/home/earth-hero.jpg'}
+				alt="Astro Odyssee"
+				id="home-hero-image"
+			/>
+		</picture>
+	</HeroSection>
+	<TextSection>
+		<p>
+			Jungsch&uuml;tzenverein Barlo e. V.<br />
+			Corrensstra&szlig;e 68<br />
+			48149 M&uuml;nster
+		</p>
+
+		<p>
+			Vereinsregister: VR 7202<br />
+			Registergericht: Amtsgerichts Coesfeld
+		</p>
+
+		<p>
+			<strong>Vertreten durch:</strong><br />
+			Vereinsf&uuml;hrer: Christoph Frankem&ouml;lle<br />
+			Stellv. Vereinsf&uuml;hrer: Thomas Schmitz<br />
+			Schriftf&uuml;hrer: Lukas Kampshoff<br />
+			Ger&auml;tewart: Felix Schulze Sindern
+		</p>
+
+		<h3>Kontakt</h3>
+		<p>
+			Telefon: 015789131739<br />
+			E-Mail: f.schulzesindern@web.de
+		</p>
+
+		<h3>Redaktionell verantwortlich</h3>
+		<p>Felix Schulze Sindern</p>
+
+		<h3>
+			Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle
+		</h3>
+		<p>
+			Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor
+			einer Verbraucherschlichtungsstelle teilzunehmen.
+		</p>
+	</TextSection>
+</Layout>

@@ -23,7 +23,7 @@ const posts = await Astro.glob('./posts/*.mdx').then(posts =>
 			if (isBefore(a.publishDate, b.publishDate)) return 1;
 			if (isBefore(b.publishDate, a.publishDate)) return -1;
 			return 0;
-		})
+		}),
 );
 
 const seo = {

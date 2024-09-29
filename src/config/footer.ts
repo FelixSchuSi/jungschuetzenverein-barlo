@@ -7,19 +7,19 @@ export const footerSocials = [
 	{
 		name: 'WhatsApp',
 		url: 'https://chat.whatsapp.com/DZwS3bet8879YausotZUCV',
-		icon: "mdi:whatsapp",
+		icon: 'mdi:whatsapp',
 	},
 	{
 		name: 'Facebook',
 		url: 'https://www.facebook.com/JungschuetzenvereinBarlo',
-		icon: "mdi:facebook",
+		icon: 'mdi:facebook',
 	},
 	{
 		name: 'Github',
 		url: 'https://github.com/FelixSchuSi/jungschuetzenverein-barlo',
-		icon: "mdi:github",
-	}
-]
+		icon: 'mdi:github',
+	},
+] as const;
 
 export const footerLists = [
 	{
@@ -32,7 +32,7 @@ export const footerLists = [
 			{
 				title: 'Landing Page 2',
 				slug: '/landing-pages/landing-2',
-			}
+			},
 		],
 	},
 	{
@@ -70,7 +70,7 @@ export const footerLists = [
 			{
 				title: 'Customizing Odyssey',
 				slug: '/theme/customizing-odyssey',
-			}
+			},
 		],
 	},
-];
+] as const;
