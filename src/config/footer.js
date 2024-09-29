@@ -16,7 +16,7 @@ export const footerSocials = [
 	},
 	{
 		name: 'Github',
-		url: 'https://github.com/FelixSchuSi/',
+		url: 'https://github.com/FelixSchuSi/jungschuetzenverein-barlo',
 		icon: "mdi:github",
 	}
 ]

@@ -1,8 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { Container, Button } from '@components/odyssey-theme';
-import settings from '../../../config/settings.js';
-import { ThemeSwitcher } from '../../theme-switcher/theme-switcher';
+import { BASE_PATH_WITHOUT_DOMAIN } from '../../../../base-path.mjs';
 ---
 
 <Container>
@@ -17,20 +16,25 @@ import { ThemeSwitcher } from '../../theme-switcher/theme-switcher';
 				> and carefully crafted for startups and businesses.
 			</p>
 			<div class="hero-btns__container">
-				<Button href="/theme/get-started" customIcon
+				<Button
+					href={BASE_PATH_WITHOUT_DOMAIN + '/theme/get-started'}
+					customIcon
 					>Get Started
 					<Fragment slot="icon">
 						<Icon name="ic:baseline-chevron-right" />
 					</Fragment>
 				</Button>
-				<Button href="/theme/style-guide" unelevated>Style Guide</Button
+				<Button
+					href={BASE_PATH_WITHOUT_DOMAIN + '/theme/style-guide'}
+					unelevated>Style Guide</Button
 				>
 			</div>
 		</div>
 		<div class="hero-section__image">
 			<picture>
 				<img
-					src="/assets/images/home/classic-hero.jpg"
+					src={BASE_PATH_WITHOUT_DOMAIN +
+						'/assets/images/home/earth-hero.jpg'}
 					alt="Astro Odyssey"
 					id="home-hero-image"
 				/>

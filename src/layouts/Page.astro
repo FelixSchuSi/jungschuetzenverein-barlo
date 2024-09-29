@@ -6,22 +6,26 @@ import Logo from '../components/Logo.astro';
 import settings from '../config/settings';
 import { footerLists, footerSocials } from '../config/footer';
 
-
 export interface Props {
 	seo?: BaseHeadProps;
 }
 
 import { nav } from '../config/nav.js';
+import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
 
 const { seo } = Astro.props as Props;
 ---
 
-<Layout seo={seo}>
+<Layout {seo}>
 	<Header rightMenu navData={nav} slot="header">
 		<span slot="logo">
 			<Logo />
 		</span>
-		<Button slot="action-item" href="/theme/get-started">Get Started</Button>
+		<Button
+			slot="action-item"
+			href={BASE_PATH_WITHOUT_DOMAIN + '/theme/get-started'}
+			>Get Started</Button
+		>
 	</Header>
 	<div id="page">
 		<slot />
@@ -30,10 +34,10 @@ const { seo } = Astro.props as Props;
 		slot="footer"
 		background="var(--theme-surface-1)"
 		color="var(--theme-on-surface-1)"
-		footerLists={footerLists}
-    footerSocials={footerSocials}
+		{footerLists}
+		{footerSocials}
 		copyrightName={settings.name}
-    showPlug={settings.showPlug}
+		showPlug={settings.showPlug}
 	>
 		<Logo slot="logo" />
 	</Footer>
