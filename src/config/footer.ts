@@ -40,15 +40,15 @@ export const footerLists = [
 		items: [
 			{
 				title: 'About',
-				slug: '/company/about',
+				slug: '/about',
 			},
 			{
-				title: 'Blog',
-				slug: '/blog',
+				title: 'News',
+				slug: '/news',
 			},
 			{
-				title: 'Contact',
-				slug: '/company/contact',
+				title: 'Fotos',
+				slug: '/fotos',
 			},
 			{
 				title: 'Impressum',
