@@ -12,6 +12,7 @@ export interface Props {
 import { nav } from '../config/nav.js';
 import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
 import { Header, Button, Footer } from '../components/odyssey-theme';
+import { Icon } from 'astro-icon/components';
 
 const { seo } = Astro.props;
 ---
@@ -21,10 +22,16 @@ const { seo } = Astro.props;
 		<span slot="logo">
 			<Logo />
 		</span>
+
 		<Button
 			slot="action-item"
-			href={BASE_PATH_WITHOUT_DOMAIN + '/theme/get-started'}>Get Started</Button
-		>
+			href={BASE_PATH_WITHOUT_DOMAIN + '/theme/get-started'}
+			customIcon
+			>Termine
+			<Fragment slot="icon">
+				<Icon name="ic:baseline-chevron-right" />
+			</Fragment>
+		</Button>
 	</Header>
 	<div id="page">
 		<slot />

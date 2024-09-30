@@ -50,6 +50,14 @@ export const footerLists = [
 				title: 'Contact',
 				slug: '/company/contact',
 			},
+			{
+				title: 'Impressum',
+				slug: '/impressum',
+			},
+			{
+				title: 'Datenschutz',
+				slug: '/datenschutz',
+			},
 		],
 	},
 	{

@@ -10,8 +10,10 @@ export function generateSlug(string: string): string {
 		.replace(/-+$/, '');
 }
 
-export function generateTagData(categories: Set<string>): {title: string, slug: string}[] {
-	let categoryData: {title: string, slug: string}[] = [];
+export function generateTagData(
+	categories: Set<string>,
+): { title: string; slug: string }[] {
+	let categoryData: { title: string; slug: string }[] = [];
 	categories.forEach(category => {
 		categoryData.push({
 			title: category,

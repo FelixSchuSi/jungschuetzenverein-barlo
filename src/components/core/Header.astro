@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { BASE_PATH_WITHOUT_DOMAIN } from '../../../base-path.mjs';
-import type { nav } from "../../config/nav";
+import type { nav } from '../../config/nav';
 
 interface Props {
 	navData: typeof nav;
@@ -60,9 +60,7 @@ const { navData, rightMenu } = Astro.props;
 				<Icon name="ic:baseline-close" width="24px" height="24px" />
 			</span>
 		</button>
-		<a class="header-logo__link" href={BASE_PATH_WITHOUT_DOMAIN + '/'}>
-			<slot name="logo" />
-		</a>
+		<slot name="logo" />
 	</div>
 	<div class="header-nav__container">
 		<slot name="nav">

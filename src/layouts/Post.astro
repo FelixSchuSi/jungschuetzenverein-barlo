@@ -4,7 +4,6 @@ import { generateTagData } from '../utils/helpers';
 import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
 import { Container } from '../components/odyssey-theme';
 
-
 let {
 	content: {
 		title,
@@ -16,7 +15,7 @@ let {
 	},
 } = Astro.props;
 featuredImage = BASE_PATH_WITHOUT_DOMAIN + '/' + featuredImage;
-let allTagsData: {title: string, slug: string}[] = [];
+let allTagsData: { title: string; slug: string }[] = [];
 
 if (tags && tags.length > 0) {
 	allTagsData = generateTagData(tags);

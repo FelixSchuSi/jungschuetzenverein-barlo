@@ -10,5 +10,5 @@ import { BASE_PATH_WITHOUT_DOMAIN, SITE } from './base-path.mjs';
 export default defineConfig({
 	site: SITE,
 	base: BASE_PATH_WITHOUT_DOMAIN,
-	integrations: [sitemap(), mdx(), lit(), icon()]
+	integrations: [sitemap(), mdx(), lit(), icon()],
 });
