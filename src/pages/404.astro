@@ -1,7 +1,7 @@
 ---
-import { Button, Container, TextCardSection } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
 import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
+import { Container, TextCardSection, Button } from '../components/odyssey-theme';
 
 const seo = {
 	title: 'Get Started using the Astro Odyssey Theme',
@@ -13,7 +13,7 @@ const seo = {
 	<Container>
 		<TextCardSection>
 			<h1>404</h1>
-			<h2>Page Not Found 👀</h2>
+			<h2>Seite nicht gefunden 👀</h2>
 			<div class="cta-buttons__container">
 				<Button href={BASE_PATH_WITHOUT_DOMAIN + '/'}>Return Home</Button>
 			</div>

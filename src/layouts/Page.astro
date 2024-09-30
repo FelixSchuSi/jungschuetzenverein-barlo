@@ -1,5 +1,4 @@
 ---
-import { Header, Button, Footer } from '@components/odyssey-theme';
 import Layout from './Base.astro';
 import type { Props as BaseHeadProps } from '../components/head/BaseHead.astro';
 import Logo from '../components/Logo.astro';
@@ -12,11 +11,12 @@ export interface Props {
 
 import { nav } from '../config/nav.js';
 import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
+import { Header, Button, Footer } from '../components/odyssey-theme';
 
-const { seo } = Astro.props as Props;
+const { seo } = Astro.props;
 ---
 
-<Layout {seo}>
+<Layout {...seo}>
 	<Header rightMenu navData={nav} slot="header">
 		<span slot="logo">
 			<Logo />
@@ -36,7 +36,6 @@ const { seo } = Astro.props as Props;
 		{footerLists}
 		{footerSocials}
 		copyrightName={settings.name}
-		showPlug={settings.showPlug}
 	>
 		<Logo slot="logo" />
 	</Footer>

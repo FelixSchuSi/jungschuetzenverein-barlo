@@ -1,10 +1,17 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { BASE_PATH_WITHOUT_DOMAIN } from '../../../base-path.mjs';
+import type { nav } from "../../config/nav";
+
+interface Props {
+	navData: typeof nav;
+	rightMenu: boolean;
+}
+
 const { navData, rightMenu } = Astro.props;
 ---
 
-<script type="module">
+<script is:inline type="module">
 	const bodyElement = document.querySelector('body');
 	const menuButton = document.querySelector('#menuButton');
 	const navHeader = document.querySelector('#odysseyNavHeader');

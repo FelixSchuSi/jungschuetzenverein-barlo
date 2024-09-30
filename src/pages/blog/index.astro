@@ -1,12 +1,8 @@
 ---
 import { parse, isBefore } from 'date-fns';
-import {
-	Container,
-	TextCardSection,
-	BlogPostsList,
-} from '@components/odyssey-theme';
 import Layout from '../../layouts/Page.astro';
 import NewsletterForm from '../../components/forms/NewsletterForm.astro';
+import { Container, TextCardSection, BlogPostsList } from '../../components/odyssey-theme';
 
 const posts = await Astro.glob('./posts/*.mdx').then(posts =>
 	posts

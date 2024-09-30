@@ -1,4 +1,10 @@
 ---
+import type { nav } from "../../config/nav";
+
+interface Props {
+	navData: typeof nav;
+}
+
 const { navData } = Astro.props;
 ---
 

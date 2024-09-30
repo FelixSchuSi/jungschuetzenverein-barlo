@@ -1,4 +1,10 @@
 ---
+interface Props {
+	label?: string;
+	options?: string[];
+	name?: string;
+	required?: boolean;
+}
 const { label, name, options, required } = Astro.props;
 ---
 

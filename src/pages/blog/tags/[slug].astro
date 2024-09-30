@@ -1,16 +1,28 @@
 ---
+import { Container } from '../../../components/odyssey-theme';
 import Layout from '../../../layouts/Page.astro';
-import { Container } from '@components/odyssey-theme';
 import { generateTagData } from '../../../utils/helpers.js';
+import type { MDXInstance } from 'astro';
+
+export interface MdxPost {
+    title: string;
+    description: string;
+    authors: any;
+    publishDate: Date;
+    featuredImage: any;
+    excerpt: string;
+    href: string | undefined;
+	tags: string[];
+}
 
 export async function getStaticPaths() {
-	const allPosts = await Astro.glob('../posts/*.mdx');
+	const allPosts: MDXInstance<MdxPost>[] = await Astro.glob('../posts/*.mdx');
 	const sortedPosts = allPosts.sort(
 		(a, b) =>
-			new Date(b.frontmatter.date).valueOf() -
-			new Date(a.frontmatter.date).valueOf(),
+			new Date(b.frontmatter.publishDate).valueOf() -
+			new Date(a.frontmatter.publishDate).valueOf(),
 	);
-	const allCategoriesUnique = new Set();
+	const allCategoriesUnique: Set<string> = new Set();
 
 	sortedPosts.forEach(post => {
 		post.frontmatter.tags &&

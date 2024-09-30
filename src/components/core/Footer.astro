@@ -2,6 +2,15 @@
 import { Icon } from 'astro-icon/components';
 import Container from '../core/Container.astro';
 import { BASE_PATH_WITHOUT_DOMAIN } from '../../../base-path.mjs';
+import type { footerLists as FooterLists, footerSocials as FooterSocials } from '../../config/footer';
+
+interface Props {
+	footerSocials: typeof FooterSocials,
+	footerLists: typeof FooterLists,
+	copyrightName: string,
+	background: string,
+	color: string,
+}
 
 const {
 	footerSocials,
@@ -9,7 +18,6 @@ const {
 	copyrightName,
 	background,
 	color,
-	showPlug: showPlug = true,
 } = Astro.props;
 ---
 

@@ -1,6 +1,16 @@
 ---
 import BlogPostPreview from './BlogPostPreview.astro';
-
+interface Props {
+	posts: {
+    title: any;
+    description: any;
+    authors: any;
+    publishDate: Date;
+    featuredImage: any;
+    excerpt: any;
+    href: string | undefined;
+}[];
+}
 const { posts } = Astro.props;
 ---
 
