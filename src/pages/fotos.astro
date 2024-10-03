@@ -3,98 +3,96 @@ import Layout from '../layouts/Page.astro';
 import HeroSection from '../components/sections/heros/HeroSection.astro';
 import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
 import { TextSection } from '../components/odyssey-theme';
-import type { ComponentProps } from 'astro/types';
 import { Carousel } from 'astro-carousel';
+import {
+	fotosJungschuetzenfest2023MD,
+	fotosJungschuetzenfest2023XL,
+} from '../../fotos_jungschuetzenfest_2023';
 
 const seo = {
 	title: 'Fotos',
 	description: 'Fotos',
 };
 
-const images: ComponentProps<typeof Carousel>["images"] = [
-  {
-    src: "https://a.storyblok.com/f/95455/1350x1080/3ef7748922/p5240368.jpg",
-    alt: "",
-    format: "webp",
-    width: 1350,
-    height: 1080,
-    widths: [450, 675, 1350],
-  }
-];
----
+const imagesXL = fotosJungschuetzenfest2023XL.map(url => {
+	return {
+		src: url,
+		alt: 'Foto vom Jungschützenfest',
+		format: 'webp',
+		widths: [500],
+		width: 500,
+		height: 500,
+	};
+});
 
+const imagesMD = fotosJungschuetzenfest2023MD.map(url => {
+	return {
+		src: url,
+		alt: 'Foto vom Jungschützenfest',
+		format: 'webp',
+		widths: [500],
+		width: 500,
+		height: 500,
+	};
+});
+---
 
 <Layout {seo}>
 	<HeroSection>
 		<div slot="text-container">
-			<h1>Fotos</h1>
-			<p>
-				Hier könnten Ihre Fotos stehen.
-			</p>
+			<h1>Fotos Jung<wbr />schützen<wbr />fest 2023</h1>
+			<small>
+				Du möchtest, dass ein Foto entfernt wird? Dann melde dich per Mail an
+				f.schulzesindern@web.de
+			</small>
 		</div>
 		<picture slot="image-container">
 			<img
-				src={BASE_PATH_WITHOUT_DOMAIN + '/assets/images/home/earth-hero.jpg'}
+				src="https://iili.io/db1QvFs.md.jpg"
 				alt="Astro Odyssee"
 				id="home-hero-image"
 			/>
 		</picture>
 	</HeroSection>
-	<ul id="carouselTargetList">
-		{
-		  images.map((img, index) => {
-			return (
-			  <li>
-				<a
-				  href={`/?image=${index}`}
-				  data-carousel-index={index}
-				>
-				  <img src="https://photos.fife.usercontent.google.com/pw/AP1GczOHPdqW2tUGfpSJGssksUdEq67lo6GD52DP5r9OFIaALp36__44Pa4-cA=w1169-h779-s-no-gm?authuser=0" alt="" />
-				</a>
-			  </li>
-			);
-		  })
-		}
-	  </ul>
-	<Carousel images={images} />
-	<TextSection narrow>
-		
-		<p>
-			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo
-			asperiores alias illo accusamus voluptatem ea cum nemo odit! Consequatur
-			quidem quo iusto quam ea neque nisi dolorum quod, recusandae id!
-			Repudiandae, fugit labore voluptatum beatae modi omnis adipisci corrupti
-			aut aliquid cumque inventore iure possimus doloremque iste incidunt nulla
-			architecto. Nobis iusto sunt voluptatem necessitatibus laborum, earum
-			doloremque fugit rerum!
-		</p>
-		<p>
-			Fugit asperiores harum consectetur sapiente deleniti. Optio enim tenetur
-			impedit reprehenderit labore, illo eius in, consequatur odio dolore iste
-			assumenda explicabo, nisi similique qui obcaecati possimus delectus
-			reiciendis quod modi.
-		</p>
 
-		<p>
-			Vel tempore rem omnis esse officiis optio, explicabo, quod deleniti
-			adipisci ullam cum necessitatibus eius minus vero saepe ad, dicta rerum
-			praesentium deserunt illo itaque odio corrupti voluptatum quibusdam.
-			Pariatur. Porro neque tempore, illum eligendi deleniti iure dolorem amet
-			magnam at dolores veniam nemo cumque aut alias repellat est dicta sit
-			repellendus facilis officia? Minima dolorum quo ducimus adipisci
-			perferendis.
-		</p>
-		<p>
-			Quis distinctio tempora sequi sit repudiandae cumque nostrum deserunt,
-			voluptatibus rem eum fuga modi beatae cum ullam delectus dicta atque eius
-			nam quos corporis. Animi praesentium quae nobis. Odit, mollitia.
-			Voluptatum, hic explicabo. Ex accusamus ipsa ea dolor commodi quas esse
-			ipsum alias et adipisci error necessitatibus atque facere rerum ratione
-			consequatur aspernatur repudiandae minima consectetur fuga, doloremque
-			dolorum pariatur. Ipsam error eaque velit possimus porro eum quod illo
-			iusto officia magnam magni, beatae nisi voluptate praesentium? Saepe
-			distinctio adipisci quas hic quae facilis? Sequi eum hic aperiam impedit
-			minus?
-		</p>
-	</TextSection>
+	<div id="carouselTargetList" class="container">
+		{
+			imagesMD.map((img, index) => {
+				return (
+					<a class="item" href={`/?image=${index}`} data-carousel-index={index}>
+						<img src={img.src} alt={img.alt} loading="lazy" />
+					</a>
+				);
+			})
+		}
+	</div>
+
+	<Carousel images={imagesXL} />
 </Layout>
+
+<style>
+	.container {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(100px, 293px));
+
+		justify-content: center;
+		grid-gap: 28px;
+		margin: 0 auto;
+		max-width: var(--container-max-width);
+		padding: var(--container-padding);
+		padding-top: 28px;
+		padding-bottom: 28px;
+	}
+
+	.item > img {
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+	}
+
+	@media (max-width: 1200px) {
+		.container {
+			grid-gap: 8px;
+			grid-template-columns: repeat(3, minmax(100px, 293px));
+		}
+	}
+</style>
