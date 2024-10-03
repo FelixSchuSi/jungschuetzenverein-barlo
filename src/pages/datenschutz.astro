@@ -26,9 +26,10 @@ const seo = {
 		</div>
 		<picture slot="image-container">
 			<img
-				src={BASE_PATH_WITHOUT_DOMAIN + '/assets/images/home/earth-hero.jpg'}
+			src={BASE_PATH_WITHOUT_DOMAIN + '/assets/images/impressum/schiessordnung_vorlesen_23.jpg'}
 				alt="Astro Odyssee"
-				id="home-hero-image"
+				id="hero-image"
+				
 			/>
 		</picture>
 	</HeroSection>
@@ -632,3 +633,8 @@ const seo = {
 		</p>
 	</TextSection>
 </Layout>
+<style>
+	#hero-image {
+		transform: scale(-1, 1);
+	}	    
+</style>

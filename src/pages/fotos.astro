@@ -3,12 +3,26 @@ import Layout from '../layouts/Page.astro';
 import HeroSection from '../components/sections/heros/HeroSection.astro';
 import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
 import { TextSection } from '../components/odyssey-theme';
+import type { ComponentProps } from 'astro/types';
+import { Carousel } from 'astro-carousel';
 
 const seo = {
 	title: 'Fotos',
 	description: 'Fotos',
 };
+
+const images: ComponentProps<typeof Carousel>["images"] = [
+  {
+    src: "https://a.storyblok.com/f/95455/1350x1080/3ef7748922/p5240368.jpg",
+    alt: "",
+    format: "webp",
+    width: 1350,
+    height: 1080,
+    widths: [450, 675, 1350],
+  }
+];
 ---
+
 
 <Layout {seo}>
 	<HeroSection>
@@ -26,7 +40,25 @@ const seo = {
 			/>
 		</picture>
 	</HeroSection>
+	<ul id="carouselTargetList">
+		{
+		  images.map((img, index) => {
+			return (
+			  <li>
+				<a
+				  href={`/?image=${index}`}
+				  data-carousel-index={index}
+				>
+				  <img src="https://photos.fife.usercontent.google.com/pw/AP1GczOHPdqW2tUGfpSJGssksUdEq67lo6GD52DP5r9OFIaALp36__44Pa4-cA=w1169-h779-s-no-gm?authuser=0" alt="" />
+				</a>
+			  </li>
+			);
+		  })
+		}
+	  </ul>
+	<Carousel images={images} />
 	<TextSection narrow>
+		
 		<p>
 			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo
 			asperiores alias illo accusamus voluptatem ea cum nemo odit! Consequatur
