@@ -2,35 +2,26 @@
 import Layout from '../layouts/Page.astro';
 import HeroSection from '../components/sections/heros/HeroSection.astro';
 import { Carousel } from 'astro-carousel';
-import {
-	fotosJungschuetzenfest2023MD,
-	fotosJungschuetzenfest2023XL,
-} from '../../fotos_jungschuetzenfest_2023';
+import { fotosJungschuetzenfest2023 } from '../../fotos_jungschuetzenfest_2023';
+
 
 const seo = {
 	title: 'Fotos',
 	description: 'Fotos',
 };
 
-const imagesXL = fotosJungschuetzenfest2023XL.map(url => {
-	return {
-		src: url,
-		alt: 'Foto vom Jungschützenfest',
-		format: 'webp',
-		widths: [500],
-		width: 500,
-		height: 500,
-	};
-});
 
-const imagesMD = fotosJungschuetzenfest2023MD.map(url => {
+const images = fotosJungschuetzenfest2023.map(data => {
 	return {
-		src: url,
-		alt: 'Foto vom Jungschützenfest',
+		srcS: data.srcS,
+		srcM: data.srcM,
+		srcL: data.srcL,
+		srcXL: data.srcXL,
+		src: data.srcXL,
+		alt: 'Foto vom Jungschützenfest: '+ data.name,
 		format: 'webp',
-		widths: [500],
-		width: 500,
-		height: 500,
+		width: data.width,
+		height: data.height,
 	};
 });
 ---
@@ -46,7 +37,7 @@ const imagesMD = fotosJungschuetzenfest2023MD.map(url => {
 		</div>
 		<picture slot="image-container">
 			<img
-				src="https://iili.io/db1QvFs.md.jpg"
+				src="https://iili.io/dbbwV3P.webp"
 				alt="Astro Odyssee"
 				id="home-hero-image"
 			/>
@@ -55,17 +46,17 @@ const imagesMD = fotosJungschuetzenfest2023MD.map(url => {
 
 	<div id="carouselTargetList" class="container">
 		{
-			imagesMD.map((img, index) => {
+			images.map((img, index) => {
 				return (
 					<a class="item" href={`/?image=${index}`} data-carousel-index={index}>
-						<img src={img.src} alt={img.alt} loading="lazy" />
+						<img src={img.srcS} alt={img.alt} loading="lazy" />
 					</a>
 				);
 			})
 		}
 	</div>
 
-	<Carousel images={imagesXL} />
+	<Carousel images={images} />
 </Layout>
 
 <style>
