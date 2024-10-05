@@ -1,2 +1,2 @@
-export const BASE_PATH_WITHOUT_DOMAIN = '/jungschuetzenverein-barlo';
-export const SITE = 'https://felixschusi.github.io';
+export const BASE_PATH_WITHOUT_DOMAIN = '';
+export const SITE = 'https://jungschuetzenverein-barlo.de';
