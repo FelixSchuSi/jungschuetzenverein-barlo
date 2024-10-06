@@ -1,0 +1,347 @@
+---
+interface Props {
+	images: {
+		srcS: string;
+		srcM: string;
+		srcL: string;
+		srcXL: string;
+		src: string;
+		alt: string;
+		format: string;
+		width: number;
+		height: number;
+	}[];
+}
+const { images = [] } = Astro.props;
+---
+
+<script>
+	class CarouselWrapper extends HTMLElement {
+		private images: {
+			srcS: string;
+			srcM: string;
+			srcL: string;
+			srcXL: string;
+			src: string;
+			alt: string;
+			format: string;
+			width: number;
+			height: number;
+		}[];
+		private currentSlideIndex: number = 0;
+		private slidesRoot: HTMLElement;
+		private carouselElem: HTMLElement;
+		private gotoPrev = (e?: MouseEvent) => {
+			e?.preventDefault();
+			const prevIndex = Math.max(this.currentSlideIndex - 1, 0);
+			this.currentSlideIndex = prevIndex;
+			this.renderSlides();
+		};
+		private gotoNext = (e?: MouseEvent) => {
+			e?.preventDefault();
+			const nextIndex = Math.min(
+				this.currentSlideIndex + 1,
+				this.images.length - 1,
+			);
+			this.currentSlideIndex = nextIndex;
+			this.renderSlides();
+		};
+		private onKeyDown = (e: KeyboardEvent) => {
+			if (e.key == 'ArrowLeft') this.gotoPrev();
+			if (e.key == 'ArrowRight') this.gotoNext();
+			if (e.key == 'Escape') this.close();
+		};
+		private open = () => {
+			document.documentElement.style.overflow = 'hidden';
+			this.carouselElem.removeAttribute('aria-hidden');
+		};
+		private close = () => {
+			document.documentElement.style.overflow = 'auto';
+			this.carouselElem.setAttribute('aria-hidden', 'true');
+		};
+
+		constructor() {
+			super();
+			this.images = JSON.parse(this.getAttribute('data-images')!);
+			this.slidesRoot = document.querySelector('#slides')!;
+			this.carouselElem = document.querySelector('#carousel-dialog')!;
+			const carouselTargetList = document.querySelector(
+				'#carouselTargetList',
+			)! as HTMLElement;
+			carouselTargetList?.addEventListener('click', this.handleOpen);
+			carouselTargetList?.addEventListener('keydown', this.handleOpen);
+			this.renderSlides();
+
+			// setup event handlers
+			const prevLink = document.querySelector<HTMLAnchorElement>('#prevLink')!;
+			const nextLink = document.querySelector<HTMLAnchorElement>('#nextLink')!;
+			const closeButton =
+				document.querySelector<HTMLButtonElement>('#closeButton')!;
+			prevLink.addEventListener('click', this.gotoPrev);
+			nextLink.addEventListener('click', this.gotoNext);
+			closeButton.addEventListener('click', this.close);
+			document.addEventListener('keydown', this.onKeyDown);
+		}
+
+		private renderSlides() {
+			// To make navigating more responsive we load the previous and next image by rendering them hidden.
+			const indexesToRender: number[] = [];
+			if (this.currentSlideIndex > 0)
+				indexesToRender.push(this.currentSlideIndex - 1);
+			indexesToRender.push(this.currentSlideIndex);
+			if (this.currentSlideIndex < this.images.length - 1)
+				indexesToRender.push(this.currentSlideIndex + 1);
+
+			const newHtml = indexesToRender
+				.map(idx => this.slideTemplate(idx))
+				.join(' ');
+			this.slidesRoot.innerHTML = newHtml;
+		}
+
+		private slideTemplate(slideIndex: number): string {
+			const isActiveSlide = this.currentSlideIndex === slideIndex;
+			const imageData = this.images[slideIndex]!;
+			return `
+        <img 
+          class="slide ${isActiveSlide ? 'active-slide' : 'prepared-slide'}"
+          src=${imageData.srcXL}
+          alt=${imageData.alt}
+          loading="eager"
+          decoding="sync">
+        </img>
+      `;
+		}
+
+		disconnectedCallback() {
+			const prevLink = document.querySelector<HTMLAnchorElement>('#prevLink')!;
+			const nextLink = document.querySelector<HTMLAnchorElement>('#nextLink')!;
+			const closeButton =
+				document.querySelector<HTMLButtonElement>('#closeButton')!;
+
+			prevLink.removeEventListener('click', this.gotoPrev);
+			nextLink.removeEventListener('click', this.gotoNext);
+			closeButton.removeEventListener('click', this.close);
+			document.removeEventListener('keydown', this.onKeyDown);
+		}
+
+		private handleOpen = (e: MouseEvent | KeyboardEvent) => {
+			if (!(e.target instanceof HTMLElement)) return;
+			const carouselIndex = e.target.closest<HTMLElement>(
+				'[data-carousel-index]',
+			)?.dataset.carouselIndex;
+			if (carouselIndex == null || Number.isNaN(carouselIndex)) return;
+			if (e instanceof KeyboardEvent && e.key !== 'Enter') return;
+			e.preventDefault();
+
+			this.currentSlideIndex = Number(carouselIndex);
+			this.renderSlides();
+			this.open();
+		};
+	}
+
+	customElements.define('carousel-wrapper', CarouselWrapper);
+</script>
+
+<carousel-wrapper data-images={JSON.stringify(images)}>
+	<div
+		id="carousel-dialog"
+		aria-hidden="true"
+		class="carousel"
+		aria-label="Carousel"
+	>
+		<div id="carousel" role="document">
+			<button
+				type="button"
+				id="closeButton"
+				class="carousel__button carousel__close"
+				aria-label="Close carousel"
+			>
+				<svg
+					class="carousel__svg"
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M6 18L18 6M6 6l12 12"></path>
+				</svg>
+			</button>
+			<div id="carousel__wrapper" class="carousel__wrapper">
+				<div class="carousel__main">
+					<!-- Prev Link -->
+					<a
+						class="carousel__button carousel__button--arrow"
+						aria-label="Go to previous photo"
+						id="prevLink"
+					>
+						<svg
+							class="carousel__svg"
+							id="prev"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M15 19l-7-7 7-7"></path>
+						</svg>
+					</a>
+
+					<!-- Slides -->
+					<div class="carousel__slides" id="slides"></div>
+
+					<!-- Next Link -->
+					<a
+						class="carousel__button carousel__button--arrow carousel__button--right"
+						aria-label="Go to next photo"
+						id="nextLink"
+					>
+						<svg
+							class="carousel__svg"
+							id="next"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M9 5l7 7-7 7"></path>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</carousel-wrapper>
+
+<style is:global>
+	#carousel {
+		height: 100vh;
+	}
+
+	.carousel {
+		display: unset;
+		background-color: rgba(250, 250, 250, 0.5);
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
+	}
+
+	.carousel[aria-hidden='true'] {
+		display: none;
+	}
+
+	.carousel {
+		position: fixed;
+		inset: 0;
+		user-select: none;
+		z-index: 1;
+	}
+
+	.carousel--active {
+		display: unset;
+	}
+
+	.carousel__close {
+		position: absolute;
+		right: 0;
+	}
+
+	.carousel__wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+	}
+
+	.carousel__main {
+		display: grid;
+		grid-template-columns: 0.25fr minmax(0, 100%) 0.25fr;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+	}
+
+	@media screen and (min-width: 768px) {
+		.carousel__main {
+			grid-template-columns: 0.25fr minmax(0, 0.9fr) 0.25fr;
+		}
+	}
+
+	.carousel__slides {
+		padding: 0;
+		margin: 0;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: calc(100% - 48px * 2);
+	}
+
+	.carousel__button {
+		width: 48px;
+		height: 48px;
+		border: none;
+		background: none;
+		margin: 1rem;
+		padding: 0;
+		color: var(--tertiary);
+		z-index: 2;
+	}
+
+	.carousel__button:hover {
+		cursor: pointer;
+		color: var(--secondary);
+	}
+
+	.carousel__button:focus-visible {
+		outline: dashed 2px var(--primary);
+	}
+
+	.carousel__button--right {
+		justify-self: end;
+		justify-content: flex-end;
+	}
+
+	.carousel__button--arrow {
+		display: flex;
+		align-items: center;
+		height: 50vh;
+		margin: 0;
+	}
+
+	@media screen and (min-width: 768px) {
+		.carousel__button--arrow {
+			margin: 1rem;
+		}
+	}
+
+	.carousel__svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	@media screen and (min-width: 768px) {
+		.carousel__svg {
+			width: 48px;
+			height: 48px;
+		}
+	}
+	.prepared-slide {
+		display: none;
+	}
+
+	img.slide {
+		max-height: 95vh;
+	}
+</style>

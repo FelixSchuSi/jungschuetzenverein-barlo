@@ -1,15 +1,13 @@
 ---
 import Layout from '../layouts/Page.astro';
 import HeroSection from '../components/sections/heros/HeroSection.astro';
-import { Carousel } from 'astro-carousel';
+import Carousel from '../components/image-carousel/Carousel.astro';
 import { fotosJungschuetzenfest2023 } from '../../fotos_jungschuetzenfest_2023';
-
 
 const seo = {
 	title: 'Fotos',
 	description: 'Fotos',
 };
-
 
 const images = fotosJungschuetzenfest2023.map(data => {
 	return {
@@ -18,7 +16,7 @@ const images = fotosJungschuetzenfest2023.map(data => {
 		srcL: data.srcL,
 		srcXL: data.srcXL,
 		src: data.srcXL,
-		alt: 'Foto vom Jungschützenfest: '+ data.name,
+		alt: 'Foto vom Jungschützenfest: ' + data.name,
 		format: 'webp',
 		width: data.width,
 		height: data.height,
@@ -48,7 +46,11 @@ const images = fotosJungschuetzenfest2023.map(data => {
 		{
 			images.map((img, index) => {
 				return (
-					<a class="item" href={`/?image=${index}`} data-carousel-index={index}>
+					<a
+						class="item"
+						href={`/images?image=${index}`}
+						data-carousel-index={index}
+					>
 						<img src={img.srcS} alt={img.alt} loading="lazy" />
 					</a>
 				);
@@ -76,8 +78,8 @@ const images = fotosJungschuetzenfest2023.map(data => {
 	.item > img {
 		aspect-ratio: 1 / 1;
 		object-fit: cover;
-		min-width: 100px;
-    	min-height: 100px;
+		min-width: minmax(100px, 293px);
+		min-height: minmax(100px, 293px);
 	}
 
 	@media (max-width: 1200px) {
