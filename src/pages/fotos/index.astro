@@ -1,0 +1,95 @@
+---
+import Layout from '../../layouts/Page.astro';
+import { Container, TextCardSection, BlogPostsList, Button } from '../../components/odyssey-theme';
+import type { Post } from '../../components/blog/BlogPostsList.astro';
+import { BASE_PATH_WITHOUT_DOMAIN } from '../../../base-path.mjs';
+import { Icon } from 'astro-icon/components';
+
+const fotos: Post[] = [
+	{
+		authors: "Jungschützenverein Barlo",
+		description: "Fotos vom Jungschützenfest 2023",
+		excerpt: "Fotos vom Jungschützenfest 2023",
+		featuredImage: "https://iili.io/dbbwV3P.webp",
+		href: BASE_PATH_WITHOUT_DOMAIN + "/fotos/jungschuetzenfest-2023",
+		publishDate: new Date("2024-10-07"),
+		title: "Jungschützenfest 2023"
+	},
+	{
+		authors: "Jungschützenverein Barlo",
+		description: "Fotos vom Jungschützenfest 2022",
+		excerpt: "Fotos vom Jungschützenfest 2022",
+		featuredImage: "https://iili.io/dmZS0Ov.webp",
+		href: BASE_PATH_WITHOUT_DOMAIN + "/fotos/jungschuetzenfest-2022",
+		publishDate: new Date("2024-10-07"),
+		title: "Jungschützenfest 2022"
+	},
+	{
+		authors: "Jungschützenverein Barlo",
+		description: "Fotos vom Jubiläum 2022",
+		excerpt: "Fotos vom Jubiläum 2022",
+		featuredImage: "https://iili.io/dpqFfql.webp",
+		href: BASE_PATH_WITHOUT_DOMAIN + "/fotos/jubilaeum-2022",
+		publishDate: new Date("2024-10-07"),
+		title: "Jubiläum 2022"
+	},
+];
+
+const fotos2022: Post[] = [
+	{
+		authors: "Jungschützenverein Barlo",
+		description: "Fotos vom Jungschützenfest 2022",
+		excerpt: "Fotos vom Jungschützenfest 2022",
+		featuredImage: "https://iili.io/dmZS0Ov.webp",
+		href: BASE_PATH_WITHOUT_DOMAIN + "/fotos/jungschuetzenfest-2022",
+		publishDate: new Date("2024-10-07"),
+		title: "Jungschützenfest 2022"
+	},
+	{
+		authors: "Jungschützenverein Barlo",
+		description: "Fotos vom Jubiläum 2022",
+		excerpt: "Fotos vom Jubiläum 2022",
+		featuredImage: "https://iili.io/dpqFfql.webp",
+		href: BASE_PATH_WITHOUT_DOMAIN + "/fotos/jubilaeum-2022",
+		publishDate: new Date("2024-10-07"),
+		title: "Jubiläum 2022"
+	},
+];
+
+---
+
+<Layout>
+	<Container>
+		<section
+		class="cta-card__section"
+	>
+		<div class="cta-card__container">
+			<h1>Fotos</h1>
+			Hier findest du Fotos von unseren Veranstaltungen, viel Spaß! <br />
+			Wenn du ein Foto von dir entfernt haben möchtest, melde dich per Mail an f.schulzesindern@web.de.
+		
+		</div>
+	</section>
+		<BlogPostsList posts={fotos} />
+	</Container>
+	<br />
+	<br />
+	<br />
+</Layout>
+
+<style>
+	.cta-card__section {
+		--section-bg: var(--theme-surface-2);
+		--section-color: var(--theme-on-surface-1);
+		margin-bottom: 2rem ;
+		padding: 2rem;
+		background-color: var(--section-bg);
+		color: var(--section-color);
+		border-radius: var(--theme-shape-radius);
+	}
+	.cta-card__container {
+		max-width: var(--container-max-width-narrow);
+		display: flex;
+		flex-direction: column;
+	}
+</style>

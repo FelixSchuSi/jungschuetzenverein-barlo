@@ -1,12 +1,12 @@
 ---
-import Layout from '../layouts/Page.astro';
-import HeroSection from '../components/sections/heros/HeroSection.astro';
-import Carousel from '../components/image-carousel/Carousel.astro';
-import { fotosJungschuetzenfest2023 } from '../../fotos_jungschuetzenfest_2023';
+import Layout from '../../layouts/Page.astro';
+import HeroSection from '../../components/sections/heros/HeroSection.astro';
+import Carousel from '../../components/image-carousel/Carousel.astro';
+import { fotosJungschuetzenfest2023 } from '../../../fotos_jungschuetzenfest_2023';
 
 const seo = {
-	title: 'Fotos',
-	description: 'Fotos',
+	title: 'Fotos Jungschützenfest 2023',
+	description: 'Fotos Jungschützenfest 2023',
 };
 
 const images = fotosJungschuetzenfest2023.map(data => {
@@ -36,7 +36,7 @@ const images = fotosJungschuetzenfest2023.map(data => {
 		<picture slot="image-container">
 			<img
 				src="https://iili.io/dbbwV3P.webp"
-				alt="Astro Odyssee"
+				alt="Das Königspaar der Jungschützen 2023 inklusive Throndamen"
 				id="home-hero-image"
 			/>
 		</picture>

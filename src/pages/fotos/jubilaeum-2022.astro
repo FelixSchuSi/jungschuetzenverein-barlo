@@ -1,0 +1,91 @@
+---
+import Layout from '../../layouts/Page.astro';
+import HeroSection from '../../components/sections/heros/HeroSection.astro';
+import Carousel from '../../components/image-carousel/Carousel.astro';
+import { fotosJubilaeum2022 } from '../../../fotos_jubilaeum_2022';
+
+const seo = {
+	title: 'Fotos Jubiläum 2022',
+	description: 'Fotos Jubiläum 2022',
+};
+
+const images = fotosJubilaeum2022.map(data => {
+	return {
+		srcS: data.srcS,
+		srcM: data.srcM,
+		srcL: data.srcL,
+		srcXL: data.srcXL,
+		src: data.srcXL,
+		alt: 'Foto vom Jubiläum 2022: ' + data.name,
+		format: 'webp',
+		width: data.width,
+		height: data.height,
+	};
+});
+---
+
+<Layout {seo}>
+	<HeroSection>
+		<div slot="text-container">
+			<h1>Fotos Jubi<wbr />läum 2022</h1>
+			<small>
+				Du möchtest, dass ein Foto entfernt wird? Dann melde dich per Mail an
+				f.schulzesindern@web.de
+			</small>
+		</div>
+		<picture slot="image-container">
+			<img
+				src="https://iili.io/dpqFfql.webp"
+				alt="Das Kaiserpaar und der Jungschützenvorstand 2022"
+				id="home-hero-image"
+			/>
+		</picture>
+	</HeroSection>
+
+	<div id="carouselTargetList" class="container">
+		{
+			images.map((img, index) => {
+				return (
+					<a
+						class="item"
+						href={`/images?image=${index}`}
+						data-carousel-index={index}
+					>
+						<img src={img.srcS} alt={img.alt} loading="lazy" />
+					</a>
+				);
+			})
+		}
+	</div>
+
+	<Carousel images={images} />
+</Layout>
+
+<style>
+	.container {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(100px, 293px));
+
+		justify-content: center;
+		grid-gap: 28px;
+		margin: 0 auto;
+		max-width: var(--container-max-width);
+		padding: var(--container-padding);
+		padding-top: 28px;
+		padding-bottom: 28px;
+	}
+
+	.item > img {
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+		min-width: minmax(100px, 293px);
+		min-height: minmax(100px, 293px);
+	}
+
+	@media (max-width: 1200px) {
+		.container {
+			grid-gap: 8px;
+			grid-template-columns: repeat(3, minmax(100px, 293px));
+		}
+	}
+</style>
