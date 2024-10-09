@@ -1,0 +1,91 @@
+---
+import Layout from '../../layouts/Page.astro';
+import HeroSection from '../../components/sections/heros/HeroSection.astro';
+import Carousel from '../../components/image-carousel/Carousel.astro';
+import { fotosJungschuetzenfest2024 } from '../../../fotos_jungschuetzenfest_2024';
+
+const seo = {
+	title: 'Fotos Jungschützenfest 2024',
+	description: 'Fotos Jungschützenfest 2024',
+};
+
+const images = fotosJungschuetzenfest2024.map(data => {
+	return {
+		srcS: data.srcS,
+		srcM: data.srcM,
+		srcL: data.srcL,
+		srcXL: data.srcXL,
+		src: data.srcXL,
+		alt: 'Foto vom Jungschützenfest: ' + data.name,
+		format: 'webp',
+		width: data.width,
+		height: data.height,
+	};
+});
+---
+
+<Layout {seo}>
+	<HeroSection>
+		<div slot="text-container">
+			<h1>Fotos Jung<wbr />schützen<wbr />fest 2024</h1>
+			<small>
+				Du möchtest, dass ein Foto entfernt wird? Dann melde dich per Mail an
+				f.schulzesindern@web.de
+			</small>
+		</div>
+		<picture slot="image-container">
+			<img
+				src="https://iili.io/dyYtau1.webp"
+				alt="Das Königspaar der Jungschützen 2024 inklusive Throndamen"
+				id="home-hero-image"
+			/>
+		</picture>
+	</HeroSection>
+
+	<div id="carouselTargetList" class="container">
+		{
+			images.map((img, index) => {
+				return (
+					<a
+						class="item"
+						href={`/images?image=${index}`}
+						data-carousel-index={index}
+					>
+						<img src={img.srcS} alt={img.alt} loading="lazy" />
+					</a>
+				);
+			})
+		}
+	</div>
+
+	<Carousel images={images} />
+</Layout>
+
+<style>
+	.container {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(100px, 293px));
+
+		justify-content: center;
+		grid-gap: 28px;
+		margin: 0 auto;
+		max-width: var(--container-max-width);
+		padding: var(--container-padding);
+		padding-top: 28px;
+		padding-bottom: 28px;
+	}
+
+	.item > img {
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+		min-width: minmax(100px, 293px);
+		min-height: minmax(100px, 293px);
+	}
+
+	@media (max-width: 1200px) {
+		.container {
+			grid-gap: 8px;
+			grid-template-columns: repeat(3, minmax(100px, 293px));
+		}
+	}
+</style>
