@@ -1,0 +1,85 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const dayOfMonthFormatter = new Intl.DateTimeFormat('de-DE', { day: 'numeric' });
+const monthFormatter = new Intl.DateTimeFormat('de-DE', { month: 'short' });
+const timeFormatter = new Intl.DateTimeFormat('de-DE', { timeStyle: "short"  });
+
+export interface Termin {
+    date: Date;
+    name: string;
+    description: string;
+    location: string;
+}
+
+interface Props {
+    termin: Termin;
+}
+
+const {termin} = Astro.props;
+
+---
+
+<div class="termin-item-root">
+    <div class="left">
+        <div class="dayOfMonth">{dayOfMonthFormatter.format(termin.date)}</div>
+        <div class="month">{monthFormatter.format(termin.date)}.</div>
+    </div>
+    <div class="right">
+        <div class="time-and-location">
+            <div class="time">
+                <Icon name="ic:baseline-access-time-filled" width={24} height={24} />
+                {timeFormatter.format(termin.date)}
+            </div>
+            <div class="location">
+                <Icon name="ic:baseline-location-on" width={24} height={24} />
+                {termin.location}
+            </div>
+        </div>
+        <h3 class="name">{termin.name}</h3>
+        <div class="description">{termin.description}</div>
+    </div>
+</div>
+
+<style>
+	.termin-item-root {
+		display: flex;
+		max-width: 100%;
+		flex-grow: 1;
+	}
+
+	.left {
+		background-color: var(--theme-primary);
+		color: var(--theme-on-primary);
+		padding: 1rem;
+		border-top-left-radius: calc(var(--theme-shape-radius) / 2);	
+		border-bottom-left-radius: calc(var(--theme-shape-radius) / 2);	
+	}
+
+	.right {
+		background-color: var(--theme-surface-1);
+		color: var(--theme-on-surface-1);
+		padding: 1rem;
+		border-top-right-radius: calc(var(--theme-shape-radius) / 2);	
+		border-bottom-right-radius: calc(var(--theme-shape-radius) / 2);	
+		flex-grow: 1;
+	}
+
+	.time-and-location {
+		display: flex;
+		gap: .5rem;
+	}
+
+	.time, .location {
+		display: flex;
+		align-items: center;
+	}
+
+	.description {
+		max-width: 30rem;
+	}
+
+	h3 {
+		word-break: break-all;
+	}
+</style>

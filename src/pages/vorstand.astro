@@ -76,7 +76,7 @@ import { Container } from '../components/odyssey-theme';
 	}
 
 	.blog-posts-list__list_vorstand > * {
-		min-width: 250px;
+		/* min-width: 250px; */
 	}
 
 	@media (max-width: 1200px) {
@@ -87,7 +87,10 @@ import { Container } from '../components/odyssey-theme';
 
 	@media (max-width: 768px) {
 		.blog-posts-list__list_vorstand {
-			grid-template-columns: 1fr;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		.blog-post__preview h3 {
+			font-size: x-large;
 		}
 	}
 
@@ -106,6 +109,7 @@ import { Container } from '../components/odyssey-theme';
 	}
 	.blog-post__preview h3 {
 		margin: 0;
+		word-break: break-word;
 	}
 	ul img {
 		aspect-ratio: 4 / 5;
@@ -123,7 +127,7 @@ import { Container } from '../components/odyssey-theme';
 	}
 
 	.text-and-image__text {
-		padding: 2rem 0;
+		padding-top: 2rem;
 		justify-self: center;
 	}
 

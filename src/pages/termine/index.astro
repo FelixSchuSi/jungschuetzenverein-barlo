@@ -1,0 +1,132 @@
+---
+import Layout from '../../layouts/Page.astro';
+import { Container } from '../../components/odyssey-theme';
+import Termin from './Termin.astro';
+
+const seo = {
+	title: 'Termine',
+	description: 'Termine',
+};
+
+const termine2025 = [
+	{
+		date: new Date("2025-01-04T17:30:00.000Z"),
+		name: "Jahreshauptversammlung 2025",
+		description: `Alle Jungschützen und die, die es werden wollen sind herzlich zur Jahreshauptversammlung eingeladen. Auf der Tagesordnung stehen u. a. der Jahres- und Kassenbericht sowie die Neuwahlen des Vorstands. Wir freuen uns auf euer Kommen!`,
+		location: "Landgasthaus Schmitz"
+	},
+	{
+		date: new Date("2025-04-19T18:00:00.000Z"),
+		name: "Osterdisco 2025",
+		description: "Am Ostersamstag kann der Jungschütze nochmal richtig das Tanzbein schwingen! Der Jungschützenverein lädt zur alljährlichen Osterdisco im Saal Wissing Flinzenberg ein.",
+		location: "Saal Wissing-Flinzenberg"
+	},
+	{
+		date: new Date("2025-09-19T16:00:00.000Z"),		
+		name: "Jungschützenfest 2025",
+		description: "Das beste Wochenende des Jahres. Schreib es dir lieber direkt in den Kalender!",
+		location: "Barlo Dorfplatz"
+	},
+];
+
+const termine2026 = [
+	{
+		date: new Date("2026-01-03T17:30:00.000Z"),
+		name: "Jahreshauptversammlung 2026",
+		description: `Alle Jungschützen und die, die es werden wollen sind herzlich zur Jahreshauptversammlung eingeladen. Auf der Tagesordnung stehen u. a. der Jahres- und Kassenbericht sowie die Neuwahlen des Vorstands. Wir freuen uns auf euer Kommen!`,
+		location: "Landgasthaus Schmitz"
+	},
+	{
+		date: new Date("2026-04-05T18:00:00.000Z"),
+		name: "Osterdisco 2026",
+		description: "Am Ostersamstag kann der Jungschütze nochmal richtig das Tanzbein schwingen! Der Jungschützenverein lädt zur alljährlichen Osterdisco im Saal Wissing Flinzenberg ein.",
+		location: "Saal Wissing-Flinzenberg"
+	},
+	{
+		date: new Date("2026-09-18T16:00:00.000Z"),		
+		name: "Jungschützenfest 2026",
+		description: "Das beste Wochenende des Jahres. Schreib es dir lieber direkt in den Kalender!",
+		location: "Barlo Dorfplatz"
+	},
+];
+
+const termine2027 = [
+	{
+		date: new Date("2027-01-02T17:30:00.000Z"),
+		name: "Jahreshauptversammlung 2027",
+		description: `Alle Jungschützen und die, die es werden wollen sind herzlich zur Jahreshauptversammlung eingeladen. Auf der Tagesordnung stehen u. a. der Jahres- und Kassenbericht sowie die Neuwahlen des Vorstands. Wir freuen uns auf euer Kommen!`,
+		location: "Landgasthaus Schmitz"
+	},
+	{
+		date: new Date("2027-04-03T18:00:00.000Z"),
+		name: "Osterdisco 2027",
+		description: "Am Ostersamstag kann der Jungschütze nochmal richtig das Tanzbein schwingen! Der Jungschützenverein lädt zur alljährlichen Osterdisco im Saal Wissing Flinzenberg ein.",
+		location: "Saal Wissing-Flinzenberg"
+	},
+	{
+		date: new Date("2027-09-17T17:00:00.000Z"),		
+		name: "Jungschützenfest 2027",
+		description: "Das beste Wochenende des Jahres. Schreib es dir lieber direkt in den Kalender!",
+		location: "Barlo Dorfplatz"
+	},
+];
+
+---
+
+<Layout {seo}>
+	<Container>
+		<div class="root-full-width">
+			<div class="root">
+				<h2>Termine 2025</h2>
+				{termine2025.map(termin => <Termin termin={termin}></Termin>)}
+		
+			</div>
+		</div>
+	</Container>
+	<div class="h-line"></div>
+	<Container>
+		<div class="root-full-width">
+			<div class="root">
+				<h2>Termine 2026</h2>
+				{termine2026.map(termin => <Termin termin={termin}></Termin>)}
+			</div>
+		</div>
+	</Container>
+	<div class="h-line"></div>
+	<Container>
+		<div class="root-full-width">
+			<div class="root">
+				<h2>Termine 2027</h2>
+				{termine2027.map(termin => <Termin termin={termin}></Termin>)}
+			</div>
+		</div>
+	</Container>
+	<br />
+</Layout>
+
+<style>
+	.root-full-width {
+		display: flex;
+		justify-content: center;	
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.root {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 1rem;
+	}
+
+	h2 {
+		margin-top: 2rem;
+		margin-bottom: 0;
+	}
+
+	.h-line {
+		width: 100%;
+		border-bottom: 2px solid var(--theme-primary);
+		margin-top: 1rem;
+	}
+</style>
