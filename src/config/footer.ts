@@ -47,6 +47,10 @@ export const footerLists = [
 				slug: '/news',
 			},
 			{
+				title: 'Vorstand',
+				slug: '/vorstand',
+			},
+			{
 				title: 'Fotos',
 				slug: '/fotos',
 			},
