@@ -7,18 +7,27 @@ import { Container } from '../components/odyssey-theme';
 
 <Layout>
 	<Container>
-		<section class="cta-card__section">
-			<div class="cta-card__container">
-				<h1>Der Vorstand</h1>
-				Das ist unser Vorstand aus dem Jahre 2024
+		<section class="text-and-image__section">
+			<div class="text-and-image__image">
+				<picture slot="image-container">
+					<img src="https://iili.io/dyYt9Qs.webp" alt="Der Vorstand 2024" />
+				</picture>
+			</div>
+			<div class="text-and-image__text">
+				<div class="text-container">
+					<h1>Der Vorstand 2024</h1>
+				</div>
 			</div>
 		</section>
+	</Container>
+
+	<Container>
 		<ul class="blog-posts-list__list_vorstand">
 			{
 				(
 					vorstand2024Einzelbilder.map(einzelBild => {
 						return {
-							featuredImage: einzelBild.srcL,
+							featuredImage: einzelBild.srcS,
 							title: String(einzelBild.position),
 							excerpt: `${einzelBild.firstname} ${einzelBild.lastname}`,
 						};
@@ -27,7 +36,7 @@ import { Container } from '../components/odyssey-theme';
 					return (
 						<li class="blog-post__preview">
 							<a>
-								<img src={post.featuredImage} />
+								<img src={post.featuredImage} loading="lazy" />
 								<h3>{post.title}</h3>
 								{post.excerpt && <p>{post.excerpt}</p>}
 							</a>
@@ -53,6 +62,9 @@ import { Container } from '../components/odyssey-theme';
 		max-width: var(--container-max-width-narrow);
 		display: flex;
 		flex-direction: column;
+	}
+	.cta-card__container > img {
+		width: 100%;
 	}
 	.blog-posts-list__list_vorstand {
 		margin: 0;
@@ -95,10 +107,35 @@ import { Container } from '../components/odyssey-theme';
 	.blog-post__preview h3 {
 		margin: 0;
 	}
-	img {
+	ul img {
 		aspect-ratio: 4 / 5;
 		width: 100%;
 		object-fit: cover;
 		max-height: 500px;
+	}
+
+	.text-and-image__section {
+		display: grid;
+		align-items: center;
+		gap: 1rem;
+		margin: 2rem auto 0 auto;
+		grid-template-columns: 1fr;
+	}
+
+	.text-and-image__text {
+		padding: 2rem 0;
+		justify-self: center;
+	}
+
+	.text-and-image__image img {
+		max-height: 575px;
+		object-fit: cover;
+		border-radius: calc(var(--theme-shape-radius) / 2);
+		transition: border-radius var(--theme-transition);
+		width: 100%;
+	}
+
+	.text-and-image__image img:hover {
+		border-radius: var(--theme-shape-radius);
 	}
 </style>
