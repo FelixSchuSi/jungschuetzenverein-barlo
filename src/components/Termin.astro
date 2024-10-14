@@ -22,18 +22,18 @@ const {termin} = Astro.props;
 
 <div class="termin-item-root">
     <div class="left">
-        <div class="dayOfMonth">{dayOfMonthFormatter.format(termin.date)}</div>
+        <h3 class="day-of-month">{dayOfMonthFormatter.format(termin.date)}</h3>
         <div class="month">{monthFormatter.format(termin.date)}.</div>
     </div>
     <div class="right">
         <div class="time-and-location">
             <div class="time">
                 <Icon name="ic:baseline-access-time-filled" width={24} height={24} />
-                {timeFormatter.format(termin.date)}
+                <div>{timeFormatter.format(termin.date)}</div>
             </div>
             <div class="location">
                 <Icon name="ic:baseline-location-on" width={24} height={24} />
-                {termin.location}
+                <div>{termin.location}</div>
             </div>
         </div>
         <h3 class="name">{termin.name}</h3>
@@ -56,6 +56,16 @@ const {termin} = Astro.props;
 		border-bottom-left-radius: calc(var(--theme-shape-radius) / 2);	
 	}
 
+	.day-of-month, 
+	.month {
+		display: flex;
+    	justify-content: center;
+	}
+
+	.day-of-month {
+		margin: 0;
+	}
+
 	.right {
 		background-color: var(--theme-surface-1);
 		color: var(--theme-on-surface-1);
@@ -73,6 +83,11 @@ const {termin} = Astro.props;
 	.time, .location {
 		display: flex;
 		align-items: center;
+	}
+
+	.location > *:first-child,
+	.time > *:first-child {
+		flex-shrink: 0;
 	}
 
 	.description {
