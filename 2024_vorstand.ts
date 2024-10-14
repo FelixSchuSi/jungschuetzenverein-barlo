@@ -6,9 +6,9 @@ type VorstandsPosition =
 	| 'Oberst'
 	| 'Major'
 	| 'Hauptmann'
-	| 'Adjudant vom Oberst'
-	| 'Adjudant vom Major'
-	| 'Adjudant vom Hauptmann'
+	| 'Adjutant vom Oberst'
+	| 'Adjutant vom Major'
+	| 'Adjutant vom Hauptmann'
 	| 'Fähnrich'
 	| '1. Fahnenoffizier'
 	| '2. Fahnenoffizier'
@@ -169,7 +169,7 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		height: 5120,
 		srcS: 'https://iili.io/2HwlVob.md.webp',
 		srcM: 'https://iili.io/2HwlVob.webp',
-		position: 'Adjudant vom Oberst',
+		position: 'Adjutant vom Oberst',
 		firstname: 'Joshua',
 		lastname: 'Hidding',
 	},
@@ -181,7 +181,7 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		height: 5120,
 		srcS: 'https://iili.io/2HwlYKl.md.webp',
 		srcM: 'https://iili.io/2HwlYKl.webp',
-		position: 'Adjudant vom Major',
+		position: 'Adjutant vom Major',
 		firstname: 'Janis',
 		lastname: 'Wiltink',
 	},
@@ -193,7 +193,7 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		height: 5120,
 		srcS: 'https://iili.io/2HwlVob.md.webp',
 		srcM: 'https://iili.io/2HwlVob.webp',
-		position: 'Adjudant vom Hauptmann',
+		position: 'Adjutant vom Hauptmann',
 		firstname: 'Mirko',
 		lastname: 'Renzel',
 	},
