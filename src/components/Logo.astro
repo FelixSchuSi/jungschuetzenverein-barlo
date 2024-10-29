@@ -1,5 +1,7 @@
 ---
 import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
+
+const { hideIfMobile = false } = Astro.props;
 ---
 
 <div class="logo-root">
@@ -165,8 +167,8 @@ import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
 			</defs>
 		</svg>
 	</a>
-	<a class="logo-schriftzug" href={BASE_PATH_WITHOUT_DOMAIN + '/'}>
-		Jung<wbr />schützen<wbr />verein Barlo
+	<a class={`logo-schriftzug ${hideIfMobile ? "hide-if-mobile": ""}`} href={BASE_PATH_WITHOUT_DOMAIN + '/'}>
+		Jung&shy;schützen&shy;verein Barlo
 	</a>
 </div>
 
@@ -193,7 +195,7 @@ import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
 		max-width: 4.5rem;
 	}
 	@media (max-width: 768px) {
-		.logo-schriftzug {
+		.logo-schriftzug.hide-if-mobile {
 			display: none;
 		}
 	}

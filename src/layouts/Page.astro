@@ -20,7 +20,7 @@ const { seo } = Astro.props;
 <Layout {...seo}>
 	<Header rightMenu navData={nav} slot="header">
 		<span slot="logo">
-			<Logo />
+			<Logo hideIfMobile={true} />
 		</span>
 
 		<Button
