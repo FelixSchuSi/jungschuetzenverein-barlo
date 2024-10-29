@@ -14,5 +14,5 @@ export const nav = [
 	{
 		title: 'Vorstand',
 		slug: '/vorstand',
-	}	
+	},
 ] as const;
