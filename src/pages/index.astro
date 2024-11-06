@@ -7,6 +7,8 @@ import {
 	Container,
 	FeatureCard,
 } from '../components/odyssey-theme';
+import InstaProfileEmbed from '../components/insta-profile-embed/InstaProfileEmbed.astro';
+import WhatsappEmbed from '../components/whatsapp-embed/WhatsappEmbed.astro';
 ---
 
 <AnnouncementBar
@@ -18,25 +20,21 @@ import {
 	<HomeHeroSection />
 	<Container>
 		<section class="feature-card__section">
-			<h2>Insta</h2>
+			<h2>Was gibt es auf Insta?</h2>
 			<p>
-				Hier sollte irgendwann instagram verlinkt werden, vllt auch Whatsapp mit
-				invite link + qr code
+				Folge uns auf Instagram @jungschuetzenvereinbarlo_ev_ um auf dem
+				Laufenden zu bleiben!
 			</p>
-			<div class="feature-card__grid">
-				<FeatureCard
-					href={BASE_PATH_WITHOUT_DOMAIN + '/landing-pages/landing-1'}
-					title="Landing Page 1"
-					imgSrc={BASE_PATH_WITHOUT_DOMAIN +
-						'/assets/images/home/screenshots/landing-1'}
-				/>
-				<FeatureCard
-					href={BASE_PATH_WITHOUT_DOMAIN + '/landing-pages/landing-2'}
-					title="Landing Page 2"
-					imgSrc={BASE_PATH_WITHOUT_DOMAIN +
-						'/assets/images/home/screenshots/landing-2'}
-				/>
-			</div>
+
+			<InstaProfileEmbed />
+		</section>
+		<section class="feature-card__section">
+			<h2>Komm in die Gruppe!</h2>
+			<p>
+				In der WhatsApp Gruppe gibt es exklusive Informationen nur für
+				Jungschützen!
+			</p>
+			<WhatsappEmbed />
 		</section>
 	</Container>
 </Layout>
@@ -44,7 +42,10 @@ import {
 <style>
 	.feature-card__section {
 		margin: var(--section-margin) auto;
+		display: flex;
+		flex-direction: column;
 	}
+
 	.feature-card__grid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -54,5 +55,17 @@ import {
 		.feature-card__grid {
 			grid-template-columns: 1fr;
 		}
+	}
+</style>
+
+<style is:global>
+	.feature-card__section > iframe {
+		align-self: center;
+	}
+
+	.feature-card__section > .whatsapp-embed {
+		align-self: center;
+		width: 100%;
+		max-width: 600px;
 	}
 </style>

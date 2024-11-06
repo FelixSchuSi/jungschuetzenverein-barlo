@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Page.astro';
-import { vorstand2024Einzelbilder } from '../../2024_vorstand';
+import { vorstand2024Einzelbilder } from '../../fotos/2024_vorstand';
 import type { Post } from '../components/blog/BlogPostsList.astro';
 import { Container } from '../components/odyssey-theme';
 
@@ -75,10 +75,6 @@ Astro.props.image = 'https://iili.io/dyYt9Qs.webp';
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 1rem;
-	}
-
-	.blog-posts-list__list_vorstand > * {
-		/* min-width: 250px; */
 	}
 
 	@media (max-width: 1200px) {
