@@ -2,12 +2,8 @@
 import Layout from '../layouts/Page.astro';
 import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
 import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
-import {
-	AnnouncementBar,
-	Container,
-} from '../components/odyssey-theme';
+import { AnnouncementBar, Container } from '../components/odyssey-theme';
 import InstaProfileEmbed from '../components/insta-profile-embed/InstaProfileEmbed.astro';
-import WhatsappEmbed from '../components/whatsapp-embed/WhatsappEmbed.astro';
 ---
 
 <AnnouncementBar
@@ -26,14 +22,6 @@ import WhatsappEmbed from '../components/whatsapp-embed/WhatsappEmbed.astro';
 			</p>
 
 			<InstaProfileEmbed />
-		</section>
-		<section class="feature-card__section">
-			<h2>Komm in die Gruppe!</h2>
-			<p>
-				In der WhatsApp Gruppe gibt es exklusive Informationen nur für
-				Jungschützen!
-			</p>
-			<WhatsappEmbed />
 		</section>
 	</Container>
 </Layout>
@@ -60,11 +48,5 @@ import WhatsappEmbed from '../components/whatsapp-embed/WhatsappEmbed.astro';
 <style is:global>
 	.feature-card__section > iframe {
 		align-self: center;
-	}
-
-	.feature-card__section > .whatsapp-embed {
-		align-self: center;
-		width: 100%;
-		max-width: 600px;
 	}
 </style>

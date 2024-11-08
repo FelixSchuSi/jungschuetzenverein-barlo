@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Page.astro';
+import { Container, BlogPostsList } from '../../components/odyssey-theme';
+import type { Post } from '../../components/blog/BlogPostsList.astro';
+import { BASE_PATH_WITHOUT_DOMAIN } from '../../../base-path.mjs';
+
+const eintraege: Post[] = [
+	{
+		authors: 'Jungschützenverein Barlo',
+		description: 'Vereinsführer, Oberst und Schriftführer ab 1950',
+		excerpt: 'Vereinsführer, Oberst und Schriftführer ab 1950',
+		featuredImage:
+			BASE_PATH_WITHOUT_DOMAIN + '/assets/images/historie/tabelle.png',
+		href:
+			BASE_PATH_WITHOUT_DOMAIN +
+			'/historie/vereinsfuehrer-oberst-schriftfuehrer-ab-1950',
+		publishDate: new Date(),
+		title: 'Vereinsführer, Oberst und Schriftführer ab 1950',
+	},
+];
+---
+
+<Layout>
+	<Container>
+		<section class="cta-card__section">
+			<div class="cta-card__container">
+				<h1>Historie</h1>
+				Schau dich um und informiere dich über die Gescichte vom Jungschützenverein
+				Barlo e. V.!
+			</div>
+		</section>
+		<BlogPostsList posts={eintraege} />
+	</Container>
+	<br />
+	<br />
+	<br />
+</Layout>
+
+<style>
+	.cta-card__section {
+		--section-bg: var(--theme-surface-2);
+		--section-color: var(--theme-on-surface-1);
+		margin-bottom: 2rem;
+		padding: 2rem;
+		background-color: var(--section-bg);
+		color: var(--section-color);
+		border-radius: var(--theme-shape-radius);
+	}
+	.cta-card__container {
+		max-width: var(--container-max-width-narrow);
+		display: flex;
+		flex-direction: column;
+	}
+</style>
