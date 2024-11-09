@@ -5,8 +5,8 @@ import Layout from '../../layouts/Page.astro';
 
 <Layout>
 	<Container>
-		<h2>Vereinsführer, Oberst und Schriftführer ab 1950</h2>
 		<div class="root">
+			<h2>Vereinsführer, Oberst und Schriftführer ab 1950</h2>
 			<div class="table">
 				<div class="row head">
 					<div class="cell">Jahr</div>
@@ -491,7 +491,8 @@ import Layout from '../../layouts/Page.astro';
 		.root {
 			width: 100%;
 			display: flex;
-			justify-content: center;
+			align-items: center;
+			flex-direction: column;
 		}
 		.cell {
 			padding: 4px;
@@ -510,6 +511,9 @@ import Layout from '../../layouts/Page.astro';
 		.head .cell {
 			background-color: var(--theme-primary);
 			color: var(--theme-on-primary);
+		}
+		h2 {
+			max-width: 1000px;
 		}
 	</style>
 </Layout>
