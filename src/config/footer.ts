@@ -23,7 +23,7 @@ export const footerSocials = [
 
 export const footerLists = [
 	{
-		title: 'Aktuelles',
+		title: 'Der Verein',
 		items: [
 			{
 				title: 'Termine',
@@ -33,18 +33,26 @@ export const footerLists = [
 				title: 'Fotos',
 				slug: '/fotos',
 			},
-		],
-	},
-	{
-		title: 'Der Verein',
-		items: [
 			{
 				title: 'Vorstand',
 				slug: '/vorstand',
 			},
+		],
+	},
+	{
+		title: 'Historie',
+		items: [
 			{
-				title: 'Historie',
-				slug: '/historie',
+				title: 'Entstehungsgeschichte',
+				slug: '/historie/entstehungsgeschichte',
+			},
+			{
+				title: 'Vereinsführer, Oberst und Schriftführer ab 1950',
+				slug: '/historie/vereinsfuehrer-oberst-schriftfuehrer-ab-1950',
+			},
+			{
+				title: 'Das Schützenfest des Jungschützen-Vorstands',
+				slug: '/historie/das-schuetzenfest-des-jungschuetzen-vorstands',
 			},
 		],
 	},
