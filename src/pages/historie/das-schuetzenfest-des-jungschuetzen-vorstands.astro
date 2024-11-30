@@ -1,10 +1,22 @@
 ---
+import { BASE_PATH_WITHOUT_DOMAIN } from '../../../base-path.mjs';
 import JungschuetzenLogoSvg from '../../components/JungschuetzenLogoSvg.astro';
 import { Container } from '../../components/odyssey-theme';
 import Layout from '../../layouts/Page.astro';
 ---
 
 <Layout>
+	<Container>
+		<section class="text-and-image__section">
+			<div class="text-and-image__image">
+				<picture slot="image-container">
+					<img
+						src={BASE_PATH_WITHOUT_DOMAIN + '/assets/images/vorstand.webp'}
+					/>
+				</picture>
+			</div>
+		</section>
+	</Container>
 	<Container>
 		<div class="root">
 			<div class="text-root">
@@ -148,5 +160,23 @@ import Layout from '../../layouts/Page.astro';
 		width: 100%;
 		display: flex;
 		justify-content: center;
+	}
+
+	img {
+		width: 100vw;
+	}
+
+	.text-and-image__image img {
+		max-height: 575px;
+		object-position: 50% 30%;
+		object-fit: cover;
+		border-radius: calc(var(--theme-shape-radius) / 2);
+		transition: border-radius var(--theme-transition);
+		width: 100%;
+		margin-bottom: var(--section-margin);
+	}
+
+	.text-and-image__image img:hover {
+		border-radius: var(--theme-shape-radius);
 	}
 </style>
