@@ -32,7 +32,6 @@ import { Container, Button } from '../../odyssey-theme';
 			<video
 				autoplay
 				muted
-				controls
 				loop
 				src={BASE_PATH_WITHOUT_DOMAIN + '/assets/videos/003.webm'}></video>
 		</div>
@@ -72,14 +71,24 @@ import { Container, Button } from '../../odyssey-theme';
 	}
 	.hero-section__image video {
 		width: 100%;
-		height: 100%;
+		aspect-ratio: 720 / 960;
 		max-height: 80vh;
 		object-fit: cover;
 		border-radius: var(--theme-shape-radius);
 	}
-	@media (max-width: 768px) {
+	@media (max-width: 600px) {
 		.hero-section__section {
 			grid-template-columns: 1fr;
+			margin-top: 0;
+			margin-bottom: calc(1.5 * var(--section-margin));
+		}
+		.hero-section__image {
+			order: -1;
+			margin-bottom: calc(var(--section-margin) / 2);
+		}
+		.hero-section__image video {
+			aspect-ratio: 1 / 1;
+			object-position: 50% 0%;
 		}
 	}
 </style>
