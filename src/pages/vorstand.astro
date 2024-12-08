@@ -39,7 +39,7 @@ Astro.props.image = 'https://iili.io/dyYt9Qs.webp';
 						<li class="blog-post__preview">
 							<a>
 								<img src={post.featuredImage} loading="lazy" />
-								<h3>{post.title}</h3>
+								<h3 set:html={post.title} />
 								{post.excerpt && <p>{post.excerpt}</p>}
 							</a>
 						</li>
