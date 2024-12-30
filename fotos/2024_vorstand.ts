@@ -1,19 +1,19 @@
 type VorstandsPosition =
-	| 'Vereinsführer'
-	| 'Stellv. Vereinsführer'
-	| 'Schriftführer'
-	| 'Gerätewart'
-	| 'Oberst'
-	| 'Major'
-	| 'Hauptmann'
-	| 'Adjutant vom Oberst'
-	| 'Adjutant vom Major'
-	| 'Adjutant vom Hauptmann'
-	| 'Fähnrich'
-	| '1. Fahnenoffizier'
-	| '2. Fahnenoffizier'
-	| 'Feldwebel'
-	| 'Kutscher';
+	| 'Vereins&shy;führer'
+	| 'Stellv. Vereins&shy;führer'
+	| 'Schrift&shy;führer'
+	| 'Geräte&shy;wart'
+	| 'O&shy;berst'
+	| 'Ma&shy;jor'
+	| 'Haupt&shy;mann'
+	| 'Ad&shy;ju&shy;tant vom O&shy;berst'
+	| 'Ad&shy;ju&shy;tant vom Ma&shy;jor'
+	| 'Ad&shy;jut&shy;ant vom Haupt&shy;mann'
+	| 'Fähn&shy;rich'
+	| '1. Fahnen&shy;offi&shy;zier'
+	| '2. Fahnen&shy;offi&shy;zier'
+	| 'Feld&shy;webel'
+	| 'Kut&shy;scher';
 
 export interface VorstandsMitglied {
 	filename: string;
@@ -39,7 +39,7 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		// srcM: 'https://iili.io/2HwlWVj.webp',
 		srcS: 'https://iili.io/2zMijBj.md.webp',
 		srcM: 'https://iili.io/2zMijBj.webp',
-		position: 'Vereinsführer',
+		position: 'Vereins&shy;führer',
 		firstname: 'Chris',
 		lastname: 'Frankemölle',
 	},
@@ -53,7 +53,7 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		// srcM: 'https://iili.io/2Hwl5P4.webp',
 		srcS: 'https://iili.io/2zMiWhu.md.webp',
 		srcM: 'https://iili.io/2zMiWhu.webp',
-		position: 'Stellv. Vereinsführer',
+		position: 'Stellv. Vereins&shy;führer',
 		firstname: 'Thomas',
 		lastname: 'Schmitz',
 	},
@@ -67,7 +67,7 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		// srcM: 'https://iili.io/2HwljKQ.webp',
 		srcS: 'https://iili.io/2zMiUTF.md.webp',
 		srcM: 'https://iili.io/2zMiUTF.webp',
-		position: 'Schriftführer',
+		position: 'Schrift&shy;führer',
 		firstname: 'Lukas',
 		lastname: 'Kampshoff',
 	},
@@ -81,7 +81,7 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		// srcM: 'https://iili.io/2HwlmWG.webp',
 		srcS: 'https://iili.io/2zMiXLb.md.webp',
 		srcM: 'https://iili.io/2zMiXLb.webp',
-		position: 'Gerätewart',
+		position: 'Geräte&shy;wart',
 		firstname: 'Felix',
 		lastname: 'Schulze Sindern',
 	},
@@ -95,7 +95,7 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		// srcM: 'https://iili.io/2HwlXix.webp',
 		srcS: 'https://iili.io/2zMighg.md.webp',
 		srcM: 'https://iili.io/2zMighg.webp',
-		position: 'Oberst',
+		position: 'O&shy;berst',
 		firstname: 'Matthias',
 		lastname: 'Welling',
 	},
@@ -109,7 +109,7 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		// srcM: 'https://iili.io/2Hwlal2.webp',
 		srcS: 'https://iili.io/2zMi6CJ.md.webp',
 		srcM: 'https://iili.io/2zMi6CJ.webp',
-		position: 'Major',
+		position: 'Ma&shy;jor',
 		firstname: 'Robin',
 		lastname: 'Heisterkamp',
 	},
@@ -123,7 +123,7 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		// srcM: 'https://iili.io/2Hw02JS.webp',
 		srcS: 'https://iili.io/2zMi8p1.md.webp',
 		srcM: 'https://iili.io/2zMi8p1.webp',
-		position: 'Hauptmann',
+		position: 'Haupt&shy;mann',
 		firstname: 'Jonas',
 		lastname: 'Poth',
 	},
@@ -137,7 +137,7 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		// srcM: 'https://iili.io/2HwlZOX.webp',
 		srcS: 'https://iili.io/2zMiwEx.md.webp',
 		srcM: 'https://iili.io/2zMiwEx.webp',
-		position: 'Fähnrich',
+		position: 'Fähn&shy;rich',
 		firstname: 'David',
 		lastname: 'Mölders',
 	},
@@ -151,7 +151,7 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		// srcM: 'https://iili.io/2HwlkR1.webp',
 		srcS: 'https://iili.io/2zMie2V.md.webp',
 		srcM: 'https://iili.io/2zMie2V.webp',
-		position: '1. Fahnenoffizier',
+		position: '1. Fahnen&shy;offi&shy;zier',
 		firstname: 'Lukas',
 		lastname: 'Gustedt',
 	},
@@ -165,7 +165,7 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		// srcM: 'https://iili.io/2Hwlpsf.webp',
 		srcS: 'https://iili.io/2zMiNrQ.md.webp',
 		srcM: 'https://iili.io/2zMiNrQ.webp',
-		position: '2. Fahnenoffizier',
+		position: '2. Fahnen&shy;offi&shy;zier',
 		firstname: 'Finn',
 		lastname: 'Hölter',
 	},
@@ -179,7 +179,7 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		// srcM: 'https://iili.io/2HwlvOF.webp',
 		srcS: 'https://iili.io/2zMikYB.md.webp',
 		srcM: 'https://iili.io/2zMikYB.webp',
-		position: 'Feldwebel',
+		position: 'Feld&shy;webel',
 		firstname: 'Hendrik',
 		lastname: 'Welling',
 	},
@@ -191,7 +191,7 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		height: 5120,
 		srcS: 'https://iili.io/2zMtSse.md.webp',
 		srcM: 'https://iili.io/2zMtSse.webp',
-		position: 'Adjutant vom Oberst',
+		position: 'Ad&shy;ju&shy;tant vom O&shy;berst',
 		firstname: 'Joshua',
 		lastname: 'Hidding',
 	},
@@ -205,7 +205,7 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		// srcM: 'https://iili.io/2HwlYKl.webp',
 		srcS: 'https://iili.io/2zMivkP.md.webp',
 		srcM: 'https://iili.io/2zMivkP.webp',
-		position: 'Adjutant vom Major',
+		position: 'Ad&shy;ju&shy;tant vom Ma&shy;jor',
 		firstname: 'Janis',
 		lastname: 'Wiltink',
 	},
@@ -219,7 +219,7 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		// srcM: 'https://iili.io/2HwlVob.webp',
 		srcS: 'https://iili.io/2zMirQa.md.webp',
 		srcM: 'https://iili.io/2zMirQa.webp',
-		position: 'Adjutant vom Hauptmann',
+		position: 'Ad&shy;jut&shy;ant vom Haupt&shy;mann',
 		firstname: 'Mirko',
 		lastname: 'Renzel',
 	},
@@ -233,7 +233,7 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		// srcM: 'https://iili.io/2HwlcSS.webp',
 		srcS: 'https://iili.io/2zMiPEv.md.webp',
 		srcM: 'https://iili.io/2zMiPEv.webp',
-		position: 'Kutscher',
+		position: 'Kut&shy;scher',
 		firstname: 'Jonas',
 		lastname: 'Wübling',
 	},
