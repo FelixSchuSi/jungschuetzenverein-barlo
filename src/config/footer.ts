@@ -5,11 +5,6 @@ export const footerSocials = [
 		icon: 'mdi:instagram',
 	},
 	{
-		name: 'WhatsApp',
-		url: 'https://chat.whatsapp.com/DZwS3bet8879YausotZUCV',
-		icon: 'mdi:whatsapp',
-	},
-	{
 		name: 'Facebook',
 		url: 'https://www.facebook.com/JungschuetzenvereinBarlo',
 		icon: 'mdi:facebook',

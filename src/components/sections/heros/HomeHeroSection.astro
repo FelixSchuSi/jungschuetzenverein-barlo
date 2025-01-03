@@ -22,39 +22,19 @@ import { Container, Button } from '../../odyssey-theme';
 			</div>
 		</div>
 		<div class="hero-section__image">
-			<!-- <picture>
+			<picture>
 				<img
 					src="https://iili.io/dbbO90N.webp"
 					alt="Astro Odyssey"
 					id="home-hero-image"
 				/>
-			</picture> -->
-			<video
-				muted
-				loop
-				src={BASE_PATH_WITHOUT_DOMAIN + '/assets/videos/003.webm'}></video>
+			</picture>
+			<!-- <video
+				playsinline
+				src={BASE_PATH_WITHOUT_DOMAIN + '/assets/videos/003.webm'}></video> -->
 		</div>
 	</section>
 </Container>
-
-<script>
-	/**
-	 * autoplays the video on the landing page.
-	 * We can not use HTMLVideoElement.autoplay, because safari blocks it: https://webkit.org/blog/7734/auto-play-policy-changes-for-macos/
-	 */
-	function autoplay() {
-		const videoElement = document.querySelector('video');
-		if (videoElement == null) return;
-		const playPromise = videoElement.play();
-
-		// Show video controls, when autoplay was blocked
-		playPromise.catch(() => {
-			videoElement.controls = true;
-		});
-	}
-
-	autoplay();
-</script>
 
 <style>
 	.hero-section__section {
