@@ -223,6 +223,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYVaIa.webp',
 		srcS: 'https://iili.io/dyYVaIa.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (025).webp',
@@ -241,6 +242,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYVlLv.webp',
 		srcS: 'https://iili.io/dyYVlLv.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (027).webp',
@@ -340,6 +342,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYV842.webp',
 		srcS: 'https://iili.io/dyYV842.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (038).webp',
@@ -376,6 +379,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYV4pe.webp',
 		srcS: 'https://iili.io/dyYV4pe.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (042).webp',
@@ -385,6 +389,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYVPTu.webp',
 		srcS: 'https://iili.io/dyYVPTu.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (043).webp',
@@ -592,6 +597,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYWR6l.webp',
 		srcS: 'https://iili.io/dyYWR6l.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (066).webp',
@@ -646,6 +652,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYWEZb.webp',
 		srcS: 'https://iili.io/dyYWEZb.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (072).webp',
@@ -655,6 +662,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYWMnj.webp',
 		srcS: 'https://iili.io/dyYWMnj.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (073).webp',
@@ -1024,6 +1032,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYXXxs.webp',
 		srcS: 'https://iili.io/dyYXXxs.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (114).webp',
@@ -1618,6 +1627,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYjIZg.webp',
 		srcS: 'https://iili.io/dyYjIZg.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (179).webp',
@@ -1978,6 +1988,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYwuO7.webp',
 		srcS: 'https://iili.io/dyYwuO7.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (219).webp',
@@ -2005,6 +2016,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYw0UQ.webp',
 		srcS: 'https://iili.io/dyYw0UQ.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (222).webp',
@@ -2014,6 +2026,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYwEJV.webp',
 		srcS: 'https://iili.io/dyYwEJV.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (223).webp',
@@ -2149,6 +2162,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYws1f.webp',
 		srcS: 'https://iili.io/dyYws1f.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (238).webp',
@@ -2185,6 +2199,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYwbm7.webp',
 		srcS: 'https://iili.io/dyYwbm7.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (242).webp',
@@ -2392,6 +2407,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYN1Bs.webp',
 		srcS: 'https://iili.io/dyYN1Bs.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (265).webp',
@@ -2491,6 +2507,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYNrvV.webp',
 		srcS: 'https://iili.io/dyYNrvV.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (276).webp',
@@ -2716,6 +2733,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYO0AB.webp',
 		srcS: 'https://iili.io/dyYO0AB.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (301).webp',
@@ -3130,6 +3148,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYeNqu.webp',
 		srcS: 'https://iili.io/dyYeNqu.md.webp',
+		rotateRight90: true,
 	},
 	{
 		name: 'Schützenfest2024 (347).webp',
@@ -3139,6 +3158,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYeO0b.webp',
 		srcS: 'https://iili.io/dyYeO0b.md.webp',
+		rotateRight90: true,
 	},
 	{
 		name: 'Schützenfest2024 (348).webp',
@@ -3283,6 +3303,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYkF2f.webp',
 		srcS: 'https://iili.io/dyYkF2f.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (364).webp',
@@ -3589,6 +3610,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYvJwB.webp',
 		srcS: 'https://iili.io/dyYvJwB.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (398).webp',
@@ -3607,6 +3629,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYvdZP.webp',
 		srcS: 'https://iili.io/dyYvdZP.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (400).webp',
@@ -3616,6 +3639,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYvFMF.webp',
 		srcS: 'https://iili.io/dyYvFMF.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (401).webp',
@@ -4606,6 +4630,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYSQnI.webp',
 		srcS: 'https://iili.io/dyYSQnI.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (511).webp',
@@ -4678,6 +4703,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYU3nS.webp',
 		srcS: 'https://iili.io/dyYU3nS.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (519).webp',
@@ -4696,6 +4722,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYUKP9.webp',
 		srcS: 'https://iili.io/dyYUKP9.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (521).webp',
@@ -4714,6 +4741,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYUBcu.webp',
 		srcS: 'https://iili.io/dyYUBcu.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (523).webp',
@@ -4723,6 +4751,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYUC8b.webp',
 		srcS: 'https://iili.io/dyYUC8b.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (524).webp',

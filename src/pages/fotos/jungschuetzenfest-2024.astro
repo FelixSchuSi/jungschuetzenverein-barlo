@@ -20,6 +20,8 @@ const images = fotosJungschuetzenfest2024.map(data => {
 		format: 'webp',
 		width: data.width,
 		height: data.height,
+		rotateLeft90: data.rotateLeft90 ?? false,
+		rotateRight90: data.rotateRight90 ?? false,
 	};
 });
 ---
@@ -51,7 +53,13 @@ const images = fotosJungschuetzenfest2024.map(data => {
 						href={`/images?image=${index}`}
 						data-carousel-index={index}
 					>
-						<img src={img.srcS} alt={img.alt} loading="lazy" />
+						<img
+							class={`${img.rotateLeft90 ? 'rotate-left-90' : ''}
+			${img.rotateRight90 ? 'rotate-right-90' : ''}`}
+							src={img.srcS}
+							alt={img.alt}
+							loading="lazy"
+						/>
 					</a>
 				);
 			})
@@ -79,6 +87,14 @@ const images = fotosJungschuetzenfest2024.map(data => {
 		aspect-ratio: 1 / 1;
 		object-fit: cover;
 		width: 100%;
+	}
+
+	img.rotate-left-90 {
+		transform: rotate(-90deg);
+	}
+
+	img.rotate-right-90 {
+		transform: rotate(90deg);
 	}
 
 	@media (max-width: 1200px) {
