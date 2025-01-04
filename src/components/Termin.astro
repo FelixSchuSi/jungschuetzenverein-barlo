@@ -3,9 +3,16 @@ import { Icon } from 'astro-icon/components';
 
 const dayOfMonthFormatter = new Intl.DateTimeFormat('de-DE', {
 	day: 'numeric',
+	timeZone: 'Europe/Berlin',
 });
-const monthFormatter = new Intl.DateTimeFormat('de-DE', { month: 'short' });
-const timeFormatter = new Intl.DateTimeFormat('de-DE', { timeStyle: 'short' });
+const monthFormatter = new Intl.DateTimeFormat('de-DE', {
+	month: 'short',
+	timeZone: 'Europe/Berlin',
+});
+const timeFormatter = new Intl.DateTimeFormat('de-DE', {
+	timeStyle: 'short',
+	timeZone: 'Europe/Berlin',
+});
 
 export interface Termin {
 	date: Date;
