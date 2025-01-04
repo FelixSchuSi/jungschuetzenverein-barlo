@@ -37,8 +37,8 @@ const { termin } = Astro.props;
 				<div>{termin.location}</div>
 			</div>
 		</div>
-		<h3 class="name">{termin.name}</h3>
-		<div class="description">{termin.description}</div>
+		<h3 class="name" set:html={termin.name} />
+		<div class="description" set:html={termin.description} />
 	</div>
 </div>
 
@@ -56,6 +56,13 @@ const { termin } = Astro.props;
 		border-top-left-radius: calc(var(--theme-shape-radius) / 2);
 		border-bottom-left-radius: calc(var(--theme-shape-radius) / 2);
 		min-width: 4rem;
+	}
+
+	@media (max-width: 768px) {
+		.left {
+			min-width: 3rem;
+			padding: 0.5rem;
+		}
 	}
 
 	.day-of-month,
@@ -100,5 +107,9 @@ const { termin } = Astro.props;
 
 	h3 {
 		word-break: break-all;
+	}
+	.name,
+	.description {
+		word-break: break-word;
 	}
 </style>
