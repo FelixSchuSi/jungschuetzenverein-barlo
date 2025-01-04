@@ -7,6 +7,7 @@ export const fotosJungschuetzenfest2022 = [
 		height: 2600,
 		srcS: 'https://iili.io/dmZ1kGV.md.webp',
 		srcM: 'https://iili.io/dmZ1kGV.webp',
+		rotateRight90: false,
 	},
 	{
 		name: 'Jungschützen 2022 (001).webp',
@@ -16,6 +17,7 @@ export const fotosJungschuetzenfest2022 = [
 		height: 4480,
 		srcS: 'https://iili.io/dmZ1Ua1.md.webp',
 		srcM: 'https://iili.io/dmZ1Ua1.webp',
+		rotateLeft90: false,
 	},
 	{
 		name: 'Jungschützen 2022 (002).webp',

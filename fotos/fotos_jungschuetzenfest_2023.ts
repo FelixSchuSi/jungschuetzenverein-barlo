@@ -7,6 +7,7 @@ export const fotosJungschuetzenfest2023 = [
 		srcM: 'https://iili.io/dbtsB8x.webp',
 		srcL: 'https://iili.io/dbb858B.md.webp',
 		srcXL: 'https://iili.io/dbb858B.webp',
+		rotateLeft90: false,
 	},
 	{
 		srcS: 'https://iili.io/dbtsF6u.md.webp',
@@ -16,6 +17,7 @@ export const fotosJungschuetzenfest2023 = [
 		srcM: 'https://iili.io/dbtsF6u.webp',
 		srcL: 'https://iili.io/dbb87yP.md.webp',
 		srcXL: 'https://iili.io/dbb87yP.webp',
+		rotateRight90: false,
 	},
 	{
 		srcS: 'https://iili.io/dbtsf3b.md.webp',

@@ -7,6 +7,7 @@ export const fotosJubilaeum2022 = [
 		height: 4000,
 		srcS: 'https://iili.io/dpB93n2.md.webp',
 		srcM: 'https://iili.io/dpB93n2.webp',
+		rotateLeft90: false,
 	},
 	{
 		name: 'HUF03075.webp',
@@ -16,6 +17,7 @@ export const fotosJubilaeum2022 = [
 		height: 4000,
 		srcS: 'https://iili.io/dpqu97j.md.webp',
 		srcM: 'https://iili.io/dpqu97j.webp',
+		rotateRight90: false,
 	},
 	{
 		name: 'HUF03076.webp',

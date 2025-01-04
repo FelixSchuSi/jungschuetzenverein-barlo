@@ -21,6 +21,8 @@ const images = fotosJubilaeum2022.map(data => {
 		format: 'webp',
 		width: data.width,
 		height: data.height,
+		rotateLeft90: data.rotateLeft90 ?? false,
+		rotateRight90: data.rotateRight90 ?? false,
 	};
 });
 ---
