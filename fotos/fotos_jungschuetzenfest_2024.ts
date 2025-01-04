@@ -625,6 +625,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYWa87.webp',
 		srcS: 'https://iili.io/dyYWa87.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (069).webp',
@@ -634,6 +635,7 @@ export const fotosJungschuetzenfest2024 = [
 		height: 4480,
 		srcM: 'https://iili.io/dyYWl99.webp',
 		srcS: 'https://iili.io/dyYWl99.md.webp',
+		rotateLeft90: true,
 	},
 	{
 		name: 'Schützenfest2024 (070).webp',
