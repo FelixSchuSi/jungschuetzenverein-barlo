@@ -1,10 +1,23 @@
 ---
-import Layout from '../layouts/Page.astro';
-import { vorstand2024Einzelbilder } from '../../fotos/2024_vorstand';
+import Layout from './Page.astro';
 import type { Post } from '../components/blog/BlogPostsList.astro';
 import { Container } from '../components/odyssey-theme';
+import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
+import type { VorstandsMitglied } from './types';
 
-Astro.props.image = 'https://iili.io/dyYt9Qs.webp';
+interface Props {
+	einzelBilder: VorstandsMitglied[];
+	gruppenBild: string;
+	jahr: number;
+}
+const { einzelBilder, gruppenBild, jahr } = Astro.props;
+
+const allVorstandPages = Object.keys(
+	await import.meta.glob('../pages/vorstand/*'),
+)
+	.map(path => path.replaceAll('../pages/', '').replaceAll('.astro', ''))
+	.filter(path => !path.includes('index'))
+	.filter(path => !path.includes(`${jahr}`));
 ---
 
 <Layout>
@@ -12,12 +25,12 @@ Astro.props.image = 'https://iili.io/dyYt9Qs.webp';
 		<section class="text-and-image__section">
 			<div class="text-and-image__image">
 				<picture slot="image-container">
-					<img src="https://iili.io/dyYt9Qs.webp" alt="Der Vorstand 2024" />
+					<img src={gruppenBild} alt={`Der Vorstand ${jahr}`} />
 				</picture>
 			</div>
 			<div class="text-and-image__text">
 				<div class="text-container">
-					<h1>Der Vorstand 2024</h1>
+					<h1>{`Der Vorstand ${jahr}`}</h1>
 				</div>
 			</div>
 		</section>
@@ -27,7 +40,7 @@ Astro.props.image = 'https://iili.io/dyYt9Qs.webp';
 		<ul class="blog-posts-list__list_vorstand">
 			{
 				(
-					vorstand2024Einzelbilder.map(einzelBild => {
+					einzelBilder.map(einzelBild => {
 						return {
 							featuredImage: einzelBild.srcS,
 							title: String(einzelBild.position),
@@ -47,6 +60,20 @@ Astro.props.image = 'https://iili.io/dyYt9Qs.webp';
 				})
 			}
 		</ul>
+	</Container>
+	<Container>
+		<section class="cta-card__section">
+			<div class="cta-card__container">
+				<h3>Vorstände aus anderen Jahren</h3>
+				{
+					allVorstandPages.map(page => (
+						<a href={`${BASE_PATH_WITHOUT_DOMAIN}/${page}`}>
+							Vorstand aus dem Jahr {page.replaceAll('vorstand/', '')}
+						</a>
+					))
+				}
+			</div>
+		</section>
 	</Container>
 </Layout>
 
@@ -139,5 +166,20 @@ Astro.props.image = 'https://iili.io/dyYt9Qs.webp';
 
 	.text-and-image__image img:hover {
 		border-radius: var(--theme-shape-radius);
+	}
+
+	.cta-card__section {
+		--section-bg: var(--theme-surface-1);
+		--section-color: var(--theme-on-surface-1);
+		margin-bottom: 2rem;
+		padding: 2rem;
+		background-color: var(--section-bg);
+		color: var(--section-color);
+		border-radius: var(--theme-shape-radius);
+	}
+	.cta-card__container {
+		max-width: var(--container-max-width-narrow);
+		display: flex;
+		flex-direction: column;
 	}
 </style>

@@ -1,32 +1,6 @@
-type VorstandsPosition =
-	| 'Vereins&shy;führer'
-	| 'Stellv. Vereins&shy;führer'
-	| 'Schrift&shy;führer'
-	| 'Geräte&shy;wart'
-	| 'O&shy;berst'
-	| 'Ma&shy;jor'
-	| 'Haupt&shy;mann'
-	| 'Ad&shy;ju&shy;tant vom O&shy;berst'
-	| 'Ad&shy;ju&shy;tant vom Ma&shy;jor'
-	| 'Ad&shy;jut&shy;ant vom Haupt&shy;mann'
-	| 'Fähn&shy;rich'
-	| '1. Fahnen&shy;offi&shy;zier'
-	| '2. Fahnen&shy;offi&shy;zier'
-	| 'Feld&shy;webel'
-	| 'Kut&shy;scher';
-
-export interface VorstandsMitglied {
-	filename: string;
-	srcL: string;
-	srcXL: string;
-	width: number;
-	height: number;
-	srcS: string;
-	srcM: string;
-	position: VorstandsPosition;
-	firstname: string;
-	lastname: string;
-}
+---
+import type { VorstandsMitglied } from '../../layouts/types';
+import VorstandPage from '../../layouts/VorstandPage.astro';
 
 export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 	{
@@ -35,8 +9,6 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		srcXL: 'https://iili.io/2Hwl0H7.webp',
 		width: 3840,
 		height: 5120,
-		// srcS: 'https://iili.io/2HwlWVj.md.webp',
-		// srcM: 'https://iili.io/2HwlWVj.webp',
 		srcS: 'https://iili.io/2zMijBj.md.webp',
 		srcM: 'https://iili.io/2zMijBj.webp',
 		position: 'Vereins&shy;führer',
@@ -49,8 +21,6 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		srcXL: 'https://iili.io/2HwlINn.webp',
 		width: 3840,
 		height: 5120,
-		// srcS: 'https://iili.io/2Hwl5P4.md.webp',
-		// srcM: 'https://iili.io/2Hwl5P4.webp',
 		srcS: 'https://iili.io/2zMiWhu.md.webp',
 		srcM: 'https://iili.io/2zMiWhu.webp',
 		position: 'Stellv. Vereins&shy;führer',
@@ -63,8 +33,6 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		srcXL: 'https://iili.io/2Hwl1R9.webp',
 		width: 3840,
 		height: 5120,
-		// srcS: 'https://iili.io/2HwljKQ.md.webp',
-		// srcM: 'https://iili.io/2HwljKQ.webp',
 		srcS: 'https://iili.io/2zMiUTF.md.webp',
 		srcM: 'https://iili.io/2zMiUTF.webp',
 		position: 'Schrift&shy;führer',
@@ -77,8 +45,6 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		srcXL: 'https://iili.io/2Hw09f4.webp',
 		width: 3840,
 		height: 5120,
-		// srcS: 'https://iili.io/2HwlmWG.md.webp',
-		// srcM: 'https://iili.io/2HwlmWG.webp',
 		srcS: 'https://iili.io/2zMiXLb.md.webp',
 		srcM: 'https://iili.io/2zMiXLb.webp',
 		position: 'Geräte&shy;wart',
@@ -91,8 +57,6 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		srcXL: 'https://iili.io/2HwlENe.webp',
 		width: 3840,
 		height: 5120,
-		// srcS: 'https://iili.io/2HwlXix.md.webp',
-		// srcM: 'https://iili.io/2HwlXix.webp',
 		srcS: 'https://iili.io/2zMighg.md.webp',
 		srcM: 'https://iili.io/2zMighg.webp',
 		position: 'O&shy;berst',
@@ -105,8 +69,6 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		srcXL: 'https://iili.io/2HwlRVf.webp',
 		width: 3840,
 		height: 5120,
-		// srcS: 'https://iili.io/2Hwlal2.md.webp',
-		// srcM: 'https://iili.io/2Hwlal2.webp',
 		srcS: 'https://iili.io/2zMi6CJ.md.webp',
 		srcM: 'https://iili.io/2zMi6CJ.webp',
 		position: 'Ma&shy;jor',
@@ -119,8 +81,6 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		srcXL: 'https://iili.io/2Hw0357.webp',
 		width: 3024,
 		height: 4032,
-		// srcS: 'https://iili.io/2Hw02JS.md.webp',
-		// srcM: 'https://iili.io/2Hw02JS.webp',
 		srcS: 'https://iili.io/2zMi8p1.md.webp',
 		srcM: 'https://iili.io/2zMi8p1.webp',
 		position: 'Haupt&shy;mann',
@@ -133,8 +93,6 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		srcXL: 'https://iili.io/2Hwlriv.webp',
 		width: 3840,
 		height: 5120,
-		// srcS: 'https://iili.io/2HwlZOX.md.webp',
-		// srcM: 'https://iili.io/2HwlZOX.webp',
 		srcS: 'https://iili.io/2zMiwEx.md.webp',
 		srcM: 'https://iili.io/2zMiwEx.webp',
 		position: 'Fähn&shy;rich',
@@ -147,8 +105,6 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		srcXL: 'https://iili.io/2HwlGDu.webp',
 		width: 3840,
 		height: 5120,
-		// srcS: 'https://iili.io/2HwlkR1.md.webp',
-		// srcM: 'https://iili.io/2HwlkR1.webp',
 		srcS: 'https://iili.io/2zMie2V.md.webp',
 		srcM: 'https://iili.io/2zMie2V.webp',
 		position: '1. Fahnen&shy;offi&shy;zier',
@@ -161,8 +117,6 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		srcXL: 'https://iili.io/2Hw0Jg2.webp',
 		width: 3840,
 		height: 5120,
-		// srcS: 'https://iili.io/2Hwlpsf.md.webp',
-		// srcM: 'https://iili.io/2Hwlpsf.webp',
 		srcS: 'https://iili.io/2zMiNrQ.md.webp',
 		srcM: 'https://iili.io/2zMiNrQ.webp',
 		position: '2. Fahnen&shy;offi&shy;zier',
@@ -175,8 +129,6 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		srcXL: 'https://iili.io/2HwlNUB.webp',
 		width: 3840,
 		height: 5120,
-		// srcS: 'https://iili.io/2HwlvOF.md.webp',
-		// srcM: 'https://iili.io/2HwlvOF.webp',
 		srcS: 'https://iili.io/2zMikYB.md.webp',
 		srcM: 'https://iili.io/2zMikYB.webp',
 		position: 'Feld&shy;webel',
@@ -201,8 +153,6 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		srcXL: 'https://iili.io/2Hw0Fe9.webp',
 		width: 3840,
 		height: 5120,
-		// srcS: 'https://iili.io/2HwlYKl.md.webp',
-		// srcM: 'https://iili.io/2HwlYKl.webp',
 		srcS: 'https://iili.io/2zMivkP.md.webp',
 		srcM: 'https://iili.io/2zMivkP.webp',
 		position: 'Ad&shy;ju&shy;tant vom Ma&shy;jor',
@@ -215,8 +165,6 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		srcXL: 'https://iili.io/2HwlTts.webp',
 		width: 3840,
 		height: 5120,
-		// srcS: 'https://iili.io/2HwlVob.md.webp',
-		// srcM: 'https://iili.io/2HwlVob.webp',
 		srcS: 'https://iili.io/2zMirQa.md.webp',
 		srcM: 'https://iili.io/2zMirQa.webp',
 		position: 'Ad&shy;jut&shy;ant vom Haupt&shy;mann',
@@ -229,8 +177,6 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 		srcXL: 'https://iili.io/2HwlAoG.webp',
 		width: 3840,
 		height: 5120,
-		// srcS: 'https://iili.io/2HwlcSS.md.webp',
-		// srcM: 'https://iili.io/2HwlcSS.webp',
 		srcS: 'https://iili.io/2zMiPEv.md.webp',
 		srcM: 'https://iili.io/2zMiPEv.webp',
 		position: 'Kut&shy;scher',
@@ -239,32 +185,13 @@ export const vorstand2024Einzelbilder: VorstandsMitglied[] = [
 	},
 ];
 
-export const vostand2024Rest = {
-	filename: 'IMG 20241009 WA0115.webp',
-	srcL: 'https://iili.io/2Hwl6fR.md.webp',
-	srcXL: 'https://iili.io/2Hwl6fR.webp',
-	width: 5120,
-	height: 3840,
-	srcS: 'https://iili.io/2HwlUxa.md.webp',
-	srcM: 'https://iili.io/2HwlUxa.webp',
+const pageData = {
+	einzelBilder: vorstand2024Einzelbilder,
+	gruppenBild: 'https://iili.io/dyYt9Qs.webp',
+	jahr: 2024,
 };
 
-export const vostand2024Geschaeftsfuehrend = {
-	filename: 'IMG 20241009 WA0122.webp',
-	srcL: 'https://iili.io/2HwlLJI.md.webp',
-	srcXL: 'https://iili.io/2HwlLJI.webp',
-	width: 3840,
-	height: 5120,
-	srcS: 'https://iili.io/2Hwl8Dg.md.webp',
-	srcM: 'https://iili.io/2Hwl8Dg.webp',
-};
+Astro.props.image = pageData.gruppenBild;
+---
 
-export const vostand2024Fahne = {
-	filename: 'IMG 20241009 WA0125.webp',
-	srcL: 'https://iili.io/2Hwlbxs.md.webp',
-	srcXL: 'https://iili.io/2Hwlbxs.webp',
-	width: 3840,
-	height: 5120,
-	srcS: 'https://iili.io/2HwlQRt.md.webp',
-	srcM: 'https://iili.io/2HwlQRt.webp',
-};
+<VorstandPage {...pageData} />
