@@ -8,7 +8,10 @@ const seo = {
 	description: 'Termine',
 };
 
-const termine2025 = [
+const tomorrow: Date = new Date();
+tomorrow.setDate(new Date().getDate() + 1);
+
+const termine = [
 	{
 		date: new Date('2025-01-04T17:30:00.000Z'),
 		name: 'Jahres&shy;haupt&shy;ver&shy;samm&shy;lung 2025',
@@ -50,9 +53,7 @@ const termine2025 = [
 			'Am Sonntag steht Früshoppen, Ausholen des neuen Königspaars und Fahneschlagen auf dem Programm. Abends kann sich das neue Königspaar nochmal richtig beim Thron feiern lassen.',
 		location: 'Barlo Dorfplatz',
 	},
-];
-
-const termine2026 = [
+	// 2026
 	{
 		date: new Date('2026-01-03T17:30:00.000Z'),
 		name: 'Jahres&shy;haupt&shy;ver&shy;samm&shy;lung 2026',
@@ -94,9 +95,7 @@ const termine2026 = [
 			'Am Sonntag steht Früshoppen, Ausholen des neuen Königspaars und Fahneschlagen auf dem Programm. Abends kann sich das neue Königspaar nochmal richtig beim Thron feiern lassen.',
 		location: 'Barlo Dorfplatz',
 	},
-];
-
-const termine2027 = [
+	// 2027
 	{
 		date: new Date('2027-01-02T17:30:00.000Z'),
 		name: 'Jahres&shy;haupt&shy;ver&shy;samm&shy;lung 2027',
@@ -138,7 +137,7 @@ const termine2027 = [
 			'Am Sonntag steht Früshoppen, Ausholen des neuen Königspaars und Fahneschlagen auf dem Programm. Abends kann sich das neue Königspaar nochmal richtig beim Thron feiern lassen.',
 		location: 'Barlo Dorfplatz',
 	},
-];
+].filter(termin => termin.date > tomorrow);
 ---
 
 <Layout {seo}>
@@ -146,13 +145,23 @@ const termine2027 = [
 		<div class="root-full-width">
 			<div class="root">
 				<h2>Termine 2025</h2>
-				{termine2025.map(termin => <Termin termin={termin} />)}
-
+				{
+					termine
+						.filter(e => e.date.getFullYear() === 2025)
+						.map(termin => <Termin termin={termin} />)
+				}
 				<h2>Termine 2026</h2>
-				{termine2026.map(termin => <Termin termin={termin} />)}
-
+				{
+					termine
+						.filter(e => e.date.getFullYear() === 2026)
+						.map(termin => <Termin termin={termin} />)
+				}
 				<h2>Termine 2027</h2>
-				{termine2027.map(termin => <Termin termin={termin} />)}
+				{
+					termine
+						.filter(e => e.date.getFullYear() === 2027)
+						.map(termin => <Termin termin={termin} />)
+				}
 			</div>
 		</div>
 	</Container>
