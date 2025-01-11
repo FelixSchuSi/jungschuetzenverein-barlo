@@ -1,13 +1,16 @@
 ---
+import { Image } from 'astro:assets';
 import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
-import JungschuetzenLogoSvg from './JungschuetzenLogoSvg.astro';
-
+import logo from './logo.png';
 const { hideIfMobile = false } = Astro.props;
+logo.height;
+logo.width;
 ---
 
 <div class="logo-root">
 	<a href={BASE_PATH_WITHOUT_DOMAIN + '/'}>
-		<JungschuetzenLogoSvg clazz="logo-component-svg" />
+		<!-- <JungschuetzenLogoSvg clazz="logo-component-svg" /> -->
+		<Image id="logo-image" src={logo} alt="Jungschützenverein Barlo Logo" />
 	</a>
 	<a
 		class={`logo-schriftzug ${hideIfMobile ? 'hide-if-mobile' : ''}`}
@@ -44,8 +47,11 @@ const { hideIfMobile = false } = Astro.props;
 </style>
 
 <style is:global>
-	.logo-component-svg {
+	.logo-component-svg,
+	#logo-image {
 		max-height: 4.5rem;
 		max-width: 4.5rem;
+		filter: invert(15%) sepia(9%) saturate(865%) hue-rotate(71deg)
+			brightness(96%) contrast(92%);
 	}
 </style>
