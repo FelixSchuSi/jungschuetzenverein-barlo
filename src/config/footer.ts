@@ -32,6 +32,10 @@ export const footerLists = [
 				title: 'Vorstand',
 				slug: '/vorstand',
 			},
+			{
+				title: 'Satzung',
+				slug: '/satzung',
+			},
 		],
 	},
 	{

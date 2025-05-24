@@ -1,0 +1,321 @@
+---
+import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
+import { TextSection } from '../components/odyssey-theme';
+import HeroSection from '../components/sections/heros/HeroSection.astro';
+import Layout from '../layouts/Page.astro';
+
+const seo = {
+	title: `Satzung | Jungschützenverein Barlo e. V.`,
+	description: `Satzung vom Jungschützenverein Barlo e. V.`,
+};
+---
+
+<Layout {seo}>
+	<HeroSection>
+		<div slot="text-container">
+			<h1>Satzung</h1>
+			<p>
+				Hier kannst du die Satzung vom Jungschützenverein Barlo e.V. einsehen.
+			</p>
+		</div>
+		<picture slot="image-container">
+			<img
+				src={BASE_PATH_WITHOUT_DOMAIN + '/assets/images/impressum/dbb1OQt.webp'}
+				alt="Astro Odyssee"
+				id="hero-image"
+			/>
+		</picture>
+	</HeroSection>
+	<TextSection narrow>
+		<div class="root">
+			<h3><span>§ 1 </span><br /><span> Name, Sitz, Geschäftsjahr</span></h3>
+			<p>
+				<ol>
+					<li>Der Verein führt den namen Jungschützenverein Barlo e.V.</li>
+					<li>
+						Er führt nach Eintragung in das Vereinsregister den Namenszusatz
+						"eigetragener Verein" in der abgekürzten Form e.V.
+					</li>
+					<li>Der Verein hat seinen Sitz in Barlo.</li>
+					<li>Geschäftsjahr ist das Kalenderjahr.</li>
+				</ol>
+			</p>
+			<h3><span>§ 2 </span><br /><span>Zweck des Vereins</span></h3>
+			<p>
+				<ol>
+					<li>
+						Zweck des Vereins ist die Förderung der Eintracht, des Frohsinns,
+						der Kameradschaftlichkeit und der Geselligkeit, die Pflege des
+						traditionellen heimatlichen Brauchtums, die Wahrung und Fortsetzung
+						der Barloer Schützentradition sowie die Förderung der Heimatpflege.
+						Der Verein verfolgt keine politischen Ziele.
+					</li>
+					<li>
+						Der Satzungszweck wird verwirklicht durch Veranstaltungen und
+						Aktivitäten, insbesondere durch das Abhalten der traditionellen
+						Schützenfestveranstaltungen in Barlo.
+					</li>
+				</ol>
+			</p>
+			<h3><span>§ 3 </span><br /><span>Mitgliedschaft</span></h3>
+			<p>
+				<ol>
+					<li>
+						Mitglieder des Vereins können alle Junggesellen werden die ihren
+						Wohnsitz seit mindestens einem Jahr im Kirchspiel Barlo haben oder
+						hatten und das 17. Lebensjahr vollendet haben. Die Mitgliedschaft
+						erfolgt durch Antragstellung an den Vorstand.
+					</li>
+					<li>Über die Aufnahme von Mitgliedern entscheidet der Vorstand.</li>
+					<li>Die Mitgliedschaft wird wirksam zum 01. des laufenden Monats.</li>
+				</ol>
+			</p>
+			<h3><span>§ 4 </span><br /><span>Beendigung der Mitgliedschaft</span></h3>
+			<p>
+				<ol>
+					<li>
+						Die Mitgliedschaft erlischt, <br />
+						a) durch den Tod<br />
+						b) durch Austrittserklärung<br />
+						c) durch Ausschluss<br />
+						d) durch kirchliche Trauung nach Vollendung des 35. Lebensjahres
+					</li>
+					<li>
+						Der Austritt kann jederzeit durch schriftliche Erklärung gegenüber
+						dem Vorstand erfolgen, jedoch nur zum Schluss eines Geschäftsjahres
+						und unter Einhaltung einer Frist von drei Monaten.
+					</li>
+					<li>
+						Der Ausschluss erfolgt: <br />
+						a) Falls das Mitglied seinen finanziellen Verpflichtungen drei Monaten
+						nach Fälligkeit trotz schriftlicher Mahnung nicht nachgekommen ist. <br
+						/>
+						b) Falls das Mitglied durch sein Verhalten, die Belange oder das Ansehen
+						des Vereins schädigt. <br />
+						c) Über den Ausschluss entscheidet auf Antrag des Vorstandes die Mitgliederversammlung.
+						<br />
+						d) Der Vorstand hat seinen Antrag dem auszuschließenden Mitglied mindestens
+						zwei Wochen vor der Versammlung schriftlich mitzuteilen. <br />
+						e) Der Ausschluss eines Mitgliedes wird sofort mit der Beschlussfassung
+						wirksam.
+					</li>
+				</ol>
+			</p>
+			<h3><span>§ 5 </span><br /><span>Beiträge</span></h3>
+			<p>
+				<ol>
+					<li>Von den Mitgliedern werden Jahresbeiträge erhoben.</li>
+					<li>
+						Der Mitgliedsbeitrag sowie etwaige außerordentliche Beiträge werden
+						von der Mitgliederversammlung festgelegt. Mitglieder die das 35.
+						Lebensjahr vollendet haben sind von der Beitragspflicht befreit.
+					</li>
+				</ol>
+			</p>
+			<h3><span>§ 6 </span><br /><span>Organe</span></h3>
+			<p>
+				<ol>
+					<li>
+						Organe des Vereins sind:<br />
+						b) die Mitgliederversammlung<br />
+						c) der Vorstand.
+					</li>
+				</ol>
+			</p>
+			<h3><span>§ 7 </span><br /><span>Mitglieder&shy;versammlung</span></h3>
+			<p>
+				<ol>
+					<li>
+						Oberstes Organ des Vereins ist die Mitgliederversammlung. Eine
+						ordentliche Mitgliederversammlung findet einmal jährlich statt.
+					</li>
+					<li>
+						Die Einberufung der Mitgliederversammlung erfolgt durch den Vorstand
+						schriftlich oder durch Veröffentlichung im Bocholter-Borkener
+						Volksblatt unter Angabe der Tagesordnung. Zwischen dem Tag der
+						Einladung und dem Termin zur Versammlung muss eine Frist von zwei
+						Wochen liegen. Die endgültige Tagesordnung setzt die
+						Mitgliederversammlung zu Beginn selbst fest.
+					</li>
+					<li>
+						Eine außerordentliche Mitgliederversammlung ist innerhalb einer
+						Frist von zwei Wochen mit entsprechender Tagesordnung vom Vorstand
+						einzuberufen, wenn das Interesse des Vereins es erfordert oder 1/4
+						der stimmberechtigten Mitglieder schriftlich beim Vorsitzenden unter
+						Angabe des Zwecks und der Gründe dieses beantragt hat.
+					</li>
+					<li>
+						Die Mitgliederversammlung wird von dem Vorsitzenden oder in seiner
+						Abwesenheit von einem weiteren Vorstandsmitglied geleitet. Ist kein
+						Vorstandsmitglied anwesend, bestimmt die Versammlung den
+						Versammlungsleiter. Bei Wahlen kann die Versammlungsleitung für die
+						Dauer des Wahlganges und der vorhergehenden Diskussion übertragen
+						werden. Der Versammlungsleiter bestimmt einen Protokollführer.
+					</li>
+					<li>
+						Die Mitgliederversammlung ist ohne Rücksicht auf die Zahl der
+						erschienenen Mitglieder beschlussfähig.
+					</li>
+					<li>
+						Die Beschlüsse werden mit einfacher Mehrheit der anwesenden
+						stimmberechtigten Mitglieder gefasst. Bei Stimmengleichheit gilt ein
+						Antrag als abgelehnt.
+					</li>
+					<li>
+						Satzungsänderungen können nur mit einer Mehrheit von 2/3 der
+						erschienenen stimmberechtigten Mitglieder beschlossen werden, soweit
+						sie in der Einladung angekündigt waren. Die Auflösung des Vereins
+						kann nur mit einer Mehrheit von 3/4 der erschienenen
+						stimmberechtigten Mitglieder beschlossen werden, wenn sie in der
+						Einladung angekündigt war.
+					</li>
+					<li>
+						Bei Wahlen ist gewählt, wer die einfache Mehrheit der abgegebenen
+						gültigen Stimmen erhält. Bei Stimmengleichheit findet eine Stichwahl
+						statt.
+					</li>
+					<li>
+						Dem Antrag eines stimmberechtigten Mitgliedes auf geheime Abstimmung
+						muss entsprochen werden.
+					</li>
+					<li>
+						Über Beschlüsse der Mitgliederversammlung ist ein Protokoll zu
+						führen, das vom Schriftführer und bei dessen Abwesenheit von seinem
+						Vertreter zu unterzeichen ist.
+					</li>
+				</ol>
+			</p>
+			<h3><span>§ 8 </span><br /><span>Vorstand</span></h3>
+			<p>
+				<ol>
+					<li>
+						Der engere Vorstand besteht aus
+						<ul>
+							<li>dem ersten Vorsitzenden</li><li>
+								dem zweiten Vorsitzenden
+							</li><li>Schriftführer</li><li>Gerätewart</li><li>Oberst</li><li>
+								Major
+							</li>
+						</ul>
+						Es handelt sich hierbei um den Vorstand im Sinne des § 26 BGB. Je zwei
+						dieser Vorstandsmitglieder vertreten den Verein gemeinschaftlich.
+					</li>
+					<li>
+						Darüber hinaus wählt die Mitgliederversammlung weitere
+						Vorstandsmitglieder, nämlich den sogenannten erweiterten Vorstand,
+						welcher das Offizierskorps bildet und aus neun Mitgliedern besteht.
+						Der Vorstand wird von der Mitgliederversammlung für die Dauer von 3
+						Jahren, gerechnet von der Wahl an, gewählt. Zu Vorstandsmitglieder
+						können nur Mitglieder des Vereins gewählt werden. Mit Beendigung der
+						Mitgliedschaft im Verein endet auch das Amt eines
+						Vorstandsmitgliedes. Die Wiederwahl ist zulässig.
+					</li>
+					<li>
+						Scheidet ein Mitglied des Vorstandes vorzeitig aus, so kann der
+						Vorstand einen Nachfolger wählen. Die Wahl hat Gültigkeit bis zur
+						nächsten Mitgliederversammlung.
+					</li>
+				</ol>
+			</p>
+			<h3>
+				<span>§ 9 </span><br /><span>Sitzung und Beschlüsse des Vorstands</span>
+			</h3>
+			<p>
+				<ol>
+					<li>
+						Außer den dem Vorstand in dieser Satzung oder von der
+						Mitgliederversammlung übertragenen Aufgaben führt der Vorstand die
+						laufenden Geschäfte des Vereins. Er kann den Vorsitzenden oder
+						Vorstandsmitglieder widerruflich zur Führung einzelner Geschäfte
+						bevollmächtigten und auch besondere Zuständigkeiten auf einzelne
+						Vereinsmitglieder übertragen.
+					</li>
+					<li>
+						Der Vorstand tritt zusammen, wenn es die Gegebenheiten erfordern. Er
+						ist beschlussfähig, wenn mindestens vier seiner Mitglieder anwesend
+						sind. Bei der Beschlussfassung entscheidet die Mehrheit der
+						abgegebenen gültigen Stimmen. Bei Stimmengleichheit entscheidet die
+						Stimme des Vorsitzenden, bei dessen Abwesenheit die des
+						stellvertretenden Vorsitzenden.
+					</li>
+				</ol>
+			</p>
+			<h3><span>§ 10 </span><br /><span>Kassenprüfung</span></h3>
+			<p>
+				Die Mitgliederversammlung wählt jeweils für 1 Jahr die Kassenprüfer. Die
+				Kassenprüfer erstatten der Mitgliederversammlung einen Prüfungsbericht
+				und beantragen bei ordnungsgemäßer Führung der Kassengeschäfte die
+				Entlastung des Vorstandes. Die Kassenprüfer dürfen keine
+				Vorstandsmitglieder sein. Wiederwahl ist möglich.
+			</p>
+			<h3><span>§ 11 </span><br /><span>Schützenfest</span></h3>
+			<p>
+				<ol>
+					<li>
+						Das alljährliche Schützenfest wird am dritten Sonntag am Wochenende
+						der Barloer Kirmes - dritter Sonntag im Monat September-
+					</li>
+					<li>
+						Zum Vogelschießen zugelassen werden nur die Mitglieder, welche
+						mindestens ein Jahr ihren Wohnsitz im Kirchspiel Barlo haben oder
+						hatten und das 18. Lebensjahr vollendet haben.
+					</li>
+					<li>
+						Der König erhält vom Verein für den Abschuss des Vogels ein
+						Königsgeld dessen Höhe vom Vorstand festgelegt wird. Zur Königin
+						ausgewählt werden können nur Mädchen und Frauen welche das 17.
+						Lebensjahr vollendet haben und ihren Wohnsitz im Kirchspiel Barlo
+						haben oder hatten.
+					</li>
+					<li>
+						Wer unberechtigter Weise den Vogel abschießt, zum Beispiel weil er
+						die Voraussetzungen der Ziffer 2 nicht erfüllt oder nach Abschuss
+						des Vogels auf die Königswürde verzichtet ist verpflichtet innerhalb
+						einer Stunde einen neuen Vogel für das weitere Vogelschießen zu
+						besorgen und mindestens 100 Liter Bier auszugeben. Außerdem hat er
+						150,00 € in die Vereinskasse zu zahlen.
+					</li>
+				</ol>
+			</p>
+			<h3><span>§ 12 </span><br /><span>Auflösung des Vereins</span></h3>
+			<p>
+				<ol>
+					<li>
+						Bei Auflösung oder Aufhebung des Vereins oder bei Wegfall seines
+						bisherigen Zwecks fällt sein Vermögen an den Verein Pro Barlo e.V. .
+					</li>
+					<li>
+						Falls die Mitgliederversammlung nichts anderes beschließt, wird die
+						Liquidation vom zuletzt eingetragenen Vorstand durchgeführt.
+					</li>
+				</ol>
+			</p>
+			Barlo, den 29.06.2014
+		</div>
+	</TextSection>
+</Layout>
+
+<style>
+	#hero-image {
+		transform: scale(-1, 1);
+	}
+	a {
+		word-break: break-all;
+	}
+	.root {
+		display: flex;
+		flex-direction: column;
+	}
+	h3 {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-top: 2rem;
+	}
+	h3 > br {
+		display: none;
+	}
+	h3 > span {
+		text-align: center;
+	}
+</style>
