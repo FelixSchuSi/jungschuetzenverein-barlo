@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Page.astro';
 import { Container } from '../components/odyssey-theme';
-import Termin from '../components/Termin.astro';
+import Termin, { type TerminProp } from '../components/Termin.astro';
+import { festprogramm } from '../components/festtagsprogramm/festtagsprogramm.astro';
 
 const seo = {
 	title: 'Termine',
@@ -11,14 +12,16 @@ const seo = {
 const tomorrow: Date = new Date();
 tomorrow.setDate(new Date().getDate() + 1);
 
-const termine = [
+const termine: TerminProp[] = [
 	{
+		type: 'Termin',
 		date: new Date('2025-01-04T17:30:00.000Z'),
 		name: 'Jahres&shy;haupt&shy;ver&shy;samm&shy;lung 2025',
 		description: `Alle Jungschützen und die, die es werden wollen sind herzlich zur Jahres&shy;haupt&shy;ver&shy;samm&shy;lung eingeladen. Auf der Tagesordnung stehen u. a. der Jahres- und Kassenbericht sowie die Neuwahlen des Vorstands. Wir freuen uns auf euer Kommen!`,
 		location: 'Landgasthaus Schmitz',
 	},
 	{
+		type: 'Termin',
 		date: new Date('2025-04-19T18:00:00.000Z'),
 		name: 'Oster&shy;disco 2025',
 		description:
@@ -26,41 +29,24 @@ const termine = [
 		location: 'Saal Wissing-Flinzenberg',
 	},
 	{
+		type: 'Termin',
 		date: new Date('2025-09-14T09:00:00.000Z'),
 		name: 'Früh&shy;schoppen 2025',
 		description:
 			'Am Sonntag vor Schützenfest findet ein gemütlicher Umtrunk bei Schmitz statt. Dort können sich neue Jungschützen anmelden und Hüte, Gewehre, Nadeln, Federn und Shirts werden verkauft.',
 		location: 'Landgasthaus Schmitz',
 	},
-	{
-		date: new Date('2025-09-19T16:00:00.000Z'),
-		name: 'Jung&shy;schüt&shy;zen&shy;fest Freitag 2025',
-		description:
-			'In das beste Wochenende des Jahres starten wir um 18:00 Uhr beim Antreten zum Ausholen des Königspaares. Um 20:00 Uhr beginnt die Jungschützendisco im Saal Wissing-Flinzenberg!',
-		location: 'Barlo Dorfplatz',
-	},
-	{
-		date: new Date('2025-09-20T06:30:00.000Z'),
-		name: 'Jung&shy;schüt&shy;zen&shy;fest Samstag 2025',
-		description:
-			'Nach dem Zug durch die Gemeinde, der Gefallenenehrung und dem Kirchgang beginnt das Vogelschießen! Abends werden die Orden vergeben und die Inthronisierung des neuen Königspaares findet statt.',
-		location: 'Barlo Dorfplatz',
-	},
-	{
-		date: new Date('2025-09-21T09:00:00.000Z'),
-		name: 'Jung&shy;schüt&shy;zen&shy;fest Sonntag 2025',
-		description:
-			'Am Sonntag steht Früshoppen, Ausholen des neuen Königspaars und Fahneschlagen auf dem Programm. Abends kann sich das neue Königspaar nochmal richtig beim Thron feiern lassen.',
-		location: 'Barlo Dorfplatz',
-	},
+	...festprogramm,
 	// 2026
 	{
+		type: 'Termin',
 		date: new Date('2026-01-03T17:30:00.000Z'),
 		name: 'Jahres&shy;haupt&shy;ver&shy;samm&shy;lung 2026',
 		description: `Alle Jungschützen und die, die es werden wollen sind herzlich zur Jahres&shy;haupt&shy;ver&shy;samm&shy;lung eingeladen. Auf der Tagesordnung stehen u. a. der Jahres- und Kassenbericht sowie die Neuwahlen des Vorstands. Wir freuen uns auf euer Kommen!`,
 		location: 'Landgasthaus Schmitz',
 	},
 	{
+		type: 'Termin',
 		date: new Date('2026-04-05T18:00:00.000Z'),
 		name: 'Oster&shy;disco 2026',
 		description:
@@ -68,6 +54,7 @@ const termine = [
 		location: 'Saal Wissing-Flinzenberg',
 	},
 	{
+		type: 'Termin',
 		date: new Date('2026-09-13T09:00:00.000Z'),
 		name: 'Früh&shy;schoppen 2026',
 		description:
@@ -75,6 +62,7 @@ const termine = [
 		location: 'Landgasthaus Schmitz',
 	},
 	{
+		type: 'Termin',
 		date: new Date('2026-09-18T16:00:00.000Z'),
 		name: 'Jung&shy;schüt&shy;zen&shy;fest Freitag 2026',
 		description:
@@ -82,6 +70,7 @@ const termine = [
 		location: 'Barlo Dorfplatz',
 	},
 	{
+		type: 'Termin',
 		date: new Date('2026-09-19T06:30:00.000Z'),
 		name: 'Jung&shy;schüt&shy;zen&shy;fest Samstag 2026',
 		description:
@@ -89,6 +78,7 @@ const termine = [
 		location: 'Barlo Dorfplatz',
 	},
 	{
+		type: 'Termin',
 		date: new Date('2026-09-20T09:00:00.000Z'),
 		name: 'Jung&shy;schüt&shy;zen&shy;fest Sonntag 2026',
 		description:
@@ -97,12 +87,14 @@ const termine = [
 	},
 	// 2027
 	{
+		type: 'Termin',
 		date: new Date('2027-01-02T17:30:00.000Z'),
 		name: 'Jahres&shy;haupt&shy;ver&shy;samm&shy;lung 2027',
 		description: `Alle Jungschützen und die, die es werden wollen sind herzlich zur Jahres&shy;haupt&shy;ver&shy;samm&shy;lung eingeladen. Auf der Tagesordnung stehen u. a. der Jahres- und Kassenbericht sowie die Neuwahlen des Vorstands. Wir freuen uns auf euer Kommen!`,
 		location: 'Landgasthaus Schmitz',
 	},
 	{
+		type: 'Termin',
 		date: new Date('2027-04-03T18:00:00.000Z'),
 		name: 'Oster&shy;disco 2027',
 		description:
@@ -110,6 +102,7 @@ const termine = [
 		location: 'Saal Wissing-Flinzenberg',
 	},
 	{
+		type: 'Termin',
 		date: new Date('2027-09-12T09:00:00.000Z'),
 		name: 'Früh&shy;schoppen 2027',
 		description:
@@ -117,6 +110,7 @@ const termine = [
 		location: 'Landgasthaus Schmitz',
 	},
 	{
+		type: 'Termin',
 		date: new Date('2027-09-17T17:00:00.000Z'),
 		name: 'Jung&shy;schüt&shy;zen&shy;fest Freitag 2027',
 		description:
@@ -124,6 +118,7 @@ const termine = [
 		location: 'Barlo Dorfplatz',
 	},
 	{
+		type: 'Termin',
 		date: new Date('2027-09-18T06:30:00.000Z'),
 		name: 'Jung&shy;schüt&shy;zen&shy;fest Samstag 2027',
 		description:
@@ -131,13 +126,14 @@ const termine = [
 		location: 'Barlo Dorfplatz',
 	},
 	{
+		type: 'Termin',
 		date: new Date('2027-09-19T09:00:00.000Z'),
 		name: 'Jung&shy;schüt&shy;zen&shy;fest Sonntag 2027',
 		description:
 			'Am Sonntag steht Früshoppen, Ausholen des neuen Königspaars und Fahneschlagen auf dem Programm. Abends kann sich das neue Königspaar nochmal richtig beim Thron feiern lassen.',
 		location: 'Barlo Dorfplatz',
 	},
-].filter(termin => termin.date > tomorrow);
+].filter(termin => termin.date > tomorrow) as TerminProp[];
 ---
 
 <Layout {seo}>
@@ -186,11 +182,5 @@ const termine = [
 	h2 {
 		margin-top: 2rem;
 		margin-bottom: 0;
-	}
-
-	.h-line {
-		width: 100%;
-		border-bottom: 2px solid var(--theme-primary);
-		margin-top: 1rem;
 	}
 </style>

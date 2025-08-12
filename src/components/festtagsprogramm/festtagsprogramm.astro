@@ -1,0 +1,156 @@
+---
+import Termin, { type TerminProp } from '../Termin.astro';
+
+export const festprogramm: TerminProp[] = [
+	{
+		date: new Date('2025-09-19T18:00:00+02:00'),
+		type: 'EinTagMehrereTermine',
+		termine: [
+			// Freitag
+			{
+				type: 'Termin',
+				date: new Date('2025-09-19T18:00:00+02:00'),
+				name: 'Ausholen des Königspaares',
+				description:
+					'Antreten der Jungschützen zum Ausholen des Königspaares (ohne Hut und Gewehr, mit Nadel)',
+				location: 'Barlo Dorfplatz',
+			},
+			{
+				type: 'Termin',
+				date: new Date('2025-09-19T20:00:00+02:00'),
+				name: 'Disco im Saal',
+				description:
+					'Eintritt 8 €, freier Eintritt für Mitglieder, die beim Antreten eine Nadel tragen',
+				location: 'Saal Wissing-Flinzenberg',
+			},
+			{
+				type: 'Termin',
+				date: new Date('2025-09-19T20:30:00+02:00'),
+				name: 'Empfang der Schützenvereine Bocholt',
+				description: 'Mit T-Shirt halber Eintrittspreis + Empfangsgetränke',
+				location: 'Saal Wissing-Flinzenberg',
+			},
+			{
+				type: 'Termin',
+				date: new Date('2025-09-19T21:30:00+02:00'),
+				name: 'Einmarsch der Jungschützenabteilungen',
+				description: '',
+				location: 'Barlo Dorfplatz',
+			},
+		],
+	},
+	// Samstag
+	{
+		date: new Date('2025-09-20T09:30:00+02:00'),
+		type: 'EinTagMehrereTermine',
+		termine: [
+			{
+				type: 'Termin',
+				date: new Date('2025-09-20T09:30:00+02:00'),
+				name: 'Gefallenenehrung und Zug durch die Gemeinde',
+				description:
+					'Antreten der Mitglieder zur Gefallenenehrung anschließend Zug durch die Gemeinde',
+				location: 'Barlo Dorfplatz',
+			},
+			{
+				type: 'Termin',
+				date: new Date('2025-09-20T10:15:00'),
+				name: 'Andacht, Kranzniederlegung',
+				description: 'Kranzniederledeung und eine kurze Andacht am Ehrenmal',
+				location: 'Ehrenmal',
+			},
+			{
+				type: 'Termin',
+				date: new Date('2025-09-20T11:00:00+02:00'),
+				name: 'Vogelschießen auf dem Kirmesplatz',
+				description: '',
+				location: 'Barlo Dorfplatz',
+			},
+			{
+				type: 'Termin',
+				date: new Date('2025-09-20T18:30:00+02:00'),
+				name: 'Inthronisierung des neuen Königspaares',
+				description:
+					'Inthronisierung des neuen Königspaares und Vergabe der Orden auf dem Kirchplatz, anschließend Ausklang mit Musik und Tanz im Saal Wissing Flinzenberg',
+				location: 'Kirchplatz',
+			},
+		],
+	},
+	{
+		date: new Date('2025-09-21T11:00:00+02:00'),
+		type: 'EinTagMehrereTermine',
+		termine: [
+			// Sonntag
+			{
+				type: 'Termin',
+				date: new Date('2025-09-21T11:00:00+02:00'),
+				name: 'Frühschoppen',
+				description: 'Frühshoppen auf dem Kirmesplatz',
+				location: 'Barlo Dorfplatz',
+			},
+			{
+				type: 'Termin',
+				date: new Date('2025-09-21T14:30:00+02:00'),
+				name: 'Ausholen des Königspaares & Obersts',
+				description:
+					'Antreten der Mitglieder zum Ausholen des Königspaares, des Obersts, der verheirateten Mitglieder und des Vorstandes der Schützengilde bei der neuen Königin. Anschließend Zug zum Kirmesplatz',
+				location: 'Barlo Dorfplatz',
+			},
+			{
+				type: 'Termin',
+				date: new Date('2025-09-21T18:45:00'),
+				name: 'Fahneschlagen',
+				description: 'Fahneschlagen auf dem Kirchplatz',
+				location: 'Kirchplatz',
+			},
+			{
+				type: 'Termin',
+				date: new Date('2025-09-21T19:30:00+02:00'),
+				name: 'Krönungsball',
+				description: 'Krönungsball mit der Partyband „Rendezvous“',
+				location: 'Saal Wissing-Flinzenberg',
+			},
+		],
+	},
+];
+---
+
+<!-- <h2>Festtagsprogramm</h2> -->
+<div class="root-full-width">
+	<div class="root">
+		{festprogramm.map(termin => <Termin termin={termin} />)}
+	</div>
+</div>
+<style>
+	.festprogramm {
+		font-family: sans-serif;
+	}
+	h2 {
+		margin-bottom: 1rem;
+		border-bottom: 2px solid #ccc;
+		padding-bottom: 0.5rem;
+	}
+	h3 {
+		margin-top: 1rem;
+		color: #2a4d69;
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+	li {
+		margin: 0.3rem 0;
+	}
+	.root-full-width {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.root {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 1rem;
+	}
+</style>

@@ -4,6 +4,8 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
 import { AnnouncementBar, Container } from '../components/odyssey-theme';
 import InstaProfileEmbed from '../components/insta-profile-embed/InstaProfileEmbed.astro';
+import Festtagsprogramm from '../components/festtagsprogramm/festtagsprogramm.astro';
+import SchuetzenfestCountdown from '../components/schuetzenfest-countdown/SchuetzenfestCountdown.astro';
 ---
 
 <AnnouncementBar
@@ -15,38 +17,45 @@ import InstaProfileEmbed from '../components/insta-profile-embed/InstaProfileEmb
 	<HomeHeroSection />
 	<Container>
 		<section class="feature-card__section">
-			<h2>Was gibt es auf Insta?</h2>
-			<p>
-				Folge uns auf Instagram @jungschuetzenvereinbarlo_ev_ um auf dem
-				Laufenden zu bleiben!
-			</p>
+			<SchuetzenfestCountdown />
 
-			<InstaProfileEmbed />
+			<Festtagsprogramm />
 		</section>
+		<Container>
+			<section class="feature-card__section">
+				<h2>Was gibt es auf Insta?</h2>
+				<p>
+					Folge uns auf Instagram @jungschuetzenvereinbarlo_ev_ um auf dem
+					Laufenden zu bleiben!
+				</p>
+
+				<InstaProfileEmbed />
+			</section>
+		</Container>
 	</Container>
-</Layout>
 
-<style>
-	.feature-card__section {
-		margin: var(--section-margin) auto;
-		display: flex;
-		flex-direction: column;
-	}
-
-	.feature-card__grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: var(--theme-grid-gap);
-	}
-	@media (max-width: 768px) {
-		.feature-card__grid {
-			grid-template-columns: 1fr;
+	<style>
+		.feature-card__section {
+			margin: var(--section-margin) auto;
+			display: flex;
+			flex-direction: column;
 		}
-	}
-</style>
 
-<style is:global>
-	.feature-card__section > iframe {
-		align-self: center;
-	}
-</style>
+		.feature-card__grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: var(--theme-grid-gap);
+		}
+		@media (max-width: 768px) {
+			.feature-card__grid {
+				grid-template-columns: 1fr;
+			}
+		}
+	</style>
+
+	<style is:global>
+		.feature-card__section > iframe {
+			align-self: center;
+		}
+	</style>
+</Layout>

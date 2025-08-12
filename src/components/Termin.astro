@@ -14,18 +14,30 @@ const timeFormatter = new Intl.DateTimeFormat('de-DE', {
 	timeZone: 'Europe/Berlin',
 });
 
-export interface Termin {
+export interface Props {
+	termin: TerminProp;
+}
+export type Termin = {
+	type: 'Termin';
 	date: Date;
 	name: string;
 	description: string;
 	location: string;
-}
-
-interface Props {
-	termin: Termin;
-}
-
+};
+export type EinTagMehrereTermine = {
+	type: 'EinTagMehrereTermine';
+	date: Date;
+	termine: Termin[];
+};
+export type TerminProp = Termin | EinTagMehrereTermine;
 const { termin } = Astro.props;
+
+let alleTermine: Termin[] = [];
+if (termin.type === 'Termin') {
+	alleTermine = [termin];
+} else {
+	alleTermine = termin.termine;
+}
 ---
 
 <div class="termin-item-root">
@@ -34,18 +46,31 @@ const { termin } = Astro.props;
 		<div class="month">{monthFormatter.format(termin.date)}.</div>
 	</div>
 	<div class="right">
-		<div class="time-and-location">
-			<div class="time">
-				<Icon name="ic:baseline-access-time-filled" width={24} height={24} />
-				<div>{timeFormatter.format(termin.date)}</div>
-			</div>
-			<div class="location">
-				<Icon name="ic:baseline-location-on" width={24} height={24} />
-				<div>{termin.location}</div>
-			</div>
-		</div>
-		<h3 class="name" set:html={termin.name} />
-		<div class="description" set:html={termin.description} />
+		{
+			alleTermine.map((t: Termin) => (
+				<>
+					<div class="termin-root">
+						<div class="time-and-location">
+							<div class="time">
+								<Icon
+									name="ic:baseline-access-time-filled"
+									width={24}
+									height={24}
+								/>
+								<div>{timeFormatter.format(t.date)}</div>
+							</div>
+							<div class="location">
+								<Icon name="ic:baseline-location-on" width={24} height={24} />
+								<div>{t.location}</div>
+							</div>
+						</div>
+						<h3 class="name" set:html={t.name} />
+						<div class="description" set:html={t.description} />
+					</div>
+					<div class="h-line" />
+				</>
+			))
+		}
 	</div>
 </div>
 
@@ -89,6 +114,20 @@ const { termin } = Astro.props;
 		border-top-right-radius: calc(var(--theme-shape-radius) / 2);
 		border-bottom-right-radius: calc(var(--theme-shape-radius) / 2);
 		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.h-line {
+		width: 100%;
+		border-top: 1px solid var(--theme-primary);
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		opacity: 20%;
+	}
+
+	.h-line:last-child {
+		display: none;
 	}
 
 	.time-and-location {
@@ -109,12 +148,15 @@ const { termin } = Astro.props;
 	}
 
 	.description {
-		max-width: 30rem;
+		max-width: 40rem;
 	}
 
 	h3 {
 		word-break: break-all;
+		font-size: xx-large;
+		max-width: 40rem;
 	}
+
 	.name,
 	.description {
 		word-break: break-word;
