@@ -56,10 +56,8 @@ const image = new URL(Astro.props.image || './favicon/favicon.ico', Astro.site);
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={image} />
 
-<!-- Google Analytics -->
-<script>
-	var host = window.location.hostname;
-	if (host != 'localhost') {
-		// Place Google Analytics code here.
-	}
-</script>
+<!-- goatcounter Analytics -->
+<script
+	data-goatcounter="https://jungschuetzenvereinbarlo.goatcounter.com/count"
+	async
+	src="//gc.zgo.at/count.js"></script>
