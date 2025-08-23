@@ -18,10 +18,6 @@ const images = fotosJungschuetzenfest2024.map(data => {
 		src: data.srcXL,
 		alt: 'Foto vom Jungschützenfest: ' + data.name,
 		format: 'webp',
-		width: data.width,
-		height: data.height,
-		rotateLeft90: data.rotateLeft90 ?? false,
-		rotateRight90: data.rotateRight90 ?? false,
 	};
 });
 ---
@@ -53,13 +49,7 @@ const images = fotosJungschuetzenfest2024.map(data => {
 						href={`/images?image=${index}`}
 						data-carousel-index={index}
 					>
-						<img
-							class={`${img.rotateLeft90 ? 'rotate-left-90' : ''}
-			${img.rotateRight90 ? 'rotate-right-90' : ''}`}
-							src={img.srcS}
-							alt={img.alt}
-							loading="lazy"
-						/>
+						<img src={img.srcS} alt={img.alt} loading="lazy" />
 					</a>
 				);
 			})

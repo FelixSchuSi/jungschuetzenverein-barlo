@@ -8,10 +8,10 @@ interface Props {
 		src: string;
 		alt: string;
 		format: string;
-		width: number;
-		height: number;
-		rotateLeft90: boolean;
-		rotateRight90: boolean;
+		width?: number;
+		height?: number;
+		rotateLeft90?: boolean;
+		rotateRight90?: boolean;
 	}[];
 }
 const { images = [] } = Astro.props;
