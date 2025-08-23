@@ -1,0 +1,16 @@
+{
+	"name": "preprocess-images",
+	"version": "1.0.0",
+	"description": "",
+	"license": "ISC",
+	"author": "",
+	"type": "module",
+	"main": "preprocess.ts",
+	"scripts": {
+		"start": "node preprocess.ts"
+	},
+	"dependencies": {
+		"form-data": "^4.0.4",
+		"node-fetch": "^3.3.2"
+	}
+}
