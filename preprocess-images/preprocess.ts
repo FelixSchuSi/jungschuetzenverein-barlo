@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import sharp from 'sharp';
+import exifr from 'exifr';
 import { parseArgs } from './parse-args.ts';
 
 const SIZES: number[] = [400, 1000];
@@ -55,7 +56,32 @@ async function main(): Promise<void> {
 
 	const imageFiles = files.filter(f => /\.(jpe?g|png|webp|avif)$/i.test(f));
 
-	if (imageFiles.length === 0) {
+	const filesWithDates = await Promise.all(
+		imageFiles.map(async f => {
+			const filePath = path.join(inputDir, f);
+			let dateTaken: Date | null = null;
+			try {
+				const exif = await exifr.parse(filePath, ['DateTimeOriginal']);
+				if (exif && exif.DateTimeOriginal) {
+					dateTaken = exif.DateTimeOriginal;
+				}
+			} catch {
+				// ignore files without exif
+			}
+			// fallback: file modified time
+			if (!dateTaken) {
+				const stat = await fs.stat(filePath);
+				dateTaken = stat.mtime;
+			}
+			return { file: f, date: dateTaken };
+		}),
+	);
+
+	const sortedFiles = filesWithDates
+		.sort((a, b) => a.date.getTime() - b.date.getTime())
+		.map(entry => entry.file);
+
+	if (sortedFiles.length === 0) {
 		console.log('No images found in input dir.');
 		return;
 	}
@@ -65,17 +91,15 @@ async function main(): Promise<void> {
 	);
 
 	await Promise.all(
-		imageFiles.map((file, i) => {
+		sortedFiles.map((file, i) => {
 			try {
-				processImage(file, inputDir, outputDir, i, imageFiles.length);
+				processImage(file, inputDir, outputDir, i, sortedFiles.length);
 			} catch (e) {
 				console.log(`Image could not be processed: ${file}`);
 				console.log(e);
 			}
 		}),
 	);
-
-	console.log('🎉 All images processed!');
 }
 
 main();

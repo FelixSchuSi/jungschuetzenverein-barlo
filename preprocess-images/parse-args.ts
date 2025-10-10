@@ -3,6 +3,7 @@ export interface CliArgs {
 	outputDir: string | undefined;
 	albumId: string | undefined;
 	apiKey: string | undefined;
+	outputFile: string | undefined;
 }
 
 export function parseArgs(argv: string[]): CliArgs {
@@ -26,5 +27,6 @@ export function parseArgs(argv: string[]): CliArgs {
 		outputDir: args['output-dir'],
 		albumId: args['album-id'],
 		apiKey: args['api-key'],
+		outputFile: args['output-file'],
 	};
 }

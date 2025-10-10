@@ -1,17 +1,8 @@
 ---
 interface Props {
 	images: {
-		srcS: string;
-		srcM: string;
 		srcL: string;
-		srcXL: string;
-		src: string;
 		alt: string;
-		format: string;
-		width?: number;
-		height?: number;
-		rotateLeft90?: boolean;
-		rotateRight90?: boolean;
 	}[];
 }
 const { images = [] } = Astro.props;
@@ -20,17 +11,8 @@ const { images = [] } = Astro.props;
 <script>
 	class CarouselWrapper extends HTMLElement {
 		private images: {
-			srcS: string;
-			srcM: string;
 			srcL: string;
-			srcXL: string;
-			src: string;
 			alt: string;
-			format: string;
-			width: number;
-			height: number;
-			rotateLeft90: boolean;
-			rotateRight90: boolean;
 		}[];
 		private currentSlideIndex: number = 0;
 		private slidesRoot: HTMLElement;
@@ -107,8 +89,8 @@ const { images = [] } = Astro.props;
 			const imageData = this.images[slideIndex]!;
 			return `
         <img 
-          class="slide ${isActiveSlide ? 'active-slide' : 'prepared-slide'} ${imageData.rotateLeft90 ? 'rotate-left-90' : ''} ${imageData.rotateRight90 ? 'rotate-right-90' : ''}"
-          src=${imageData.srcXL}
+          class="slide ${isActiveSlide ? 'active-slide' : 'prepared-slide'}"
+          src=${imageData.srcL}
           alt=${imageData.alt}
           loading="eager"
           decoding="sync">
@@ -347,13 +329,5 @@ const { images = [] } = Astro.props;
 
 	img.slide {
 		max-height: 95vh;
-	}
-
-	img.rotate-left-90 {
-		transform: rotate(-90deg);
-	}
-
-	img.rotate-right-90 {
-		transform: rotate(90deg);
 	}
 </style>
