@@ -1,24 +1,23 @@
 ---
 import Layout from '../layouts/Page.astro';
 import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
-import { Container } from '../components/odyssey-theme';
+import { AnnouncementBar, Container } from '../components/odyssey-theme';
 import InstaProfileEmbed from '../components/insta-profile-embed/InstaProfileEmbed.astro';
-import Festtagsprogramm from '../components/festtagsprogramm/festtagsprogramm.astro';
-import SchuetzenfestCountdown from '../components/schuetzenfest-countdown/SchuetzenfestCountdown.astro';
+import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
 ---
 
-<!-- <AnnouncementBar
-	text="Die Fotos vom Jungschützenfest 2024 sind jetzt online!"
-	href={BASE_PATH_WITHOUT_DOMAIN + '/fotos/jungschuetzenfest-2024'}
+<AnnouncementBar
+	text="Die Fotos vom Jungschützenfest 2025 sind jetzt online!"
+	href={BASE_PATH_WITHOUT_DOMAIN + '/fotos/jungschuetzenfest-2025'}
 	slot="announcement-bar"
-/> -->
+/>
 <Layout>
 	<HomeHeroSection />
 	<Container>
 		<section class="feature-card__section">
-			<SchuetzenfestCountdown />
+			<!-- <SchuetzenfestCountdown /> -->
 
-			<Festtagsprogramm />
+			<!-- <Festtagsprogramm /> -->
 		</section>
 		<Container>
 			<section class="feature-card__section">
