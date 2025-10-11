@@ -48,7 +48,7 @@ async function main(): Promise<void> {
 	const { inputDir, outputDir } = parseArgs(process.argv);
 	if (!inputDir || !outputDir) {
 		throw new Error(
-			'Usage: node compress.ts --input-dir <dir> --output-dir <dir>',
+			'Usage: node preprocess.ts --input-dir <dir> --output-dir <dir>',
 		);
 	}
 

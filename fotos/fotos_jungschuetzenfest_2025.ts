@@ -1840,6 +1840,11 @@ export const fotosJungschuetzenfest2025 = [
 	// 	srcS: 'https://iili.io/KNdthQV.webp',
 	// },
 	{
+		name: '367.webp',
+		srcL: 'https://iili.io/KNjF3IR.webp',
+		srcS: 'https://iili.io/KNjnP6l.webp',
+	},
+	{
 		name: '368.webp',
 		srcL: 'https://iili.io/KN25rNe.webp',
 		srcS: 'https://iili.io/KNdtwCB.webp',
