@@ -47,7 +47,7 @@ const termine: TerminProp[] = [
 	},
 	{
 		type: 'Termin',
-		date: new Date('2026-04-05T18:00:00.000Z'),
+		date: new Date('2026-04-26T18:00:00.000Z'),
 		name: 'Oster&shy;disco 2026',
 		description:
 			'Am Ostersamstag kann der Jungschütze nochmal richtig das Tanzbein schwingen! Der Jungschützenverein lädt zur alljährlichen Oster&shy;disco im Saal Wissing Flinzenberg ein.',
@@ -140,12 +140,6 @@ const termine: TerminProp[] = [
 	<Container>
 		<div class="root-full-width">
 			<div class="root">
-				<h2>Termine 2025</h2>
-				{
-					termine
-						.filter(e => e.date.getFullYear() === 2025)
-						.map(termin => <Termin termin={termin} />)
-				}
 				<h2>Termine 2026</h2>
 				{
 					termine
