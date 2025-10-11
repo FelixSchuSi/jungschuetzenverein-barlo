@@ -114,16 +114,16 @@ export const fotosJungschuetzenfest2025 = [
 		srcL: 'https://iili.io/KN2C71e.webp',
 		srcS: 'https://iili.io/KNdSsrQ.webp',
 	},
-	{
-		name: '023.webp',
-		srcL: 'https://iili.io/KN2CYru.webp',
-		srcS: 'https://iili.io/KNdSQ2V.webp',
-	},
-	{
-		name: '024.webp',
-		srcL: 'https://iili.io/KN2C0kx.webp',
-		srcS: 'https://iili.io/KNdSZYB.webp',
-	},
+	// {
+	// 	name: '023.webp',
+	// 	srcL: 'https://iili.io/KN2CYru.webp',
+	// 	srcS: 'https://iili.io/KNdSQ2V.webp',
+	// },
+	// {
+	// 	name: '024.webp',
+	// 	srcL: 'https://iili.io/KN2C0kx.webp',
+	// 	srcS: 'https://iili.io/KNdSZYB.webp',
+	// },
 	{
 		name: '025.webp',
 		srcL: 'https://iili.io/KN2C1mQ.webp',
@@ -174,21 +174,21 @@ export const fotosJungschuetzenfest2025 = [
 		srcL: 'https://iili.io/KN2CkpR.webp',
 		srcS: 'https://iili.io/KNdUBTX.webp',
 	},
-	{
-		name: '035.webp',
-		srcL: 'https://iili.io/KN2C8Ip.webp',
-		srcS: 'https://iili.io/KNdUCjn.webp',
-	},
+	// {
+	// 	name: '035.webp',
+	// 	srcL: 'https://iili.io/KN2C8Ip.webp',
+	// 	srcS: 'https://iili.io/KNdUCjn.webp',
+	// },
 	{
 		name: '036.webp',
 		srcL: 'https://iili.io/KN2CUQI.webp',
 		srcS: 'https://iili.io/KNdUxCG.webp',
 	},
-	{
-		name: '037.webp',
-		srcL: 'https://iili.io/KN2CrBt.webp',
-		srcS: 'https://iili.io/KNdUzGf.webp',
-	},
+	// {
+	// 	name: '037.webp',
+	// 	srcL: 'https://iili.io/KN2CrBt.webp',
+	// 	srcS: 'https://iili.io/KNdUzGf.webp',
+	// },
 	{
 		name: '038.webp',
 		srcL: 'https://iili.io/KN2Ci2s.webp',
@@ -1574,11 +1574,11 @@ export const fotosJungschuetzenfest2025 = [
 		srcL: 'https://iili.io/KN2Rq1p.webp',
 		srcS: 'https://iili.io/KNdQkMP.webp',
 	},
-	{
-		name: '315.webp',
-		srcL: 'https://iili.io/KN2RBrN.webp',
-		srcS: 'https://iili.io/KNdQgSa.webp',
-	},
+	// {
+	// 	name: '315.webp',
+	// 	srcL: 'https://iili.io/KN2RBrN.webp',
+	// 	srcS: 'https://iili.io/KNdQgSa.webp',
+	// },
 	{
 		name: '316.webp',
 		srcL: 'https://iili.io/KN2Rn2I.webp',
@@ -1834,11 +1834,11 @@ export const fotosJungschuetzenfest2025 = [
 		srcL: 'https://iili.io/KN25UH7.webp',
 		srcS: 'https://iili.io/KNdtXhQ.webp',
 	},
-	{
-		name: '367.webp',
-		srcL: 'https://iili.io/KN25gR9.webp',
-		srcS: 'https://iili.io/KNdthQV.webp',
-	},
+	// {
+	// 	name: '367.webp',
+	// 	srcL: 'https://iili.io/KN25gR9.webp',
+	// 	srcS: 'https://iili.io/KNdthQV.webp',
+	// },
 	{
 		name: '368.webp',
 		srcL: 'https://iili.io/KN25rNe.webp',
