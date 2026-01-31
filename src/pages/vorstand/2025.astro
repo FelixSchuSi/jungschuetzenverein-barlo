@@ -1,3 +1,107 @@
 ---
-return Astro.rewrite('/vorstand');
+import type { VorstandsMitglied } from '../../layouts/types';
+import VorstandPage from '../../layouts/VorstandPage.astro';
+
+export const vorstand2025Einzelbilder: VorstandsMitglied[] = [
+	{
+		src: 'https://iili.io/2zMijBj.md.webp',
+		position: 'Vereins&shy;führer',
+		firstname: 'Chris',
+		lastname: 'Frankemölle',
+	},
+	{
+		src: 'https://iili.io/FxgcW3G.md.webp',
+		position: 'Stellv. Vereins&shy;führer',
+		firstname: 'Lukas',
+		lastname: 'Kampshoff',
+	},
+	{
+		src: 'https://iili.io/FxgcYpp.md.webp',
+		position: 'Schrift&shy;führer',
+		firstname: 'Jonas',
+		lastname: 'Pooth',
+	},
+	{
+		src: 'https://iili.io/2zMiXLb.md.webp',
+		position: 'Geräte&shy;wart',
+		firstname: 'Felix',
+		lastname: 'Schulze Sindern',
+	},
+	{
+		src: 'https://iili.io/2zMighg.md.webp',
+		position: 'O&shy;berst',
+		firstname: 'Matthias',
+		lastname: 'Welling',
+	},
+	{
+		src: 'https://iili.io/2zMi6CJ.md.webp',
+		position: 'Ma&shy;jor',
+		firstname: 'Robin',
+		lastname: 'Heisterkamp',
+	},
+	{
+		src: 'https://iili.io/FxgccTN.md.webp',
+		position: 'Haupt&shy;mann',
+		firstname: 'Janis',
+		lastname: 'Wiltink',
+	},
+	{
+		src: 'https://iili.io/2zMiwEx.md.webp',
+		position: 'Fähn&shy;rich',
+		firstname: 'David',
+		lastname: 'Mölders',
+	},
+	{
+		src: 'https://iili.io/2zMie2V.md.webp',
+		position: '1. Fahnen&shy;offi&shy;zier',
+		firstname: 'Lukas',
+		lastname: 'Gustedt',
+	},
+	{
+		src: 'https://iili.io/2zMiNrQ.md.webp',
+		position: '2. Fahnen&shy;offi&shy;zier',
+		firstname: 'Finn',
+		lastname: 'Hölter',
+	},
+	{
+		src: 'https://iili.io/FxgcECX.md.webp',
+		position: 'Feld&shy;webel',
+		firstname: 'Jonas',
+		lastname: 'Wübling',
+	},
+	{
+		src: 'https://iili.io/FxgcM4s.md.webp',
+		position: 'Ad&shy;ju&shy;tant vom O&shy;berst',
+		firstname: 'Leon',
+		lastname: 'Giesing',
+	},
+	{
+		src: 'https://iili.io/FxgcGGn.md.webp',
+		position: 'Ad&shy;ju&shy;tant vom Ma&shy;jor',
+		firstname: 'Mirko',
+		lastname: 'Renzel',
+	},
+	{
+		position: 'Ad&shy;jut&shy;ant vom Haupt&shy;mann',
+		firstname: 'Joshua',
+		lastname: 'Hidding',
+		src: 'https://iili.io/FxgcR3J.md.webp',
+	},
+	{
+		src: 'https://iili.io/Fxgc7vR.md.webp',
+		position: 'Kut&shy;scher',
+		firstname: 'Bendix',
+		lastname: 'Wülfert',
+	},
+];
+
+const pageData = {
+	einzelBilder: vorstand2025Einzelbilder,
+	gruppenBild: 'https://iili.io/KNjF3IR.webp',
+	jahr: 2025,
+};
+
+Astro.props.image = pageData.gruppenBild;
 ---
+
+<VorstandPage {...pageData} />

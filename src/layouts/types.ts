@@ -16,13 +16,7 @@ export type VorstandsPosition =
 	| 'Kut&shy;scher';
 
 export interface VorstandsMitglied {
-	filename: string;
-	srcL: string;
-	srcXL: string;
-	width: number;
-	height: number;
-	srcS: string;
-	srcM: string;
+	src: string;
 	position: VorstandsPosition;
 	firstname: string;
 	lastname: string;
