@@ -3,11 +3,25 @@ import Layout from '../layouts/Page.astro';
 import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
 import HeroSection from '../components/sections/heros/HeroSection.astro';
 import { TextSection } from '../components/odyssey-theme';
+import { einzelbilder } from './vorstand/index.astro';
 
 const seo = {
 	title: `Impressum | Jungschützenverein Barlo e. V.`,
 	description: `Das Impressum für die Website vom Jungschützenverein Barlo e. V.`,
 };
+
+const vereinsfuehrer = einzelbilder.find(
+	person => person.position === 'Vereins&shy;führer',
+);
+const stellv = einzelbilder.find(
+	person => person.position === 'Stellv. Vereins&shy;führer',
+);
+const geratewawrt = einzelbilder.find(
+	person => person.position === 'Geräte&shy;wart',
+);
+const schriftfuehrer = einzelbilder.find(
+	person => person.position === 'Schrift&shy;führer',
+);
 ---
 
 <Layout {seo}>
@@ -46,10 +60,16 @@ const seo = {
 
 		<p>
 			<strong>Vertreten durch:</strong><br />
-			Vereinsf&uuml;hrer: Christoph Frankem&ouml;lle<br />
-			Stellv. Vereinsf&uuml;hrer: Thomas Schmitz<br />
-			Schriftf&uuml;hrer: Lukas Kampshoff<br />
-			Ger&auml;tewart: Felix Schulze Sindern
+			Vereinsf&uuml;hrer: {
+				`${vereinsfuehrer.firstname} ${vereinsfuehrer.lastname}`
+			}<br />
+			Stellv. Vereinsf&uuml;hrer: {`${stellv.firstname} ${stellv.lastname}`}
+			<br />
+			Schriftf&uuml;hrer: {
+				`${schriftfuehrer.firstname} ${schriftfuehrer.lastname}`
+			}
+			<br />
+			Ger&auml;tewart: {`${geratewawrt.firstname} ${geratewawrt.lastname}`}
 		</p>
 
 		<h3>Kontakt</h3>
