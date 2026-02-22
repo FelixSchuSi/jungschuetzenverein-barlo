@@ -12,16 +12,29 @@ const seo = {
 
 const vereinsfuehrer = einzelbilder.find(
 	person => person.position === 'Vereins&shy;führer',
-);
+)!;
 const stellv = einzelbilder.find(
 	person => person.position === 'Stellv. Vereins&shy;führer',
-);
+)!;
 const geratewawrt = einzelbilder.find(
 	person => person.position === 'Geräte&shy;wart',
-);
+)!;
 const schriftfuehrer = einzelbilder.find(
 	person => person.position === 'Schrift&shy;führer',
-);
+)!;
+
+if (vereinsfuehrer === undefined) {
+	throw new Error('Vereinsführer nicht gefunden');
+}
+if (stellv === undefined) {
+	throw new Error('Stellv. Vereinsführer nicht gefunden');
+}
+if (geratewawrt === undefined) {
+	throw new Error('Gerätewart nicht gefunden');
+}
+if (schriftfuehrer === undefined) {
+	throw new Error('Schriftführer nicht gefunden');
+}
 ---
 
 <Layout {seo}>
