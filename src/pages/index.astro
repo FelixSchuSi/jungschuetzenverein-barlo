@@ -4,6 +4,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 import { AnnouncementBar, Container } from '../components/odyssey-theme';
 import InstaProfileEmbed from '../components/insta-profile-embed/InstaProfileEmbed.astro';
 import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
+import Countdown from '../components/countdown/Countdown.astro';
 ---
 
 <AnnouncementBar
@@ -14,12 +15,39 @@ import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
 <Layout>
 	<HomeHeroSection />
 	<Container>
-		<!-- <section class="feature-card__section">
-			<SchuetzenfestCountdown />
-
-			<Festtagsprogramm />
-		</section> -->
-
+		<section class="feature-card__section">
+			<Countdown
+				eventName="zur Osterdisco"
+				startDate={new Date('2026-04-04T20:00:00+02:00')}
+			/>
+			<div class="osterdisco-side-by-side">
+				<img
+					class="osterdisco-flyer"
+					src={BASE_PATH_WITHOUT_DOMAIN +
+						'/assets/images/osterdisco_flyer_klein.webp'}
+				/>
+				<div class="osterdisco-text">
+					<p>
+						Am <strong>4. April 2026</strong> findet unsere legendäre <strong
+							>Osterdisco</strong
+						> statt! Sei dabei und feier mit uns bis in die frühen Morgenstunden 🔥💯
+					</p>
+					<p>Hier die Eckdaten:</p>
+					<ul>
+						<li><strong>Datum:</strong> 4. April 2026</li>
+						<li><strong>Uhrzeit:</strong> 20:00 Uhr</li>
+						<li><strong>Ort:</strong> Saal Wissing-Flinzenberg</li>
+						<li><strong>Musik:</strong> DJ Nightlife Media</li>
+					</ul>
+				</div>
+			</div>
+			<!-- <Countdown
+				eventName="zum Jungschützenfest"
+				startDate={new Date('2025-09-19T18:00:00+02:00')}
+				bottomText="Bis dahin kannst du dir das in den Kalender eintragen:"
+			/> -->
+			<!-- <Festtagsprogramm /> -->
+		</section>
 		<section class="feature-card__section">
 			<h2>Was gibt es auf Insta?</h2>
 			<p>
@@ -30,7 +58,6 @@ import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
 			<InstaProfileEmbed />
 		</section>
 	</Container>
-
 	<style>
 		.feature-card__section {
 			margin: var(--section-margin) auto;
@@ -46,6 +73,35 @@ import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
 		@media (max-width: 768px) {
 			.feature-card__grid {
 				grid-template-columns: 1fr;
+			}
+		}
+		.osterdisco-flyer {
+			/* width: 100%; */
+			/* max-width: 400px; */
+			align-self: center;
+			max-height: 80vh;
+			border-radius: var(--theme-shape-radius);
+		}
+		.osterdisco-side-by-side {
+			display: flex;
+			flex-direction: row;
+			gap: 1rem;
+			/* justify-content: space-between; */
+			align-items: center;
+			width: 100%;
+		}
+
+		.osterdisco-text {
+			/* flex-grow: 2; */
+			max-width: 600px;
+		}
+		.osterdisco-text > * {
+			max-width: 600px;
+		}
+
+		@media (max-width: 768px) {
+			.osterdisco-text {
+				display: none;
 			}
 		}
 	</style>

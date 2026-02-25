@@ -1,0 +1,57 @@
+---
+export interface Props {
+	eventName: string;
+	bottomText?: string;
+	startDate: Date;
+}
+const { eventName, bottomText, startDate }: Props = Astro.props;
+---
+
+<h2
+	id="countdown"
+	x-start-date={startDate.toISOString()}
+	x-bottom-text={bottomText}
+	x-event-name={eventName}
+>
+</h2>
+{bottomText && <p>{bottomText}</p>}
+<script>
+	const element = document.getElementById('countdown');
+	if (!element) throw Error('Countdown element not found');
+	const eventName: string | null = element.getAttribute('x-event-name');
+	const startDateStr: string | null = element.getAttribute('x-start-date');
+	if (startDateStr === null) throw Error('Invalid date in countdown');
+	const startDate: Date = new Date(startDateStr);
+	if (eventName === null || startDate === null) {
+		console.error(
+			`one attribute is missing: eventName=${eventName}, startDate=${startDate}`,
+		);
+
+		throw Error('Missing required attributes for countdown');
+	}
+
+	function updateCountdown() {
+		if (eventName === null || startDate === null) {
+			return;
+		}
+		const now = new Date();
+		let diffMs = startDate.getTime() - now.getTime();
+		if (!element) return;
+
+		if (diffMs <= 0) {
+			diffMs = 0;
+		}
+
+		const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+		const diffHours = Math.floor(
+			(diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+		);
+		const diffMinutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+		const diffSeconds = Math.floor((diffMs % (1000 * 60)) / 1000);
+
+		element.textContent = `Nur noch ${diffDays} Tage, ${diffHours} Stunden, ${diffMinutes} Minuten und ${diffSeconds} Sekunden bis ${eventName}!`;
+	}
+
+	updateCountdown();
+	setInterval(updateCountdown, 1000);
+</script>
