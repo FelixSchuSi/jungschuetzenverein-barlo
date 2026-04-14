@@ -1,26 +1,24 @@
 ---
 import Layout from '../layouts/Page.astro';
 import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
-import { AnnouncementBar, Container } from '../components/odyssey-theme';
+import { Container } from '../components/odyssey-theme';
 import InstaProfileEmbed from '../components/insta-profile-embed/InstaProfileEmbed.astro';
-import { BASE_PATH_WITHOUT_DOMAIN } from '../../base-path.mjs';
-import Countdown from '../components/countdown/Countdown.astro';
 ---
 
-<AnnouncementBar
+<!-- <AnnouncementBar
 	text="Die Fotos vom Jungschützenfest 2025 sind jetzt online!"
 	href={BASE_PATH_WITHOUT_DOMAIN + '/fotos/jungschuetzenfest-2025'}
 	slot="announcement-bar"
-/>
+/> -->
 <Layout>
 	<HomeHeroSection />
 	<Container>
 		<section class="feature-card__section">
-			<Countdown
+			<!-- <Countdown
 				eventName="zur Osterdisco"
 				startDate={new Date('2026-04-04T20:00:00+02:00')}
-			/>
-			<div class="osterdisco-side-by-side">
+			/> -->
+			<!-- <div class="osterdisco-side-by-side">
 				<img
 					class="osterdisco-flyer"
 					src={BASE_PATH_WITHOUT_DOMAIN +
@@ -40,7 +38,7 @@ import Countdown from '../components/countdown/Countdown.astro';
 						<li><strong>Musik:</strong> DJ Nightlife Media</li>
 					</ul>
 				</div>
-			</div>
+			</div> -->
 			<!-- <Countdown
 				eventName="zum Jungschützenfest"
 				startDate={new Date('2025-09-19T18:00:00+02:00')}
