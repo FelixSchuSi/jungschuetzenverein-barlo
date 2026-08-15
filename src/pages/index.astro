@@ -2,7 +2,9 @@
 import Layout from '../layouts/Page.astro';
 import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
 import { Container } from '../components/odyssey-theme';
+import Festtagsprogramm from '../components/festtagsprogramm/festtagsprogramm.astro';
 import InstaProfileEmbed from '../components/insta-profile-embed/InstaProfileEmbed.astro';
+import Countdown from '../components/countdown/Countdown.astro';
 ---
 
 <!-- <AnnouncementBar
@@ -39,12 +41,12 @@ import InstaProfileEmbed from '../components/insta-profile-embed/InstaProfileEmb
 					</ul>
 				</div>
 			</div> -->
-			<!-- <Countdown
+			<Countdown
 				eventName="zum Jungschützenfest"
-				startDate={new Date('2025-09-19T18:00:00+02:00')}
-				bottomText="Bis dahin kannst du dir das in den Kalender eintragen:"
-			/> -->
-			<!-- <Festtagsprogramm /> -->
+				startDate={new Date('2026-09-18T18:00:00+02:00')}
+				bottomText="Bis dahin kannst du dir die Termine schon mal in den Kalender eintragen:"
+			/>
+			<Festtagsprogramm />
 		</section>
 		<section class="feature-card__section">
 			<h2>Was gibt es auf Insta?</h2>
