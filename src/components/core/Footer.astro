@@ -15,6 +15,58 @@ interface Props {
 	color: string;
 }
 
+const sponsoren: {
+	src: string;
+	link: string;
+}[] = [
+	{
+		src: '/assets/sponsoren/alex-bautrockung.webp',
+		link: 'https://www.bautrocknung-alex.de/',
+	},
+	{
+		src: '/assets/sponsoren/sparkasse.webp',
+		link: 'https://www.stadtsparkasse-bocholt.de/',
+	},
+	{
+		src: '/assets/sponsoren/autohaus-schuermann.webp',
+		link: 'https://kfz-schuermann.de/',
+	},
+	{
+		src: '/assets/sponsoren/blumen-straatman.webp',
+		link: 'https://www.blumen-bocholt.de/',
+	},
+	{
+		src: '/assets/sponsoren/hessling.webp',
+		link: 'https://hessling-holzbearbeitung.de/',
+	},
+	{
+		src: '/assets/sponsoren/volksbank.webp',
+		link: 'https://www.vb-bocholt.de/',
+	},
+	{
+		src: '/assets/sponsoren/kranenburg.webp',
+		link: 'https://www.kranenburg.com/',
+	},
+	{
+		src: '/assets/sponsoren/kampshoff.webp',
+		link: 'https://nrw-holzhaus.com/',
+	},
+
+	{
+		src: '/assets/sponsoren/moelders.webp',
+		link: 'https://www.moelders-elektro.de/',
+	},
+	{
+		src: '/assets/sponsoren/nightlife-media.webp',
+		link: 'https://www.instagram.com/nightlife_media_boh/',
+	},
+	{
+		src: '/assets/sponsoren/wuebling.webp',
+		link: 'https://www.instagram.com/wubling_agrar_service/',
+	},
+	// { src: '/assets/sponsoren/schluetter.webp', link: 'https://www.schluettergmbh.de/' },
+];
+
 const { footerSocials, footerLists, copyrightName, background, color } =
 	Astro.props;
 ---
@@ -63,6 +115,18 @@ const { footerSocials, footerLists, copyrightName, background, color } =
 						</ul>
 					</div>
 				))
+			}
+		</div>
+
+		<div class="footer__sponsors">
+			{
+				sponsoren.map(({ link, src }) => {
+					return (
+						<a href={link} target="_blank">
+							<img src={src} />
+						</a>
+					);
+				})
 			}
 		</div>
 		<div class="footer-copyright__container">
@@ -136,5 +200,18 @@ const { footerSocials, footerLists, copyrightName, background, color } =
 		.footer-copyright__container {
 			flex-direction: column;
 		}
+	}
+
+	.footer__sponsors {
+		display: flex;
+		gap: 0.5rem;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		padding-bottom: 1rem;
+	}
+
+	.footer__sponsors > * {
+		width: 150px;
 	}
 </style>
