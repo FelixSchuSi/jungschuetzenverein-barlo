@@ -68,6 +68,10 @@ const sponsoren: {
 		src: '/assets/sponsoren/hagemeyer.webp',
 		link: 'https://www.instagram.com/lust_am_fahren_/',
 	},
+	{
+		src: '/assets/sponsoren/eiting.webp',
+		link: 'http://www.fliesen-eiting.de/',
+	},
 	// { src: '/assets/sponsoren/schluetter.webp', link: 'https://www.schluettergmbh.de/' },
 ];
 
@@ -121,7 +125,7 @@ const { footerSocials, footerLists, copyrightName, background, color } =
 				))
 			}
 		</div>
-
+		<p class="sponsoren-dank">Wir danken unseren Sponsoren!</p>
 		<div class="footer__sponsors">
 			{
 				sponsoren.map(({ link, src }) => {
@@ -217,5 +221,14 @@ const { footerSocials, footerLists, copyrightName, background, color } =
 
 	.footer__sponsors > * {
 		width: 150px;
+	}
+
+	.sponsoren-dank {
+		font-weight: 300;
+		padding-top: 1 rem;
+		width: 100%;
+		display: inline-flex;
+		justify-content: center;
+		margin-bottom: 0.5rem;
 	}
 </style>
