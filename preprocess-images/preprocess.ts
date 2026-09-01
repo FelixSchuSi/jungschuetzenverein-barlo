@@ -4,7 +4,7 @@ import sharp from 'sharp';
 import exifr from 'exifr';
 import { parseArgs } from './parse-args.ts';
 
-const SIZES: number[] = [400, 1000];
+const SIZES: number[] = [100];
 const FORMATS = ['webp'] as const;
 
 async function ensureDir(dir: string): Promise<void> {
