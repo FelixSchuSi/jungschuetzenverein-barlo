@@ -214,29 +214,29 @@ const termine: TerminProp[] = [
 		<div class="root-full-width">
 			<div class="root">
 				<h2>Termine 2026</h2>
-				{
-					termine
-						.filter(e => e.date.getFullYear() === 2026)
-						.map(termin => <Termin termin={termin} />)
-				}
+				{termine
+					.filter(e => e.date.getFullYear() === 2026)
+					.map(termin => (
+						<Termin termin={termin} />
+					))}
 				<h2>Termine 2027</h2>
-				{
-					termine
-						.filter(e => e.date.getFullYear() === 2027)
-						.map(termin => <Termin termin={termin} />)
-				}
+				{termine
+					.filter(e => e.date.getFullYear() === 2027)
+					.map(termin => (
+						<Termin termin={termin} />
+					))}
 				<h2>Termine 2028</h2>
-				{
-					termine
-						.filter(e => e.date.getFullYear() === 2028)
-						.map(termin => <Termin termin={termin} />)
-				}
+				{termine
+					.filter(e => e.date.getFullYear() === 2028)
+					.map(termin => (
+						<Termin termin={termin} />
+					))}
 				<h2>Termine 2029</h2>
-				{
-					termine
-						.filter(e => e.date.getFullYear() === 2029)
-						.map(termin => <Termin termin={termin} />)
-				}
+				{termine
+					.filter(e => e.date.getFullYear() === 2029)
+					.map(termin => (
+						<Termin termin={termin} />
+					))}
 			</div>
 		</div>
 	</Container>

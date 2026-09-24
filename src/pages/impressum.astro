@@ -43,12 +43,15 @@ if (schriftfuehrer === undefined) {
 			<h1>Impressum</h1>
 			<p>
 				Du suchst nach dem Impressum? Dann bist du hier genau richtig. Wenn du
-				mit uns in Kontakt treten möchtest, schreib uns doch auf Instagram <a
+				mit uns in Kontakt treten möchtest, schreib uns doch auf Instagram{' '}
+				<a
 					target="_blank"
 					rel="noopener noreferrer"
 					href="https://www.instagram.com/jungschuetzenvereinbarlo_ev_/"
-					>@jungschuetzenvereinbarlo_ev_</a
-				>!
+				>
+					@jungschuetzenvereinbarlo_ev_
+				</a>
+				!
 			</p>
 		</div>
 		<picture slot="image-container">
@@ -61,26 +64,29 @@ if (schriftfuehrer === undefined) {
 	</HeroSection>
 	<TextSection>
 		<p>
-			Jungsch&uuml;tzenverein Barlo e. V.<br />
-			Weidenstra&szlig;e 16<br />
+			Jungsch&uuml;tzenverein Barlo e. V.
+			<br />
+			Weidenstra&szlig;e 16
+			<br />
 			46395 Bocholt
 		</p>
 
 		<p>
-			Vereinsregister: VR 7202<br />
+			Vereinsregister: VR 7202
+			<br />
 			Registergericht: Amtsgerichts Coesfeld
 		</p>
 
 		<p>
-			<strong>Vertreten durch:</strong><br />
-			Vereinsf&uuml;hrer: {
-				`${vereinsfuehrer.firstname} ${vereinsfuehrer.lastname}`
-			}<br />
+			<strong>Vertreten durch:</strong>
+			<br />
+			Vereinsf&uuml;hrer:{' '}
+			{`${vereinsfuehrer.firstname} ${vereinsfuehrer.lastname}`}
+			<br />
 			Stellv. Vereinsf&uuml;hrer: {`${stellv.firstname} ${stellv.lastname}`}
 			<br />
-			Schriftf&uuml;hrer: {
-				`${schriftfuehrer.firstname} ${schriftfuehrer.lastname}`
-			}
+			Schriftf&uuml;hrer:{' '}
+			{`${schriftfuehrer.firstname} ${schriftfuehrer.lastname}`}
 			<br />
 			Ger&auml;tewart: {`${geratewawrt.firstname} ${geratewawrt.lastname}`}
 		</p>

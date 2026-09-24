@@ -38,40 +38,36 @@ const allVorstandPages = Object.keys(
 
 	<Container>
 		<ul class="blog-posts-list__list_vorstand">
-			{
-				(
-					einzelBilder.map(einzelBild => {
-						return {
-							featuredImage: einzelBild.src,
-							title: String(einzelBild.position),
-							excerpt: `${einzelBild.firstname} ${einzelBild.lastname}`,
-						};
-					}) as Post[]
-				).map(post => {
-					return (
-						<li class="blog-post__preview">
-							<a>
-								<img src={post.featuredImage} loading="lazy" />
-								<h3 set:html={post.title} />
-								{post.excerpt && <p>{post.excerpt}</p>}
-							</a>
-						</li>
-					);
-				})
-			}
+			{(
+				einzelBilder.map(einzelBild => {
+					return {
+						featuredImage: einzelBild.src,
+						title: String(einzelBild.position),
+						excerpt: `${einzelBild.firstname} ${einzelBild.lastname}`,
+					};
+				}) as Post[]
+			).map(post => {
+				return (
+					<li class="blog-post__preview">
+						<a>
+							<img src={post.featuredImage} loading="lazy" />
+							<h3 set:html={post.title} />
+							{post.excerpt && <p>{post.excerpt}</p>}
+						</a>
+					</li>
+				);
+			})}
 		</ul>
 	</Container>
 	<Container>
 		<section class="cta-card__section">
 			<div class="cta-card__container">
 				<h3>Vorstände aus anderen Jahren</h3>
-				{
-					allVorstandPages.map(page => (
-						<a href={`${BASE_PATH_WITHOUT_DOMAIN}/${page}`}>
-							Vorstand aus dem Jahr {page.replaceAll('vorstand/', '')}
-						</a>
-					))
-				}
+				{allVorstandPages.map(page => (
+					<a href={`${BASE_PATH_WITHOUT_DOMAIN}/${page}`}>
+						Vorstand aus dem Jahr {page.replaceAll('vorstand/', '')}
+					</a>
+				))}
 			</div>
 		</section>
 	</Container>

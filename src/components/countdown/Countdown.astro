@@ -12,8 +12,7 @@ const { eventName, bottomText, startDate }: Props = Astro.props;
 	x-start-date={startDate.toISOString()}
 	x-bottom-text={bottomText}
 	x-event-name={eventName}
->
-</h2>
+></h2>
 {bottomText && <p>{bottomText}</p>}
 <script>
 	const element = document.getElementById('countdown');

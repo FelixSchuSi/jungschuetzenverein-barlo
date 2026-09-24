@@ -46,31 +46,29 @@ if (termin.type === 'Termin') {
 		<div class="month">{monthFormatter.format(termin.date)}.</div>
 	</div>
 	<div class="right">
-		{
-			alleTermine.map((t: Termin) => (
-				<>
-					<div class="termin-root">
-						<div class="time-and-location">
-							<div class="time">
-								<Icon
-									name="ic:baseline-access-time-filled"
-									width={24}
-									height={24}
-								/>
-								<div>{timeFormatter.format(t.date)}</div>
-							</div>
-							<div class="location">
-								<Icon name="ic:baseline-location-on" width={24} height={24} />
-								<div>{t.location}</div>
-							</div>
+		{alleTermine.map((t: Termin) => (
+			<>
+				<div class="termin-root">
+					<div class="time-and-location">
+						<div class="time">
+							<Icon
+								name="ic:baseline-access-time-filled"
+								width={24}
+								height={24}
+							/>
+							<div>{timeFormatter.format(t.date)}</div>
 						</div>
-						<h3 class="name" set:html={t.name} />
-						<div class="description" set:html={t.description} />
+						<div class="location">
+							<Icon name="ic:baseline-location-on" width={24} height={24} />
+							<div>{t.location}</div>
+						</div>
 					</div>
-					<div class="h-line" />
-				</>
-			))
-		}
+					<h3 class="name" set:html={t.name} />
+					<div class="description" set:html={t.description} />
+				</div>
+				<div class="h-line" />
+			</>
+		))}
 	</div>
 </div>
 

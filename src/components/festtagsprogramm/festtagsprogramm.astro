@@ -120,7 +120,9 @@ export const festprogramm: TerminProp[] = [
 <!-- <h2>Festtagsprogramm</h2> -->
 <div class="root-full-width">
 	<div class="root">
-		{festprogramm.map(termin => <Termin termin={termin} />)}
+		{festprogramm.map(termin => (
+			<Termin termin={termin} />
+		))}
 	</div>
 </div>
 <style>

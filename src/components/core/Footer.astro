@@ -100,56 +100,50 @@ const { footerSocials, footerLists, copyrightName, background, color } =
 					<slot name="logo" />
 				</div>
 				<ul class="footer-socials__list">
-					{
-						footerSocials.map(social => (
-							<li class="footer-socials__item">
-								<a
-									href={social.url}
-									target="_blank"
-									rel="noopener noreferrer"
-									class="footer-socials__link"
-									title={`${social.name} öffnen`}
-								>
-									<Icon name={social.icon} width={24} height={24} />
-								</a>
-							</li>
-						))
-					}
+					{footerSocials.map(social => (
+						<li class="footer-socials__item">
+							<a
+								href={social.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="footer-socials__link"
+								title={`${social.name} öffnen`}
+							>
+								<Icon name={social.icon} width={24} height={24} />
+							</a>
+						</li>
+					))}
 				</ul>
 			</div>
-			{
-				footerLists.map(list => (
-					<div>
-						<p>
-							<strong>{list.title}</strong>
-						</p>
-						<ul class="footer-link__list">
-							{list.items.map(item => (
-								<li>
-									<a href={BASE_PATH_WITHOUT_DOMAIN + item.slug}>
-										{item.title}
-									</a>
-								</li>
-							))}
-						</ul>
-					</div>
-				))
-			}
+			{footerLists.map(list => (
+				<div>
+					<p>
+						<strong>{list.title}</strong>
+					</p>
+					<ul class="footer-link__list">
+						{list.items.map(item => (
+							<li>
+								<a href={BASE_PATH_WITHOUT_DOMAIN + item.slug}>{item.title}</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			))}
 		</div>
 		<p class="sponsoren-dank">Wir danken unseren Sponsoren!</p>
 		<div class="footer__sponsors">
-			{
-				sponsoren.map(({ link, src }) => {
-					return (
-						<a href={link} target="_blank">
-							<img src={src} />
-						</a>
-					);
-				})
-			}
+			{sponsoren.map(({ link, src }) => {
+				return (
+					<a href={link} target="_blank">
+						<img src={src} />
+					</a>
+				);
+			})}
 		</div>
 		<div class="footer-copyright__container">
-			<p>Copyright &copy; {new Date().getFullYear()} {copyrightName}</p>
+			<p>
+				Copyright &copy; {new Date().getFullYear()} {copyrightName}
+			</p>
 		</div>
 	</Container>
 </footer>

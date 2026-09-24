@@ -64,21 +64,19 @@ const { navData, rightMenu } = Astro.props;
 	</div>
 	<div class="header-nav__container">
 		<slot name="nav">
-			{
-				navData && (
-					<nav>
-						<ul>
-							{navData.map(navItem => (
-								<li>
-									<a href={BASE_PATH_WITHOUT_DOMAIN + navItem.slug}>
-										{navItem.title}
-									</a>
-								</li>
-							))}
-						</ul>
-					</nav>
-				)
-			}
+			{navData && (
+				<nav>
+					<ul>
+						{navData.map(navItem => (
+							<li>
+								<a href={BASE_PATH_WITHOUT_DOMAIN + navItem.slug}>
+									{navItem.title}
+								</a>
+							</li>
+						))}
+					</ul>
+				</nav>
+			)}
 		</slot>
 	</div>
 	<div class="header-action-item__container">

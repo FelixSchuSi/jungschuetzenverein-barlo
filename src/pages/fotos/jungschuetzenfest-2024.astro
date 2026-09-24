@@ -21,7 +21,13 @@ const images = fotosJungschuetzenfest2024.map(data => {
 <Layout {seo}>
 	<HeroSection>
 		<div slot="text-container">
-			<h1>Fotos Jung<wbr />schützen<wbr />fest 2024</h1>
+			<h1>
+				Fotos Jung
+				<wbr />
+				schützen
+				<wbr />
+				fest 2024
+			</h1>
 			<small>
 				Du möchtest, dass ein Foto entfernt wird? Dann melde dich per Mail an
 				f.schulzesindern@web.de
@@ -37,19 +43,17 @@ const images = fotosJungschuetzenfest2024.map(data => {
 	</HeroSection>
 
 	<div id="carouselTargetList" class="container">
-		{
-			images.map((img, index) => {
-				return (
-					<a
-						class="item"
-						href={`/images?image=${index}`}
-						data-carousel-index={index}
-					>
-						<img src={img.srcS} alt={img.alt} loading="lazy" />
-					</a>
-				);
-			})
-		}
+		{images.map((img, index) => {
+			return (
+				<a
+					class="item"
+					href={`/images?image=${index}`}
+					data-carousel-index={index}
+				>
+					<img src={img.srcS} alt={img.alt} loading="lazy" />
+				</a>
+			);
+		})}
 	</div>
 
 	<Carousel images={images} />
