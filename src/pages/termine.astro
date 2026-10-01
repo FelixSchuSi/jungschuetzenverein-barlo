@@ -13,53 +13,6 @@ const tomorrow: Date = new Date();
 tomorrow.setDate(new Date().getDate() + 1);
 
 const termine: TerminProp[] = [
-	{
-		type: 'Termin',
-		date: new Date('2025-01-04T17:30:00.000Z'),
-		name: 'Jahres&shy;haupt&shy;ver&shy;samm&shy;lung 2025',
-		description: `Alle Jungschützen und die, die es werden wollen sind herzlich zur Jahres&shy;haupt&shy;ver&shy;samm&shy;lung eingeladen. Auf der Tagesordnung stehen u. a. der Jahres- und Kassenbericht sowie die Neuwahlen des Vorstands. Wir freuen uns auf euer Kommen!`,
-		location: 'Landgasthaus Schmitz',
-	},
-	{
-		type: 'Termin',
-		date: new Date('2025-04-19T18:00:00.000Z'),
-		name: 'Oster&shy;disco 2025',
-		description:
-			'Am Ostersamstag kann der Jungschütze nochmal richtig das Tanzbein schwingen! Der Jungschützenverein lädt zur alljährlichen Oster&shy;disco im Saal Wissing Flinzenberg ein.',
-		location: 'Saal Wissing-Flinzenberg',
-	},
-	{
-		type: 'Termin',
-		date: new Date('2025-09-14T09:00:00.000Z'),
-		name: 'Früh&shy;schoppen 2025',
-		description:
-			'Am Sonntag vor Schützenfest findet ein gemütlicher Umtrunk bei Schmitz statt. Dort können sich neue Jungschützen anmelden und Hüte, Gewehre, Nadeln, Federn und Shirts werden verkauft.',
-		location: 'Landgasthaus Schmitz',
-	},
-	// 2026
-	{
-		type: 'Termin',
-		date: new Date('2026-01-03T17:30:00.000Z'),
-		name: 'Jahres&shy;haupt&shy;ver&shy;samm&shy;lung 2026',
-		description: `Alle Jungschützen und die, die es werden wollen sind herzlich zur Jahres&shy;haupt&shy;ver&shy;samm&shy;lung eingeladen. Auf der Tagesordnung stehen u. a. der Jahres- und Kassenbericht sowie die Neuwahlen des Vorstands. Wir freuen uns auf euer Kommen!`,
-		location: 'Landgasthaus Schmitz',
-	},
-	{
-		type: 'Termin',
-		date: new Date('2026-04-04T18:00:00.000Z'),
-		name: 'Oster&shy;disco 2026',
-		description:
-			'Am Ostersamstag kann der Jungschütze nochmal richtig das Tanzbein schwingen! Der Jungschützenverein lädt zur alljährlichen Oster&shy;disco im Saal Wissing Flinzenberg ein.',
-		location: 'Saal Wissing-Flinzenberg',
-	},
-	{
-		type: 'Termin',
-		date: new Date('2026-09-13T09:00:00.000Z'),
-		name: 'Früh&shy;schoppen 2026',
-		description:
-			'Am Sonntag vor Schützenfest findet ein gemütlicher Umtrunk bei Schmitz statt. Dort können sich neue Jungschützen anmelden und Hüte, Gewehre, Nadeln, Federn und Shirts werden verkauft.',
-		location: 'Landgasthaus Schmitz',
-	},
 	...festprogramm,
 	// 2027
 	{
@@ -213,12 +166,6 @@ const termine: TerminProp[] = [
 	<Container>
 		<div class="root-full-width">
 			<div class="root">
-				<h2>Termine 2026</h2>
-				{termine
-					.filter(e => e.date.getFullYear() === 2026)
-					.map(termin => (
-						<Termin termin={termin} />
-					))}
 				<h2>Termine 2027</h2>
 				{termine
 					.filter(e => e.date.getFullYear() === 2027)
