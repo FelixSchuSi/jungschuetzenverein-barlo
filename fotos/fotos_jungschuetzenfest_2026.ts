@@ -1990,11 +1990,6 @@ export const fotosJungschuetzenfest2026 = [
 		srcS: 'https://iili.io/nM7p5FV.webp',
 	},
 	{
-		name: '398.webp',
-		srcL: 'https://iili.io/nMYG1VI.webp',
-		srcS: 'https://iili.io/nM7p7cB.webp',
-	},
-	{
 		name: '399.webp',
 		srcL: 'https://iili.io/nMYGEPt.webp',
 		srcS: 'https://iili.io/nM7pY8P.webp',
