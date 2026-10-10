@@ -4,7 +4,7 @@ import sharp from 'sharp';
 import exifr from 'exifr';
 import { parseArgs } from './parse-args.ts';
 
-const SIZES: number[] = [100];
+const SIZES: number[] = [400, 1000];
 const FORMATS = ['webp'] as const;
 
 async function ensureDir(dir: string): Promise<void> {
@@ -77,8 +77,17 @@ async function main(): Promise<void> {
 		}),
 	);
 
+	const collator = new Intl.Collator(undefined, {
+		numeric: true,
+		sensitivity: 'base',
+	});
 	const sortedFiles = filesWithDates
-		.sort((a, b) => a.date.getTime() - b.date.getTime())
+		.sort((a, b) => {
+			const diff = a.date.getTime() - b.date.getTime();
+			if (diff !== 0) return diff;
+			// Tie-break deterministically on natural filename order
+			return collator.compare(a.file, b.file);
+		})
 		.map(entry => entry.file);
 
 	if (sortedFiles.length === 0) {
@@ -90,16 +99,27 @@ async function main(): Promise<void> {
 		SIZES.map(size => ensureDir(path.join(outputDir, String(size)))),
 	);
 
-	await Promise.all(
-		sortedFiles.map((file, i) => {
-			try {
-				processImage(file, inputDir, outputDir, i, sortedFiles.length);
-			} catch (e) {
-				console.log(`Image could not be processed: ${file}`);
-				console.log(e);
-			}
-		}),
-	);
+	const CONCURRENCY = 8;
+	for (let start = 0; start < sortedFiles.length; start += CONCURRENCY) {
+		const batch = sortedFiles.slice(start, start + CONCURRENCY);
+		await Promise.all(
+			batch.map(async (file, j) => {
+				const i = start + j;
+				try {
+					await processImage(
+						file,
+						inputDir,
+						outputDir,
+						i,
+						sortedFiles.length,
+					);
+				} catch (e) {
+					console.log(`Image could not be processed: ${file}`);
+					console.log(e);
+				}
+			}),
+		);
+	}
 }
 
 main();

@@ -15,12 +15,6 @@ JSON.stringify(
 		return {
 			name: e.alt,
 			srcS: e.src,
-			srcM: e.src.replace('.md.', '.'),
-			// Nur eines von beidem
-			srcL: e.src,
-			srcXL: e.src.replace('.md.', '.'),
-			width: e.getAttribute('width'),
-			height: e.getAttribute('height'),
 		};
 	}),
 );
@@ -32,13 +26,10 @@ let biggerFiles = [
 	return {
 		name: e.alt,
 		srcL: e.src,
-		srcXL: e.src.replace('.md.', '.'),
-		width: Number(e.getAttribute('width')),
-		height: Number(e.getAttribute('height')),
 	};
 });
-
-let smallerFiles = JSON.parse('Aus dem anderen Album kopiert');
+const smallerjson = 'Aus dem anderen Album kopiert';
+let smallerFiles = JSON.parse(smallerjson);
 output = new Map();
 biggerFiles.forEach(e => {
 	output.set(e.name, e);

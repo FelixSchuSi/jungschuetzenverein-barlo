@@ -7,6 +7,15 @@ import { BASE_PATH_WITHOUT_DOMAIN } from '../../../base-path.mjs';
 const fotos: Post[] = [
 	{
 		authors: 'Jungschützenverein Barlo',
+		description: 'Fotos vom Jungschützenfest 2026',
+		excerpt: 'Fotos vom Jungschützenfest 2026',
+		featuredImage: 'https://iili.io/nMYGNDl.webp',
+		href: BASE_PATH_WITHOUT_DOMAIN + '/fotos/jungschuetzenfest-2026',
+		publishDate: new Date('2026-10-10'),
+		title: 'Jungschützenfest 2026',
+	},
+	{
+		authors: 'Jungschützenverein Barlo',
 		description: 'Fotos vom Jungschützenfest 2025',
 		excerpt: 'Fotos vom Jungschützenfest 2025',
 		featuredImage: 'https://iili.io/KN25six.webp',
@@ -59,8 +68,7 @@ const fotos: Post[] = [
 			<div class="cta-card__container">
 				<h1>Fotos</h1>
 				Hier findest du Fotos von unseren Veranstaltungen, viel Spaß! <br />
-				Wenn du ein Foto von dir entfernt haben möchtest, melde dich per Mail an
-				f.schulzesindern@web.de.
+				Wenn du ein Foto von dir entfernt haben möchtest, melde dich per Mail an f.schulzesindern@web.de.
 			</div>
 		</section>
 		<BlogPostsList posts={fotos} />
