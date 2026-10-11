@@ -2044,11 +2044,7 @@ export const fotosJungschuetzenfest2026 = [
 		srcL: 'https://iili.io/nMYG6Rj.webp',
 		srcS: 'https://iili.io/nM7pN9t.webp',
 	},
-	{
-		name: '410.webp',
-		srcL: 'https://iili.io/nMYGPOx.webp',
-		srcS: 'https://iili.io/nM7peNn.webp',
-	},
+
 	{
 		name: '411.webp',
 		srcL: 'https://iili.io/nMYGiDQ.webp',
@@ -2058,16 +2054,6 @@ export const fotosJungschuetzenfest2026 = [
 		name: '412.webp',
 		srcL: 'https://iili.io/nMYGLxV.webp',
 		srcS: 'https://iili.io/nM7pSVf.webp',
-	},
-	{
-		name: '413.webp',
-		srcL: 'https://iili.io/nMYGQWB.webp',
-		srcS: 'https://iili.io/nM7pUP4.webp',
-	},
-	{
-		name: '414.webp',
-		srcL: 'https://iili.io/nMYGZiP.webp',
-		srcS: 'https://iili.io/nM7prKl.webp',
 	},
 	{
 		name: '415.webp',
@@ -2628,11 +2614,6 @@ export const fotosJungschuetzenfest2026 = [
 		name: '526.webp',
 		srcL: 'https://iili.io/nMYWQWl.webp',
 		srcS: 'https://iili.io/nMYHQDX.webp',
-	},
-	{
-		name: '527.webp',
-		srcL: 'https://iili.io/nMYWDfS.webp',
-		srcS: 'https://iili.io/nMYHtxn.webp',
 	},
 	{
 		name: '528.webp',
